@@ -11,6 +11,11 @@ using MySql.Data.MySqlClient;
 using System.Globalization;
 using System.Windows.Forms.DataVisualization.Charting;
 
+
+
+//jescze jeden test
+
+
 namespace RUN
 {
     public partial class Main : Form
