@@ -13,8 +13,6 @@ using System.Windows.Forms.DataVisualization.Charting;
 
 
 
-//jescze jeden test
-
 
 namespace RUN
 {
