@@ -60,6 +60,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AppData.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DBConnect.cs" />
     <Compile Include="Zawody.cs">
       <SubType>Form</SubType>
     </Compile>
