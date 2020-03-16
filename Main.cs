@@ -21,7 +21,8 @@ namespace RUN
         string connectionString = @"DATASOURCE=db4free.net;PORT=3306;DATABASE=trening;UID=trening;PASSWORD=treningRTL;OldGuids=True;convert zero datetime=True";
         string[] miesiacNr = { "00","01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12" };
         string[] miesiacNazwa = { "Styczeń", "Luty", "Marzec", "Kwiecień", "Maj", "Czerwiec", "Lipiec", "Sierpień", "Wrzesień", "Październik", "Listopad", "Grudzień" };
-
+        private MySqlConnection MyCon;
+        private DataTable data;
 
         public Main()
         {
@@ -35,197 +36,21 @@ namespace RUN
 
         private void Main_Load(object sender, EventArgs e)
         {
+            mati_connect();
             DataGridView(DateTime.Now);
         
         }
 
-        void DataGridView(DateTime dzien)
-        // obsługa wyświetlania przeglądarki bazy danych 
+        public void mati_connect()
         {
-            string tylkoRok= "'%." + dzien.Year.ToString() + "'";
-            string tylkoMiesiac = "'%." + miesiacNr[dzien.Month] + "." + dzien.Year.ToString() + "'";
-            double sumKm=0;
-            double liczKm=1;
-            double sredKm = 0;
-            double minKm=0;
-            double maxKm=0;
-            double sumKg=0;
-            double liczKg=1;
-            double sredKg = 0;
-            double minKg=0;
-            double maxKg=0;
-
-            this.Cursor = Cursors.WaitCursor;
-
-            using (MySqlConnection MyCon = new MySqlConnection(connectionString))
+            this.data = new DataTable();
+            using (this.MyCon = new MySqlConnection(connectionString))
             {
                 try
                 {
-                    //string query = "select * from ak_miesiac where data like " + zapamiętajData;
-                    //string query = "select * from ak_miesiac";
-                    string query = "select * from ak_miesiac_zawody";
                     MyCon.Open(); //otwarcie nowego połączenia
-                    MySqlDataAdapter MyDa = new MySqlDataAdapter(query, MyCon); //pobranie danych z bazy, zgodnych z zapytaniem SQL
-                    DataTable MyTab = new DataTable();
-
-                    MyDa.Fill(MyTab); //wypełnienie tabeli w pamięci danymi z adaptera
-
-
-                    // zebranie danych o dystansie od początku kariery
-                    sumKm = Convert.ToDouble(MyTab.Compute("SUM(dystans)", string.Empty));
-                    liczKm = Convert.ToInt32(MyTab.Compute("COUNT(dystans)",string.Empty));
-                    minKm = Convert.ToDouble(MyTab.Compute("MIN(dystans)", string.Empty));
-                    maxKm = Convert.ToDouble(MyTab.Compute("MAX(dystans)", string.Empty));
-                    lblSumaAll.Text = "Dystans pokonany od 12.03.2011 : " + String.Format("{0:0.00}", sumKm) + " km";
-                    lblAllKm.Text = String.Format("{0:0.00}", sumKm) + " km";
-                    lblAllAvgKm.Text = String.Format("{0:0.00}", sumKm / liczKm) + " km";
-                    lblAllMinKm.Text = String.Format("{0:0.00}", minKm) + " km";
-                    lblAllMaxKm.Text = String.Format("{0:0.00}", maxKm) + " km";
-
-                    // zebranie danych o wadze od początku kariery
-                    sumKg = Convert.ToDouble(MyTab.Compute("SUM(waga)", string.Empty));
-                    liczKg = Convert.ToInt32(MyTab.Compute("COUNT(waga)", string.Empty));
-                    minKg = Convert.ToDouble(MyTab.Compute("MIN(waga)", string.Empty));
-                    maxKg = Convert.ToDouble(MyTab.Compute("MAX(waga)", string.Empty));
-                    lblAllAvgKg.Text = String.Format("{0:0.00}", sumKg / liczKg) + " kg";
-                    lblAllMinKg.Text = String.Format("{0:0.00}", minKg) + " kg";
-                    lblAllMaxKg.Text = String.Format("{0:0.00}", maxKg) + " kg";
-
-                    // zebranie danych o rekordach w zawodach
-
-                    DataRow[] wybor_M = MyTab.Select("zawody_typ = 'M'", "czas ASC"); // dla maratonu
-                   
-                    lblNazwaRekMaraton.Text = " " + wybor_M[0]["zawody"].ToString() + " ";
-                    lblDataRekMaraton.Text = wybor_M[0]["data"].ToString();
-                    lblCzasRekMaraton.Text = wybor_M[0]["czas"].ToString();
-                    lblNumerRekMaraton.Text = wybor_M[0]["numer"].ToString();
-                    
-                    DataRow[] wybor_P = MyTab.Select("zawody_typ = 'P'","czas ASC"); // dla polmaratonu
-
-                    lblNazwaRekPolowka.Text= " " + wybor_P[0]["zawody"].ToString()+" ";
-                    lblDataRekPolowka.Text = wybor_P[0]["data"].ToString();
-                    lblCzasRekPolowka.Text = wybor_P[0]["czas"].ToString();
-                    lblNumerRekPolowka.Text = wybor_P[0]["numer"].ToString();
-
-                    
-                    DataRow[] wybor_D = MyTab.Select("zawody_typ = 'D'", "czas ASC"); // dla dychy
-
-                    lblNazwaRekDycha.Text = " " + wybor_D[0]["zawody"].ToString() + " ";
-                    lblDataRekDycha.Text = wybor_D[0]["data"].ToString();
-                    lblCzasRekDycha.Text = wybor_D[0]["czas"].ToString();
-                    lblNumerRekDycha.Text = wybor_D[0]["numer"].ToString();
-                    
-
-
-
-                    MyTab.DefaultView.RowFilter="data like "+tylkoMiesiac; //filtr wierszy w tabeli do wyświetlenia
-                    
-                    this.dataGrid.DataSource = MyTab; //wypełnienie GridView danymi
-
-
-                    // zebranie danych o dystansie dla wybranego roku
-                    liczKm = 0;
-                    sumKm = 0;
-                    sredKm = 0;
-                    minKm = 0;
-                    maxKm = 0;
-
-                    grpYearKm.Text = dzien.Year.ToString();
-                    liczKm = Convert.ToInt32(MyTab.Compute("COUNT(dystans)", "data like " + tylkoRok));
-
-                    if (liczKm != 0) // dla roku który ma dystanse
-                    {
-                        sumKm = Convert.ToDouble(MyTab.Compute("SUM(dystans)", "data like " + tylkoRok));
-                        sredKm = sumKm / liczKm;
-                        minKm = Convert.ToDouble(MyTab.Compute("MIN(dystans)", "data like " + tylkoRok));
-                        maxKm = Convert.ToDouble(MyTab.Compute("MAX(dystans)", "data like " + tylkoRok));
-                    }
-
-                    lblYearAllKm.Text = String.Format("{0:0.00}", sumKm)+ " km";
-                    lblYearAvgKm.Text=String.Format("{0:0.00}", sumKm/liczKm)+ " km";
-                    lblYearMinKm.Text=String.Format("{0:0.00}", minKm)+ " km";
-                    lblYearMaxKm.Text = String.Format("{0:0.00}", maxKm) + " km";
-
-                    // zebranie danych o wadze dla wybranego roku
-                    liczKg = 0;
-                    sumKg = 0;
-                    sredKg = 0;
-                    minKg = 0;
-                    maxKg = 0;       
-                    
-                    grpYearKg.Text = dzien.Year.ToString();
-                    liczKg = Convert.ToInt32(MyTab.Compute("COUNT(waga)", "data like " + tylkoRok));
-
-                    if (liczKg != 0) // dla roku który ma wagi
-                    { 
-                        sumKg = Convert.ToDouble(MyTab.Compute("SUM(waga)", "data like " + tylkoRok));
-                        sredKg = sumKg / liczKg;
-                        minKg = Convert.ToDouble(MyTab.Compute("MIN(waga)", "data like " + tylkoRok));
-                        maxKg = Convert.ToDouble(MyTab.Compute("MAX(waga)", "data like " + tylkoRok));
-                    }
-
-                    lblYearAvgKg.Text = String.Format("{0:0.00}", sumKg / liczKg) + " kg";
-                    lblYearMinKg.Text = String.Format("{0:0.00}", minKg) + " kg";
-                    lblYearMaxKg.Text = String.Format("{0:0.00}", maxKg) + " kg";
-
-                    // zebranie danych o dystansie dla wybranego miesiąca
-                    liczKm = 0;
-                    sumKm = 0;
-                    sredKm = 0;
-                    minKm = 0;
-                    maxKm = 0;
-
-                    grpMounthKm.Text = miesiacNazwa[dzien.Month - 1] + " " + dzien.Year.ToString();
-                    liczKm = Convert.ToInt32(MyTab.Compute("COUNT(dystans)", "data like " + tylkoMiesiac));
-
-                    if (liczKm!=0) // dla miesiąca który ma dystanse
-                    {
-                        sumKm = Convert.ToDouble(MyTab.Compute("SUM(dystans)", "data like "+tylkoMiesiac));
-                        sredKm = sumKm / liczKm;
-                        minKm= Convert.ToDouble(MyTab.Compute("MIN(dystans)", "data like " + tylkoMiesiac));
-                        maxKm= Convert.ToDouble(MyTab.Compute("MAX(dystans)", "data like " + tylkoMiesiac));
-                    }
-
-                    lblMounthAllKm.Text = String.Format("{0:0.00}", sumKm) + " km";
-                    lblMounthAvgKm.Text = String.Format("{0:0.00}", sredKm) + " km";
-                    lblMounthMinKm.Text = String.Format("{0:0.00}", minKm) + " km";
-                    lblMounthMaxKm.Text = String.Format("{0:0.00}", maxKm) + " km";
-
-                    // zebranie danych o wadze dla wybranego miesiąca
-                    liczKg = 0;
-                    sumKg = 0;
-                    sredKg = 0;
-                    minKg = 0;
-                    maxKg = 0;
-
-                    grpMounthKg.Text = miesiacNazwa[dzien.Month - 1] + " " + dzien.Year.ToString();
-                    liczKg = Convert.ToInt32(MyTab.Compute("COUNT(waga)", "data like " + tylkoMiesiac));
-
-                    if (liczKg!=0) // dla miesiąca który ma wagi
-                    {
-                        sumKg = Convert.ToDouble(MyTab.Compute("SUM(waga)", "data like " + tylkoMiesiac));
-                        sredKg = sumKg / liczKg;
-                        minKg = Convert.ToDouble(MyTab.Compute("MIN(waga)", "data like " + tylkoMiesiac));
-                        maxKg = Convert.ToDouble(MyTab.Compute("MAX(waga)", "data like " + tylkoMiesiac));
-                    }
-
-                    lblMounthAvgKg.Text = String.Format("{0:0.00}", sredKg) + " kg";
-                    lblMounthMinKg.Text = String.Format("{0:0.00}", minKg) + " kg";
-                    lblMounthMaxKg.Text = String.Format("{0:0.00}", maxKg) + " kg";
-
-
-                    // wyświetlanie wykresu wag
-                    chrWaga.Series.Clear();
-                    chrWaga.Series.Add(new Series());
-                    chrWaga.Series[0].ChartType = SeriesChartType.Column;
-                    chrWaga.ChartAreas[0].AxisY.IsStartedFromZero = false;
-                    // rozmiar czcionki osi X i Y
-                    this.chrWaga.ChartAreas[0].AxisX.LabelStyle.Font = new System.Drawing.Font("Courier New", 6, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-                    this.chrWaga.ChartAreas[0].AxisY.LabelStyle.Font = new System.Drawing.Font("Courier New", 6, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-                    for (int i = 0; i < dataGrid.Rows.Count - 1; i++)
-                    {
-                        this.chrWaga.Series[0].Points.AddXY(dataGrid.Rows[i].Cells[1].Value.ToString(), dataGrid.Rows[i].Cells[3].Value);
-                    }
+                    GetTable();
+                    MyCon.Close(); //zamknięcie połaczenia
 
                 }
                 catch (MySqlException ex)
@@ -247,11 +72,201 @@ namespace RUN
                         default:
                             MyMessageBox.ShowMessage("Problem z połaczeniem, próbuj dalej!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             break;
+                            
                     }
                 }
-
-                this.Cursor = this.DefaultCursor;
             }
+        }
+
+        public void GetTable()
+        // pobranie tabeli z bazy danych do tabeli (data) w pamięci 
+        {
+            string query = "select * from ak_miesiac_zawody";
+            MySqlDataAdapter MyDa = new MySqlDataAdapter(query, MyCon);
+            MyDa.Fill(this.data);
+        }
+
+        void DataGridView(DateTime dzien)
+        // obsługa wyświetlania przeglądarki bazy danych 
+        {
+            string tylkoRok= "'%." + dzien.Year.ToString() + "'";
+            string tylkoMiesiac = "'%." + miesiacNr[dzien.Month] + "." + dzien.Year.ToString() + "'";
+            double sumKm=0;
+            double liczKm=1;
+            double sredKm = 0;
+            double minKm=0;
+            double maxKm=0;
+            double sumKg=0;
+            double liczKg=1;
+            double sredKg = 0;
+            double minKg=0;
+            double maxKg=0;
+
+            this.Cursor = Cursors.WaitCursor;
+             this.Cursor = this.DefaultCursor;
+
+
+
+
+            DataTable MyTab = this.data;
+
+            // zebranie danych o dystansie od początku kariery
+            sumKm = Convert.ToDouble(MyTab.Compute("SUM(dystans)", string.Empty));
+            liczKm = Convert.ToInt32(MyTab.Compute("COUNT(dystans)", string.Empty));
+            minKm = Convert.ToDouble(MyTab.Compute("MIN(dystans)", string.Empty));
+            maxKm = Convert.ToDouble(MyTab.Compute("MAX(dystans)", string.Empty));
+            lblSumaAll.Text = "Dystans pokonany od 12.03.2011 : " + String.Format("{0:0.00}", sumKm) + " km";
+            lblAllKm.Text = String.Format("{0:0.00}", sumKm) + " km";
+            lblAllAvgKm.Text = String.Format("{0:0.00}", sumKm / liczKm) + " km";
+            lblAllMinKm.Text = String.Format("{0:0.00}", minKm) + " km";
+            lblAllMaxKm.Text = String.Format("{0:0.00}", maxKm) + " km";
+
+            // zebranie danych o wadze od początku kariery
+            sumKg = Convert.ToDouble(MyTab.Compute("SUM(waga)", string.Empty));
+            liczKg = Convert.ToInt32(MyTab.Compute("COUNT(waga)", string.Empty));
+            minKg = Convert.ToDouble(MyTab.Compute("MIN(waga)", string.Empty));
+            maxKg = Convert.ToDouble(MyTab.Compute("MAX(waga)", string.Empty));
+            lblAllAvgKg.Text = String.Format("{0:0.00}", sumKg / liczKg) + " kg";
+            lblAllMinKg.Text = String.Format("{0:0.00}", minKg) + " kg";
+            lblAllMaxKg.Text = String.Format("{0:0.00}", maxKg) + " kg";
+
+            // zebranie danych o rekordach w zawodach
+
+            DataRow[] wybor_M = MyTab.Select("zawody_typ = 'M'", "czas ASC"); // dla maratonu
+
+            lblNazwaRekMaraton.Text = " " + wybor_M[0]["zawody"].ToString() + " ";
+            lblDataRekMaraton.Text = wybor_M[0]["data"].ToString();
+            lblCzasRekMaraton.Text = wybor_M[0]["czas"].ToString();
+            lblNumerRekMaraton.Text = wybor_M[0]["numer"].ToString();
+
+            DataRow[] wybor_P = MyTab.Select("zawody_typ = 'P'", "czas ASC"); // dla polmaratonu
+
+            lblNazwaRekPolowka.Text = " " + wybor_P[0]["zawody"].ToString() + " ";
+            lblDataRekPolowka.Text = wybor_P[0]["data"].ToString();
+            lblCzasRekPolowka.Text = wybor_P[0]["czas"].ToString();
+            lblNumerRekPolowka.Text = wybor_P[0]["numer"].ToString();
+
+
+            DataRow[] wybor_D = MyTab.Select("zawody_typ = 'D'", "czas ASC"); // dla dychy
+
+            lblNazwaRekDycha.Text = " " + wybor_D[0]["zawody"].ToString() + " ";
+            lblDataRekDycha.Text = wybor_D[0]["data"].ToString();
+            lblCzasRekDycha.Text = wybor_D[0]["czas"].ToString();
+            lblNumerRekDycha.Text = wybor_D[0]["numer"].ToString();
+
+
+
+
+            MyTab.DefaultView.RowFilter = "data like " + tylkoMiesiac; //filtr wierszy w tabeli do wyświetlenia
+
+            this.dataGrid.DataSource = MyTab; //wypełnienie GridView danymi
+
+
+            // zebranie danych o dystansie dla wybranego roku
+            liczKm = 0;
+            sumKm = 0;
+            sredKm = 0;
+            minKm = 0;
+            maxKm = 0;
+
+            grpYearKm.Text = dzien.Year.ToString();
+            liczKm = Convert.ToInt32(MyTab.Compute("COUNT(dystans)", "data like " + tylkoRok));
+
+            if (liczKm != 0) // dla roku który ma dystanse
+            {
+                sumKm = Convert.ToDouble(MyTab.Compute("SUM(dystans)", "data like " + tylkoRok));
+                sredKm = sumKm / liczKm;
+                minKm = Convert.ToDouble(MyTab.Compute("MIN(dystans)", "data like " + tylkoRok));
+                maxKm = Convert.ToDouble(MyTab.Compute("MAX(dystans)", "data like " + tylkoRok));
+            }
+
+            lblYearAllKm.Text = String.Format("{0:0.00}", sumKm) + " km";
+            lblYearAvgKm.Text = String.Format("{0:0.00}", sumKm / liczKm) + " km";
+            lblYearMinKm.Text = String.Format("{0:0.00}", minKm) + " km";
+            lblYearMaxKm.Text = String.Format("{0:0.00}", maxKm) + " km";
+
+            // zebranie danych o wadze dla wybranego roku
+            liczKg = 0;
+            sumKg = 0;
+            sredKg = 0;
+            minKg = 0;
+            maxKg = 0;
+
+            grpYearKg.Text = dzien.Year.ToString();
+            liczKg = Convert.ToInt32(MyTab.Compute("COUNT(waga)", "data like " + tylkoRok));
+
+            if (liczKg != 0) // dla roku który ma wagi
+            {
+                sumKg = Convert.ToDouble(MyTab.Compute("SUM(waga)", "data like " + tylkoRok));
+                sredKg = sumKg / liczKg;
+                minKg = Convert.ToDouble(MyTab.Compute("MIN(waga)", "data like " + tylkoRok));
+                maxKg = Convert.ToDouble(MyTab.Compute("MAX(waga)", "data like " + tylkoRok));
+            }
+
+            lblYearAvgKg.Text = String.Format("{0:0.00}", sumKg / liczKg) + " kg";
+            lblYearMinKg.Text = String.Format("{0:0.00}", minKg) + " kg";
+            lblYearMaxKg.Text = String.Format("{0:0.00}", maxKg) + " kg";
+
+            // zebranie danych o dystansie dla wybranego miesiąca
+            liczKm = 0;
+            sumKm = 0;
+            sredKm = 0;
+            minKm = 0;
+            maxKm = 0;
+
+            grpMounthKm.Text = miesiacNazwa[dzien.Month - 1] + " " + dzien.Year.ToString();
+            liczKm = Convert.ToInt32(MyTab.Compute("COUNT(dystans)", "data like " + tylkoMiesiac));
+
+            if (liczKm != 0) // dla miesiąca który ma dystanse
+            {
+                sumKm = Convert.ToDouble(MyTab.Compute("SUM(dystans)", "data like " + tylkoMiesiac));
+                sredKm = sumKm / liczKm;
+                minKm = Convert.ToDouble(MyTab.Compute("MIN(dystans)", "data like " + tylkoMiesiac));
+                maxKm = Convert.ToDouble(MyTab.Compute("MAX(dystans)", "data like " + tylkoMiesiac));
+            }
+
+            lblMounthAllKm.Text = String.Format("{0:0.00}", sumKm) + " km";
+            lblMounthAvgKm.Text = String.Format("{0:0.00}", sredKm) + " km";
+            lblMounthMinKm.Text = String.Format("{0:0.00}", minKm) + " km";
+            lblMounthMaxKm.Text = String.Format("{0:0.00}", maxKm) + " km";
+
+            // zebranie danych o wadze dla wybranego miesiąca
+            liczKg = 0;
+            sumKg = 0;
+            sredKg = 0;
+            minKg = 0;
+            maxKg = 0;
+
+            grpMounthKg.Text = miesiacNazwa[dzien.Month - 1] + " " + dzien.Year.ToString();
+            liczKg = Convert.ToInt32(MyTab.Compute("COUNT(waga)", "data like " + tylkoMiesiac));
+
+            if (liczKg != 0) // dla miesiąca który ma wagi
+            {
+                sumKg = Convert.ToDouble(MyTab.Compute("SUM(waga)", "data like " + tylkoMiesiac));
+                sredKg = sumKg / liczKg;
+                minKg = Convert.ToDouble(MyTab.Compute("MIN(waga)", "data like " + tylkoMiesiac));
+                maxKg = Convert.ToDouble(MyTab.Compute("MAX(waga)", "data like " + tylkoMiesiac));
+            }
+
+            lblMounthAvgKg.Text = String.Format("{0:0.00}", sredKg) + " kg";
+            lblMounthMinKg.Text = String.Format("{0:0.00}", minKg) + " kg";
+            lblMounthMaxKg.Text = String.Format("{0:0.00}", maxKg) + " kg";
+
+
+            // wyświetlanie wykresu wag
+            chrWaga.Series.Clear();
+            chrWaga.Series.Add(new Series());
+            chrWaga.Series[0].ChartType = SeriesChartType.Column;
+            chrWaga.ChartAreas[0].AxisY.IsStartedFromZero = false;
+            // rozmiar czcionki osi X i Y
+            this.chrWaga.ChartAreas[0].AxisX.LabelStyle.Font = new System.Drawing.Font("Courier New", 6, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.chrWaga.ChartAreas[0].AxisY.LabelStyle.Font = new System.Drawing.Font("Courier New", 6, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            for (int i = 0; i < dataGrid.Rows.Count - 1; i++)
+            {
+                this.chrWaga.Series[0].Points.AddXY(dataGrid.Rows[i].Cells[1].Value.ToString(), dataGrid.Rows[i].Cells[3].Value);
+            }
+
+
         }
 
         private void dataGrid_CellValueChanged(object sender, DataGridViewCellEventArgs e)
@@ -260,7 +275,7 @@ namespace RUN
             this.Cursor = Cursors.WaitCursor;
             if (dataGrid.CurrentCell != null)
             {
-                using (MySqlConnection MyCon = new MySqlConnection(connectionString))
+                using (this.MyCon = new MySqlConnection(connectionString))
                 {
                     try
                     {
@@ -292,6 +307,10 @@ namespace RUN
                             mySqlCommand.Parameters.AddWithValue("dys", zmianaDys);
                             mySqlCommand.ExecuteNonQuery();
                         }
+                        this.data = new DataTable();
+                        GetTable();
+                        MyCon.Close();
+                        //mati_connect();
                         DataGridView(jakiMiesiac);
                     }
                     catch (MySqlException ex)
