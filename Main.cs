@@ -53,27 +53,39 @@ namespace RUN
                     MyCon.Close(); //zamknięcie połaczenia
 
                 }
-                catch (MySqlException ex)
+                //catch (MySqlException ex)
+                catch
                 {
                     //When handling errors, you can your application's response based 
                     //on the error number.
                     //The two most common error numbers when connecting are as follows:
                     //0: Cannot connect to server.
                     //1045: Invalid user name and/or password.
+                    /*
                     switch (ex.Number)
                     {
                         case 0:
-                            MyMessageBox.ShowMessage("Problem z połaczeniem, próbuj dalej!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            MyMessageBox.ShowMessage("Problem z połaczeniem, próbuj dalej!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             break;
-
                         case 1045:
-                            MessageBox.Show("Invalid username/password, please try again");
+                            MyMessageBox.ShowMessage("UWAGA! Nieprawidłowe hasło lub login, próbuj dalej!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             break;
                         default:
-                            MyMessageBox.ShowMessage("Problem z połaczeniem, próbuj dalej!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            MyMessageBox.ShowMessage("Wystąpił problem z połaczeniem, próbuj dalej!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             break;
                             
                     }
+                    */
+                    //MessageBox.Show(ex.Message.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    if(MyMessageBox.ShowMessage("Błąd połączenia. Czy próbujemy się łączyć jeszcze raz?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                    {
+                        mati_connect();
+                    }
+                    else
+                    {
+                        Application.Exit();
+                    }
+                       
                 }
             }
         }
