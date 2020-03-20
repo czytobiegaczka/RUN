@@ -18,6 +18,19 @@ namespace RUN
             InitializeComponent();
          }
 
+ 
+        public void txtZawodyDystans_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != ',')
+                e.Handled = true;
+        }
+
+        public void txtZawodyNumer_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != ',')
+                e.Handled = true;
+        }
+
         private void Zawody_FormClosing(object sender, FormClosingEventArgs e)
         {
         }

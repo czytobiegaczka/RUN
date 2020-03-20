@@ -28,13 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             this.panel1 = new System.Windows.Forms.Panel();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -160,6 +160,9 @@
             this.lblCzasRekDycha = new System.Windows.Forms.Label();
             this.lblNumerRekDycha = new System.Windows.Forms.Label();
             this.lblNazwaRekDycha = new System.Windows.Forms.Label();
+            this.splitContainer11 = new System.Windows.Forms.SplitContainer();
+            this.btnZawodyDodaj = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -234,11 +237,16 @@
             this.tableLayoutPanel15.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer10)).BeginInit();
             this.splitContainer10.Panel1.SuspendLayout();
+            this.splitContainer10.Panel2.SuspendLayout();
             this.splitContainer10.SuspendLayout();
             this.panel7.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.tableLayoutPanel16.SuspendLayout();
             this.tableLayoutPanel17.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer11)).BeginInit();
+            this.splitContainer11.Panel1.SuspendLayout();
+            this.splitContainer11.Panel2.SuspendLayout();
+            this.splitContainer11.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -430,14 +438,14 @@
             this.dataGrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGrid.Location = new System.Drawing.Point(14, 3);
             this.dataGrid.Name = "dataGrid";
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dataGrid.Size = new System.Drawing.Size(556, 706);
             this.dataGrid.TabIndex = 0;
             this.dataGrid.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGrid_CellFormatting);
@@ -456,8 +464,8 @@
             // txtData
             // 
             this.txtData.DataPropertyName = "data";
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.txtData.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.txtData.DefaultCellStyle = dataGridViewCellStyle1;
             this.txtData.HeaderText = "Data";
             this.txtData.Name = "txtData";
             this.txtData.ReadOnly = true;
@@ -466,8 +474,8 @@
             // 
             this.txtDzien.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.txtDzien.DataPropertyName = "dzien";
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.txtDzien.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.txtDzien.DefaultCellStyle = dataGridViewCellStyle2;
             this.txtDzien.HeaderText = "Dzień";
             this.txtDzien.Name = "txtDzien";
             this.txtDzien.ReadOnly = true;
@@ -476,8 +484,8 @@
             // txtWaga
             // 
             this.txtWaga.DataPropertyName = "waga";
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.txtWaga.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.txtWaga.DefaultCellStyle = dataGridViewCellStyle3;
             this.txtWaga.HeaderText = "Waga";
             this.txtWaga.Name = "txtWaga";
             this.txtWaga.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
@@ -485,8 +493,8 @@
             // txtDystans
             // 
             this.txtDystans.DataPropertyName = "dystans";
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.txtDystans.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.txtDystans.DefaultCellStyle = dataGridViewCellStyle4;
             this.txtDystans.HeaderText = "Dystans";
             this.txtDystans.Name = "txtDystans";
             this.txtDystans.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
@@ -517,9 +525,9 @@
             // imgMedal
             // 
             this.imgMedal.DataPropertyName = "medal";
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle11.NullValue = null;
-            this.imgMedal.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.NullValue = null;
+            this.imgMedal.DefaultCellStyle = dataGridViewCellStyle5;
             this.imgMedal.FillWeight = 25F;
             this.imgMedal.HeaderText = " ";
             this.imgMedal.MinimumWidth = 25;
@@ -1372,8 +1380,8 @@
             // 
             // chrWaga
             // 
-            chartArea2.Name = "ChartArea1";
-            this.chrWaga.ChartAreas.Add(chartArea2);
+            chartArea1.Name = "ChartArea1";
+            this.chrWaga.ChartAreas.Add(chartArea1);
             this.chrWaga.Dock = System.Windows.Forms.DockStyle.Fill;
             this.chrWaga.Location = new System.Drawing.Point(0, 0);
             this.chrWaga.Name = "chrWaga";
@@ -1503,7 +1511,7 @@
             this.label17.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Courier New", 11.25F, System.Drawing.FontStyle.Bold);
-            this.label17.Location = new System.Drawing.Point(90, 41);
+            this.label17.Location = new System.Drawing.Point(90, 42);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(53, 17);
             this.label17.TabIndex = 0;
@@ -1514,7 +1522,7 @@
             this.label20.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Courier New", 11.25F, System.Drawing.FontStyle.Bold);
-            this.label20.Location = new System.Drawing.Point(81, 75);
+            this.label20.Location = new System.Drawing.Point(81, 76);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(62, 17);
             this.label20.TabIndex = 0;
@@ -1536,7 +1544,7 @@
             this.lblCzasRekMaraton.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblCzasRekMaraton.AutoSize = true;
             this.lblCzasRekMaraton.Font = new System.Drawing.Font("Courier New", 11.25F, System.Drawing.FontStyle.Bold);
-            this.lblCzasRekMaraton.Location = new System.Drawing.Point(242, 41);
+            this.lblCzasRekMaraton.Location = new System.Drawing.Point(242, 42);
             this.lblCzasRekMaraton.Name = "lblCzasRekMaraton";
             this.lblCzasRekMaraton.Size = new System.Drawing.Size(71, 17);
             this.lblCzasRekMaraton.TabIndex = 1;
@@ -1547,7 +1555,7 @@
             this.lblNumerRekMaraton.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblNumerRekMaraton.AutoSize = true;
             this.lblNumerRekMaraton.Font = new System.Drawing.Font("Courier New", 11.25F, System.Drawing.FontStyle.Bold);
-            this.lblNumerRekMaraton.Location = new System.Drawing.Point(242, 75);
+            this.lblNumerRekMaraton.Location = new System.Drawing.Point(242, 76);
             this.lblNumerRekMaraton.Name = "lblNumerRekMaraton";
             this.lblNumerRekMaraton.Size = new System.Drawing.Size(71, 17);
             this.lblNumerRekMaraton.TabIndex = 1;
@@ -1709,6 +1717,10 @@
             // splitContainer10.Panel1
             // 
             this.splitContainer10.Panel1.Controls.Add(this.panel7);
+            // 
+            // splitContainer10.Panel2
+            // 
+            this.splitContainer10.Panel2.Controls.Add(this.splitContainer11);
             this.splitContainer10.Size = new System.Drawing.Size(599, 345);
             this.splitContainer10.SplitterDistance = 173;
             this.splitContainer10.TabIndex = 0;
@@ -1848,6 +1860,46 @@
             this.lblNazwaRekDycha.TabIndex = 1;
             this.lblNazwaRekDycha.Text = "label12";
             // 
+            // splitContainer11
+            // 
+            this.splitContainer11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.splitContainer11.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer11.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer11.Name = "splitContainer11";
+            this.splitContainer11.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // splitContainer11.Panel1
+            // 
+            this.splitContainer11.Panel1.Controls.Add(this.btnZawodyDodaj);
+            // 
+            // splitContainer11.Panel2
+            // 
+            this.splitContainer11.Panel2.Controls.Add(this.button1);
+            this.splitContainer11.Size = new System.Drawing.Size(599, 168);
+            this.splitContainer11.SplitterDistance = 80;
+            this.splitContainer11.TabIndex = 0;
+            // 
+            // btnZawodyDodaj
+            // 
+            this.btnZawodyDodaj.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnZawodyDodaj.Location = new System.Drawing.Point(0, 0);
+            this.btnZawodyDodaj.Name = "btnZawodyDodaj";
+            this.btnZawodyDodaj.Size = new System.Drawing.Size(597, 78);
+            this.btnZawodyDodaj.TabIndex = 0;
+            this.btnZawodyDodaj.Text = "Dopisz zawody";
+            this.btnZawodyDodaj.UseVisualStyleBackColor = true;
+            this.btnZawodyDodaj.Click += new System.EventHandler(this.btnZawodyDodaj_Click);
+            // 
+            // button1
+            // 
+            this.button1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button1.Location = new System.Drawing.Point(0, 0);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(597, 82);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "Usuń zawody";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // dataGridViewImageColumn1
             // 
             this.dataGridViewImageColumn1.DataPropertyName = "zawody";
@@ -1951,6 +2003,7 @@
             this.tableLayoutPanel15.ResumeLayout(false);
             this.tableLayoutPanel15.PerformLayout();
             this.splitContainer10.Panel1.ResumeLayout(false);
+            this.splitContainer10.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer10)).EndInit();
             this.splitContainer10.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
@@ -1959,6 +2012,10 @@
             this.tableLayoutPanel16.PerformLayout();
             this.tableLayoutPanel17.ResumeLayout(false);
             this.tableLayoutPanel17.PerformLayout();
+            this.splitContainer11.Panel1.ResumeLayout(false);
+            this.splitContainer11.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer11)).EndInit();
+            this.splitContainer11.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -2091,5 +2148,8 @@
         private System.Windows.Forms.Label lblCzasRekDycha;
         private System.Windows.Forms.Label lblNumerRekDycha;
         private System.Windows.Forms.Label lblNazwaRekDycha;
+        private System.Windows.Forms.SplitContainer splitContainer11;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnZawodyDodaj;
     }
 }

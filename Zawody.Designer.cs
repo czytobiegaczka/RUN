@@ -48,17 +48,13 @@
             this.label4 = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
-            this.lblZawodyData = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
-            this.lblZawodyDystans = new System.Windows.Forms.Label();
             this.panel9 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
-            this.lblZawodyNumer = new System.Windows.Forms.Label();
             this.panel10 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel10 = new System.Windows.Forms.TableLayoutPanel();
-            this.lblZawodyCzas = new System.Windows.Forms.Label();
-            this.panel1.SuspendLayout();
+           this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -74,11 +70,8 @@
             this.panel6.SuspendLayout();
             this.tableLayoutPanel6.SuspendLayout();
             this.panel7.SuspendLayout();
-            this.tableLayoutPanel7.SuspendLayout();
             this.panel8.SuspendLayout();
-            this.tableLayoutPanel8.SuspendLayout();
             this.panel9.SuspendLayout();
-            this.tableLayoutPanel9.SuspendLayout();
             this.panel10.SuspendLayout();
             this.tableLayoutPanel10.SuspendLayout();
             this.SuspendLayout();
@@ -118,9 +111,9 @@
             this.lblZawodyNazwa.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.lblZawodyNazwa.Location = new System.Drawing.Point(52, 44);
             this.lblZawodyNazwa.Name = "lblZawodyNazwa";
-            this.lblZawodyNazwa.Size = new System.Drawing.Size(366, 31);
+            this.lblZawodyNazwa.Size = new System.Drawing.Size(30, 31);
             this.lblZawodyNazwa.TabIndex = 0;
-            this.lblZawodyNazwa.Text = "6. Półmaraton Bydgoski";
+            this.lblZawodyNazwa.Text = " ";
             // 
             // panel2
             // 
@@ -331,7 +324,6 @@
             // 
             this.tableLayoutPanel7.ColumnCount = 1;
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel7.Controls.Add(this.lblZawodyData, 0, 0);
             this.tableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel7.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel7.Name = "tableLayoutPanel7";
@@ -339,16 +331,6 @@
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel7.Size = new System.Drawing.Size(240, 82);
             this.tableLayoutPanel7.TabIndex = 0;
-            // 
-            // lblZawodyData
-            // 
-            this.lblZawodyData.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblZawodyData.AutoSize = true;
-            this.lblZawodyData.Font = new System.Drawing.Font("Courier New", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblZawodyData.Location = new System.Drawing.Point(120, 25);
-            this.lblZawodyData.Name = "lblZawodyData";
-            this.lblZawodyData.Size = new System.Drawing.Size(0, 31);
-            this.lblZawodyData.TabIndex = 1;
             // 
             // panel8
             // 
@@ -364,7 +346,6 @@
             // 
             this.tableLayoutPanel8.ColumnCount = 1;
             this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel8.Controls.Add(this.lblZawodyDystans, 0, 0);
             this.tableLayoutPanel8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel8.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel8.Name = "tableLayoutPanel8";
@@ -372,16 +353,6 @@
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel8.Size = new System.Drawing.Size(240, 82);
             this.tableLayoutPanel8.TabIndex = 0;
-            // 
-            // lblZawodyDystans
-            // 
-            this.lblZawodyDystans.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblZawodyDystans.AutoSize = true;
-            this.lblZawodyDystans.Font = new System.Drawing.Font("Courier New", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblZawodyDystans.Location = new System.Drawing.Point(120, 25);
-            this.lblZawodyDystans.Name = "lblZawodyDystans";
-            this.lblZawodyDystans.Size = new System.Drawing.Size(0, 31);
-            this.lblZawodyDystans.TabIndex = 1;
             // 
             // panel9
             // 
@@ -397,7 +368,6 @@
             // 
             this.tableLayoutPanel9.ColumnCount = 1;
             this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel9.Controls.Add(this.lblZawodyNumer, 0, 0);
             this.tableLayoutPanel9.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel9.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel9.Name = "tableLayoutPanel9";
@@ -405,16 +375,6 @@
             this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel9.Size = new System.Drawing.Size(240, 82);
             this.tableLayoutPanel9.TabIndex = 0;
-            // 
-            // lblZawodyNumer
-            // 
-            this.lblZawodyNumer.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblZawodyNumer.AutoSize = true;
-            this.lblZawodyNumer.Font = new System.Drawing.Font("Courier New", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblZawodyNumer.Location = new System.Drawing.Point(120, 25);
-            this.lblZawodyNumer.Name = "lblZawodyNumer";
-            this.lblZawodyNumer.Size = new System.Drawing.Size(0, 31);
-            this.lblZawodyNumer.TabIndex = 1;
             // 
             // panel10
             // 
@@ -430,7 +390,6 @@
             // 
             this.tableLayoutPanel10.ColumnCount = 1;
             this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel10.Controls.Add(this.lblZawodyCzas, 0, 0);
             this.tableLayoutPanel10.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel10.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel10.Name = "tableLayoutPanel10";
@@ -438,16 +397,6 @@
             this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel10.Size = new System.Drawing.Size(241, 82);
             this.tableLayoutPanel10.TabIndex = 0;
-            // 
-            // lblZawodyCzas
-            // 
-            this.lblZawodyCzas.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblZawodyCzas.AutoSize = true;
-            this.lblZawodyCzas.Font = new System.Drawing.Font("Courier New", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblZawodyCzas.Location = new System.Drawing.Point(120, 25);
-            this.lblZawodyCzas.Name = "lblZawodyCzas";
-            this.lblZawodyCzas.Size = new System.Drawing.Size(0, 31);
-            this.lblZawodyCzas.TabIndex = 1;
             // 
             // Zawody
             // 
@@ -481,17 +430,10 @@
             this.tableLayoutPanel6.ResumeLayout(false);
             this.tableLayoutPanel6.PerformLayout();
             this.panel7.ResumeLayout(false);
-            this.tableLayoutPanel7.ResumeLayout(false);
-            this.tableLayoutPanel7.PerformLayout();
             this.panel8.ResumeLayout(false);
-            this.tableLayoutPanel8.ResumeLayout(false);
-            this.tableLayoutPanel8.PerformLayout();
             this.panel9.ResumeLayout(false);
-            this.tableLayoutPanel9.ResumeLayout(false);
-            this.tableLayoutPanel9.PerformLayout();
             this.panel10.ResumeLayout(false);
             this.tableLayoutPanel10.ResumeLayout(false);
-            this.tableLayoutPanel10.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -501,7 +443,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label2;
@@ -516,17 +457,22 @@
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
         private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel7;
         private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel8;
         private System.Windows.Forms.Panel panel9;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel9;
         private System.Windows.Forms.Panel panel10;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel10;
         public System.Windows.Forms.Label lblZawodyNazwa;
         public System.Windows.Forms.Label lblZawodyData;
         public System.Windows.Forms.Label lblZawodyDystans;
         public System.Windows.Forms.Label lblZawodyNumer;
         public System.Windows.Forms.Label lblZawodyCzas;
+        public System.Windows.Forms.SplitContainer splitContainer1;
+        public System.Windows.Forms.TableLayoutPanel tableLayoutPanel7;
+        public System.Windows.Forms.TableLayoutPanel tableLayoutPanel8;
+        public System.Windows.Forms.TableLayoutPanel tableLayoutPanel9;
+        public System.Windows.Forms.TableLayoutPanel tableLayoutPanel10;
+        public System.Windows.Forms.DateTimePicker dateTimeZawody;
+        public System.Windows.Forms.TextBox txtZawodyDystans;
+        public System.Windows.Forms.TextBox txtZawodyNumer;
+        public System.Windows.Forms.DateTimePicker dateTimeZawodyCzas;
     }
 }
