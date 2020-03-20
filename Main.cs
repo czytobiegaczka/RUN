@@ -409,11 +409,24 @@ namespace RUN
                             
                             Zawody zawody = new Zawody(); // wyświetlenie okna zawodów
 
+                            zawody.lblZawodyNazwa = new System.Windows.Forms.Label();
                             zawody.lblZawodyData = new System.Windows.Forms.Label();
                             zawody.lblZawodyDystans = new System.Windows.Forms.Label();
                             zawody.lblZawodyNumer = new System.Windows.Forms.Label();
                             zawody.lblZawodyCzas = new System.Windows.Forms.Label();
 
+                            // 
+                            // lblZawodyNazwa
+                            // 
+                            zawody.lblZawodyNazwa.Anchor = System.Windows.Forms.AnchorStyles.Left;
+                            zawody.lblZawodyNazwa.AutoSize = true;
+                            zawody.lblZawodyNazwa.Font = new System.Drawing.Font("Courier New", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+                            zawody.lblZawodyNazwa.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+                            zawody.lblZawodyNazwa.Location = new System.Drawing.Point(52, 44);
+                            zawody.lblZawodyNazwa.Name = "lblZawodyNazwa";
+                            zawody.lblZawodyNazwa.Size = new System.Drawing.Size(30, 31);
+                            zawody.lblZawodyNazwa.TabIndex = 0;
+                            zawody.lblZawodyNazwa.Text = " ";
                             // 
                             // lblZawodyData
                             // 
@@ -455,6 +468,7 @@ namespace RUN
                             zawody.lblZawodyCzas.Size = new System.Drawing.Size(0, 31);
                             zawody.lblZawodyCzas.TabIndex = 1;
 
+                            zawody.tableLayoutPanel1.Controls.Add(zawody.lblZawodyNazwa, 1, 1);
                             zawody.tableLayoutPanel8.Controls.Add(zawody.lblZawodyDystans, 0, 0);
                             zawody.tableLayoutPanel9.Controls.Add(zawody.lblZawodyNumer, 0, 0);
                             zawody.tableLayoutPanel10.Controls.Add(zawody.lblZawodyCzas, 0, 0);
