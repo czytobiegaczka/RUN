@@ -455,5 +455,8 @@
         public System.Windows.Forms.TextBox txtZawodyNumer;
         public System.Windows.Forms.DateTimePicker dateTimeZawodyCzas;
         public System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        public System.Windows.Forms.TableLayoutPanel tableLayoutPanel11;
+        public System.Windows.Forms.Label lblWpisNazwaZawodow;
+        public System.Windows.Forms.TextBox txtWpisNazwaZawodow;
     }
 }
