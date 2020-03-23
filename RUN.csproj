@@ -60,6 +60,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AppData.xsd</DependentUpon>
     </Compile>
+    <Compile Include="AddPicture.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddPicture.Designer.cs">
+      <DependentUpon>AddPicture.cs</DependentUpon>
+    </Compile>
     <Compile Include="Zawody.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -93,6 +99,9 @@
     <Compile Include="MyMessageBox.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AddPicture.resx">
+      <DependentUpon>AddPicture.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Zawody.resx">
       <DependentUpon>Zawody.cs</DependentUpon>
     </EmbeddedResource>

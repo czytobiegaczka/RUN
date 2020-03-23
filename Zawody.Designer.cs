@@ -53,10 +53,12 @@
             this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
             this.panel10 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel10 = new System.Windows.Forms.TableLayoutPanel();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
+            this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -122,6 +124,7 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.BackColor = System.Drawing.SystemColors.Window;
+            this.splitContainer1.Panel2.Controls.Add(this.button1);
             this.splitContainer1.Size = new System.Drawing.Size(993, 550);
             this.splitContainer1.SplitterDistance = 245;
             this.splitContainer1.TabIndex = 0;
@@ -382,6 +385,16 @@
             this.tableLayoutPanel10.Size = new System.Drawing.Size(241, 82);
             this.tableLayoutPanel10.TabIndex = 0;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(420, 61);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Zawody
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -396,6 +409,7 @@
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.splitContainer1.Panel1.ResumeLayout(false);
+            this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
@@ -458,5 +472,6 @@
         public System.Windows.Forms.TableLayoutPanel tableLayoutPanel11;
         public System.Windows.Forms.Label lblWpisNazwaZawodow;
         public System.Windows.Forms.TextBox txtWpisNazwaZawodow;
+        private System.Windows.Forms.Button button1;
     }
 }

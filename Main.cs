@@ -18,10 +18,10 @@ namespace RUN
 {
     public partial class Main : Form
     {
-        string connectionString = @"DATASOURCE=db4free.net;PORT=3306;DATABASE=trening;UID=trening;PASSWORD=treningRTL;OldGuids=True;convert zero datetime=True";
+        public static string connectionString = @"DATASOURCE=db4free.net;PORT=3306;DATABASE=trening;UID=trening;PASSWORD=treningRTL;OldGuids=True;convert zero datetime=True";
         string[] miesiacNr = { "00","01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12" };
         string[] miesiacNazwa = { "Styczeń", "Luty", "Marzec", "Kwiecień", "Maj", "Czerwiec", "Lipiec", "Sierpień", "Wrzesień", "Październik", "Listopad", "Grudzień" };
-        private MySqlConnection MyCon;
+        public MySqlConnection MyCon;
         private DataTable data;
 
         public Main()

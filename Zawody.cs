@@ -34,5 +34,11 @@ namespace RUN
         private void Zawody_FormClosing(object sender, FormClosingEventArgs e)
         {
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            AddPicture addPicture = new AddPicture();
+            addPicture.ShowDialog();
+        }
     }
 }
