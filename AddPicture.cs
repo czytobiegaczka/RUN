@@ -50,7 +50,7 @@ namespace RUN
                     mySqlCommand.CommandType = CommandType.StoredProcedure;
                     mySqlCommand.Parameters.AddWithValue("naz", txtNazwaPicture.Text);
                     mySqlCommand.Parameters.AddWithValue("zaw", 5);
-                    //mySqlCommand.Parameters.AddWithValue("pic", img);
+                    mySqlCommand.Parameters.AddWithValue("pic", img);
 
                     if (mySqlCommand.ExecuteNonQuery()==1)
                     {
