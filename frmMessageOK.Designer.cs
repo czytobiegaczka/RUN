@@ -73,7 +73,7 @@
             this.AcceptButton = this.btnOK;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(734, 249);
+            this.ClientSize = new System.Drawing.Size(814, 249);
             this.Controls.Add(this.pictureBox);
             this.Controls.Add(this.lblMessage);
             this.Controls.Add(this.btnOK);

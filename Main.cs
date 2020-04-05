@@ -23,6 +23,7 @@ namespace RUN
         string[] miesiacNazwa = { "Styczeń", "Luty", "Marzec", "Kwiecień", "Maj", "Czerwiec", "Lipiec", "Sierpień", "Wrzesień", "Październik", "Listopad", "Grudzień" };
         public MySqlConnection MyCon;
         private DataTable data;
+        private DataTable picture;
 
         public Main()
         {
@@ -54,7 +55,7 @@ namespace RUN
 
                 }
                 //catch (MySqlException ex)
-                catch
+                catch (Exception ex)
                 {
                     //When handling errors, you can your application's response based 
                     //on the error number.
@@ -79,6 +80,7 @@ namespace RUN
                     //MessageBox.Show(ex.Message.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     if(MyMessageBox.ShowMessage("Błąd połączenia. Czy łączyć jeszcze raz?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                     {
+                        MessageBox.Show(ex.Message.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         mati_connect();
                     }
                     else
@@ -401,6 +403,7 @@ namespace RUN
                         //textBox1.Text = e.RowIndex.ToString();// return row index of dataGridView On CellMouseMove Event and Display RowIndex in TextBox1.
                         if (row.Cells["txtZawody"].Value.ToString()!="")
                         {
+                            int ZapZawodyID = Convert.ToInt16(row.Cells["txtZawody_ID"].Value);
                             string ZapNazwa = row.Cells["txtZawody"].Value.ToString();
                             string ZapData = row.Cells["txtData"].Value.ToString();
                             string ZapDystans = row.Cells["txtDystans"].Value.ToString();
@@ -474,13 +477,26 @@ namespace RUN
                             zawody.tableLayoutPanel10.Controls.Add(zawody.lblZawodyCzas, 0, 0);
                             zawody.tableLayoutPanel7.Controls.Add(zawody.lblZawodyData, 0, 0);
 
+
                             zawody.Text = ZapNazwa;
                             zawody.lblZawodyNazwa.Text = ZapNazwa;
                             zawody.lblZawodyData.Text = ZapData;
                             zawody.lblZawodyDystans.Text = ZapDystans;
                             zawody.lblZawodyNumer.Text = ZapNumer;
                             zawody.lblZawodyCzas.Text = ZapCzas;
+                            /*
+                            lblNazwaRekMaraton.Text = " " + wybor_M[0]["zawody"].ToString() + " ";
+                            lblDataRekMaraton.Text = wybor_M[0]["data"].ToString();
+                            lblCzasRekMaraton.Text = wybor_M[0]["czas"].ToString();
+                            lblNumerRekMaraton.Text = wybor_M[0]["numer"].ToString();
 
+                            zawody.picZawody.Image = wybor_zdjec[0]["fota"];
+                            zawody.picZawody.SizeMode = PictureBoxSizeMode.Zoom;
+                            Timer tm = new Timer();
+                            tm.Interval = 2000;
+                            tm.Tick += new EventHandler(changeimage);
+                            tm.Start();
+                            */
                             zawody.ShowDialog();
                         }
 
