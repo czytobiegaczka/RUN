@@ -66,6 +66,12 @@
     <Compile Include="AddPicture.Designer.cs">
       <DependentUpon>AddPicture.cs</DependentUpon>
     </Compile>
+    <Compile Include="Wait.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Wait.Designer.cs">
+      <DependentUpon>Wait.cs</DependentUpon>
+    </Compile>
     <Compile Include="Zawody.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -101,6 +107,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AddPicture.resx">
       <DependentUpon>AddPicture.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Wait.resx">
+      <DependentUpon>Wait.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Zawody.resx">
       <DependentUpon>Zawody.cs</DependentUpon>

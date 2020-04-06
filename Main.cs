@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Threading;
 using System.Windows.Forms;
-using MySql.Data.MySqlClient;
-using System.Globalization;
 using System.Windows.Forms.DataVisualization.Charting;
 
 
@@ -399,6 +394,8 @@ namespace RUN
                     ((DataGridViewRow)dataGrid.Rows[e.RowIndex]).Selected = true;
                     if (dataGrid.SelectedRows.Count > 0)
                     {
+
+
                         DataGridViewRow row = (DataGridViewRow)dataGrid.Rows[e.RowIndex];
                         //textBox1.Text = e.RowIndex.ToString();// return row index of dataGridView On CellMouseMove Event and Display RowIndex in TextBox1.
                         if (row.Cells["txtZawody"].Value.ToString()!="")
@@ -504,6 +501,8 @@ namespace RUN
                 }
             }
         }
+
+
 
         private void dataGrid_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
         //blokada na wprowadzanie w wadze i dystansie innych znaków niż cyfry

@@ -9,8 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using System.IO;
-
-
+using System.Threading;
+using Timer = System.Windows.Forms.Timer;
 
 namespace RUN
 {
@@ -24,9 +24,20 @@ namespace RUN
         public Zawody()
         {
             InitializeComponent();
+            //testujemy czy działa formularz Wait
+
+            using (Wait frm = new Wait(Testujemy))
+            {
+                frm.ShowDialog(this);
+            }
+
             ViewPicture();
          }
-
+        void Testujemy()
+        {
+            for (int i = 0; i <= 500; i++)
+                Thread.Sleep(10);
+        }
 
         public void changeimage(object sender, EventArgs e)
         {
