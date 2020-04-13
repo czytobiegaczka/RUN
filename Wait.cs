@@ -7,24 +7,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Threading;
 
 namespace RUN
 {
     public partial class Wait : Form
     {
-        public Action Worker { get; set; }
-        public Wait(Action worker)
+       public  Form get()
+        {
+            return this;
+        }
+        public Wait()
         {
             InitializeComponent();
-            if (worker == null)
-                throw new ArgumentNullException();
-            Worker = worker;
         }
 
-        protected override void OnLoad(EventArgs e)
-        {
-            base.OnLoad(e);
-            Task.Factory.StartNew(Worker).ContinueWith(t => { this.Close(); }, TaskScheduler.FromCurrentSynchronizationContext());
-        }
     }
 }

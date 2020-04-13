@@ -20,23 +20,31 @@ namespace RUN
         public int licz=0;
         public DataTable table;
         public int ileWierszy=0;
+        bool complete = false;
 
         public Zawody()
         {
             InitializeComponent();
-            //testujemy czy działa formularz Wait
 
-            using (Wait frm = new Wait(Testujemy))
+            Wait wait = new Wait();
+
+            var t1 = new Task(() =>
             {
-                frm.ShowDialog(this);
-            }
+                //dzialanie na ktore czekamy zapisujace do now swoj progress
+                ViewPicture();
 
-            ViewPicture();
-         }
-        void Testujemy()
-        {
-            for (int i = 0; i <= 500; i++)
-                Thread.Sleep(10);
+                wait.Invoke(new Action(() => { wait.Dispose(); }));
+            });
+
+            t1.Start();
+                wait.ShowDialog(this);
+            t1.Wait();
+
+            Timer tm = new Timer();
+            tm.Interval = 1500;
+            tm.Tick += new EventHandler(changeimage);
+            tm.Start();
+
         }
 
         public void changeimage(object sender, EventArgs e)
@@ -62,9 +70,12 @@ namespace RUN
 
         private void ViewPicture()
         {
+            Console.WriteLine("raz");
+            Console.WriteLine(complete);
+            
             MySqlConnection MyCon;
             string connectionString = @"DATASOURCE=db4free.net;PORT=3306;DATABASE=trening;UID=trening;PASSWORD=treningRTL;OldGuids=True;convert zero datetime=True";
-
+            
             using (MyCon = new MySqlConnection(connectionString))
             {
                 try
@@ -80,37 +91,30 @@ namespace RUN
                     mySqlDataAdapter.Fill(table);
                     ileWierszy = table.Rows.Count;
 
+                    Console.WriteLine("dwa");
+                    /*
                     Timer tm = new Timer();
-                    tm.Interval = 2000;
+                    tm.Interval = 1500;
                     tm.Tick += new EventHandler(changeimage);
                     tm.Start();
-
+                    */
+                    
                     mySqlDataAdapter.Dispose();
                     MyCon.Close();
 
                 }
-                catch (MySqlException ex)
+                catch (Exception ex)
                 {
                     //When handling errors, you can your application's response based 
                     //on the error number.
                     //The two most common error numbers when connecting are as follows:
                     //0: Cannot connect to server.
                     //1045: Invalid user name and/or password.
-                    switch (ex.Number)
-                    {
-                        case 0:
-                            MyMessageBox.ShowMessage("Problem z połaczeniem, próbuj dalej!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            break;
-
-                        case 1045:
-                            MessageBox.Show("Invalid username/password, please try again");
-                            break;
-                        default:
-                            MyMessageBox.ShowMessage(ex.ToString(), "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            break;
-                    }
+                    ViewPicture();
                 }
             }
+            
+            Console.WriteLine("trzy");
         }
 
         public void txtZawodyDystans_KeyPress(object sender, KeyPressEventArgs e)

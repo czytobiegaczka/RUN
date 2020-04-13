@@ -38,14 +38,15 @@
             this.label1.Font = new System.Drawing.Font("Courier New", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label1.Location = new System.Drawing.Point(103, 66);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(346, 23);
+            this.label1.Size = new System.Drawing.Size(322, 23);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Poczekaj - ładujemy dane ...";
+            this.label1.Text = "Poczekaj - ładuję dane ...";
             // 
             // progressBar1
             // 
             this.progressBar1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.progressBar1.Location = new System.Drawing.Point(65, 132);
+            this.progressBar1.MarqueeAnimationSpeed = 50;
             this.progressBar1.Name = "progressBar1";
             this.progressBar1.Size = new System.Drawing.Size(402, 34);
             this.progressBar1.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
@@ -62,7 +63,7 @@
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Wait";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Wait";
             this.ResumeLayout(false);
             this.PerformLayout();
