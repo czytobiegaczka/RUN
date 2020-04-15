@@ -21,28 +21,40 @@ namespace RUN
         public DataTable table;
         public int ileWierszy=0;
         public int zawodyID;
+        public Timer tm;
+        bool czyTimer = false;
 
         public Zawody(int zawID)
         {
             InitializeComponent();
+
             zawodyID = zawID;
 
+            WaitForPicture(zawID);
+            PictureTimer();
+        }
+
+        public void WaitForPicture(int zawodID)
+        {
             Wait wait = new Wait();
 
             var t1 = new Task(() =>
             {
                 //dzialanie na ktore czekamy zapisujace do now swoj progress
-                ViewPicture(zawID);
+                ViewPicture(zawodID);
 
                 wait.Invoke(new Action(() => { wait.Dispose(); })); //zamknięcie okna Wait
             });
 
             t1.Start();
-                wait.ShowDialog(this); //w trakcie czekania na wgranie zdjęć uruchamia się Wait z ProgressBar
+            wait.ShowDialog(this); //w trakcie czekania na wgranie zdjęć uruchamia się Wait z ProgressBar
             t1.Wait();
+        }
 
+        public void PictureTimer()
+        {
             Console.WriteLine(ileWierszy.ToString());
-            if (ileWierszy>0)
+            if (ileWierszy > 0)
             {
                 byte[] img = (byte[])table.Rows[licz][0];
                 MemoryStream ms = new MemoryStream(img);
@@ -50,13 +62,12 @@ namespace RUN
                 picZawody.SizeMode = PictureBoxSizeMode.Zoom;
 
                 // timer, który wyświetla zdjęcia co określony czas 
-                Timer tm = new Timer();
+                tm = new Timer();
                 tm.Tick += new EventHandler(changeimage);
-                tm.Interval = 1500;            
+                tm.Interval = 1500;
                 tm.Start();
+                czyTimer = true;
             }
-
-
         }
 
         public void changeimage(object sender, EventArgs e)
@@ -80,7 +91,7 @@ namespace RUN
 
         }
 
-        private void ViewPicture(int zawID)
+        public void ViewPicture(int zawID)
         {
             MySqlConnection MyCon;
             string connectionString = @"DATASOURCE=db4free.net;PORT=3306;DATABASE=trening;UID=trening;PASSWORD=treningRTL;OldGuids=True;convert zero datetime=True";
@@ -131,10 +142,19 @@ namespace RUN
                 e.Handled = true;
         }
 
-         private void menuAddPicture_Click_1(object sender, EventArgs e)
+         public void menuAddPicture_Click_1(object sender, EventArgs e)
         {
             AddPicture addPicture = new AddPicture(zawodyID);
             addPicture.ShowDialog();
+
+            //odświeżanie okna zawodów
+            licz = 0;
+            if(czyTimer)
+            {
+                tm.Stop();
+            }
+            WaitForPicture(zawodyID);
+            PictureTimer();
         }
     }
 }
