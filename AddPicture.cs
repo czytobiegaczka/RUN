@@ -15,9 +15,11 @@ namespace RUN
 {
     public partial class AddPicture : Form
     {
-        public AddPicture()
+        public int zawodyID;
+        public AddPicture(int zawID)
         {
             InitializeComponent();
+            zawodyID = zawID;
         }
 
         private void btnOpenFile_Click(object sender, EventArgs e)
@@ -32,6 +34,7 @@ namespace RUN
 
         private void btnSaveImageToMySQL_Click(object sender, EventArgs e)
         {
+            this.Cursor = Cursors.WaitCursor;
             MySqlConnection MyCon;
             string connectionString = @"DATASOURCE=db4free.net;PORT=3306;DATABASE=trening;UID=trening;PASSWORD=treningRTL;OldGuids=True;convert zero datetime=True";
             
@@ -49,12 +52,13 @@ namespace RUN
                     MySqlCommand mySqlCommand = new MySqlCommand("ak_picture_Add", MyCon); //deklaracja nowej komendy SQL                           
                     mySqlCommand.CommandType = CommandType.StoredProcedure;
                     mySqlCommand.Parameters.AddWithValue("naz", txtNazwaPicture.Text);
-                    mySqlCommand.Parameters.AddWithValue("zaw", 5);
+                    mySqlCommand.Parameters.AddWithValue("zaw", zawodyID);
                     mySqlCommand.Parameters.AddWithValue("pic", img);
 
                     if (mySqlCommand.ExecuteNonQuery()==1)
                     {
                         MyMessageBox.ShowMessage("Wgrywanie zdjęcia zakończone powodzeniem!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.Cursor = this.DefaultCursor;                    
                     }
                     MyCon.Close();
 
@@ -66,6 +70,7 @@ namespace RUN
                     //The two most common error numbers when connecting are as follows:
                     //0: Cannot connect to server.
                     //1045: Invalid user name and/or password.
+
                     switch (ex.Number)
                     {
                         case 0:
@@ -79,8 +84,16 @@ namespace RUN
                             MyMessageBox.ShowMessage(ex.ToString(), "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             break;
                     }
+                      this.Cursor = this.DefaultCursor;             
                 }
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+            Zawody zawody=new Zawody(zawodyID);
+            zawody.Invalidate();
         }
     }
 }

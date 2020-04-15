@@ -13,10 +13,6 @@ namespace RUN
 {
     public partial class Wait : Form
     {
-       public  Form get()
-        {
-            return this;
-        }
         public Wait()
         {
             InitializeComponent();

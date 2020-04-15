@@ -18,7 +18,6 @@ namespace RUN
         string[] miesiacNazwa = { "Styczeń", "Luty", "Marzec", "Kwiecień", "Maj", "Czerwiec", "Lipiec", "Sierpień", "Wrzesień", "Październik", "Listopad", "Grudzień" };
         public MySqlConnection MyCon;
         private DataTable data;
-        private DataTable picture;
 
         public Main()
         {
@@ -407,7 +406,7 @@ namespace RUN
                             string ZapNumer = row.Cells["txtNumer"].Value.ToString();
                             string ZapCzas = row.Cells["txtCzas"].Value.ToString();
                             
-                            Zawody zawody = new Zawody(); // wyświetlenie okna zawodów
+                            Zawody zawody = new Zawody(ZapZawodyID); // wyświetlenie okna zawodów
 
                             zawody.lblZawodyNazwa = new System.Windows.Forms.Label();
                             zawody.lblZawodyData = new System.Windows.Forms.Label();
@@ -534,7 +533,7 @@ namespace RUN
 
         private void btnZawodyDodaj_Click(object sender, EventArgs e)
         {
-            Zawody zawody = new Zawody(); // wyświetlenie okna zawodów
+            Zawody zawody = new Zawody(5); // wyświetlenie okna zawodów
 
             zawody.Text = "Dopisywanie zawodów";
             zawody.tableLayoutPanel11 = new System.Windows.Forms.TableLayoutPanel();

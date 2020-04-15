@@ -20,30 +20,42 @@ namespace RUN
         public int licz=0;
         public DataTable table;
         public int ileWierszy=0;
-        bool complete = false;
+        public int zawodyID;
 
-        public Zawody()
+        public Zawody(int zawID)
         {
             InitializeComponent();
+            zawodyID = zawID;
 
             Wait wait = new Wait();
 
             var t1 = new Task(() =>
             {
                 //dzialanie na ktore czekamy zapisujace do now swoj progress
-                ViewPicture();
+                ViewPicture(zawID);
 
-                wait.Invoke(new Action(() => { wait.Dispose(); }));
+                wait.Invoke(new Action(() => { wait.Dispose(); })); //zamknięcie okna Wait
             });
 
             t1.Start();
-                wait.ShowDialog(this);
+                wait.ShowDialog(this); //w trakcie czekania na wgranie zdjęć uruchamia się Wait z ProgressBar
             t1.Wait();
 
-            Timer tm = new Timer();
-            tm.Interval = 1500;
-            tm.Tick += new EventHandler(changeimage);
-            tm.Start();
+            Console.WriteLine(ileWierszy.ToString());
+            if (ileWierszy>0)
+            {
+                byte[] img = (byte[])table.Rows[licz][0];
+                MemoryStream ms = new MemoryStream(img);
+                picZawody.Image = Image.FromStream(ms);
+                picZawody.SizeMode = PictureBoxSizeMode.Zoom;
+
+                // timer, który wyświetla zdjęcia co określony czas 
+                Timer tm = new Timer();
+                tm.Tick += new EventHandler(changeimage);
+                tm.Interval = 1500;            
+                tm.Start();
+            }
+
 
         }
 
@@ -68,36 +80,27 @@ namespace RUN
 
         }
 
-        private void ViewPicture()
+        private void ViewPicture(int zawID)
         {
-            Console.WriteLine("raz");
-            Console.WriteLine(complete);
-            
             MySqlConnection MyCon;
             string connectionString = @"DATASOURCE=db4free.net;PORT=3306;DATABASE=trening;UID=trening;PASSWORD=treningRTL;OldGuids=True;convert zero datetime=True";
             
+
             using (MyCon = new MySqlConnection(connectionString))
             {
                 try
                 {
                     MyCon.Open(); //otwarcie nowego połączenia
 
-
-                    MySqlCommand mySqlCommand = new MySqlCommand("select picture.fota from picture where zawody_id=5", MyCon); //deklaracja nowej komendy SQL                           
+                    string queryString = "select picture.fota from picture where zawody_id=" + zawID.ToString();
+                    Console.WriteLine(queryString);
+                    MySqlCommand mySqlCommand = new MySqlCommand(queryString, MyCon); //deklaracja nowej komendy SQL                           
 
                     MySqlDataAdapter mySqlDataAdapter = new MySqlDataAdapter(mySqlCommand);
                     table = new DataTable();
 
                     mySqlDataAdapter.Fill(table);
                     ileWierszy = table.Rows.Count;
-
-                    Console.WriteLine("dwa");
-                    /*
-                    Timer tm = new Timer();
-                    tm.Interval = 1500;
-                    tm.Tick += new EventHandler(changeimage);
-                    tm.Start();
-                    */
                     
                     mySqlDataAdapter.Dispose();
                     MyCon.Close();
@@ -110,11 +113,10 @@ namespace RUN
                     //The two most common error numbers when connecting are as follows:
                     //0: Cannot connect to server.
                     //1045: Invalid user name and/or password.
-                    ViewPicture();
+                    ViewPicture(zawID);
                 }
             }
-            
-            Console.WriteLine("trzy");
+
         }
 
         public void txtZawodyDystans_KeyPress(object sender, KeyPressEventArgs e)
@@ -129,13 +131,9 @@ namespace RUN
                 e.Handled = true;
         }
 
-        private void Zawody_FormClosing(object sender, FormClosingEventArgs e)
+         private void menuAddPicture_Click_1(object sender, EventArgs e)
         {
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            AddPicture addPicture = new AddPicture();
+            AddPicture addPicture = new AddPicture(zawodyID);
             addPicture.ShowDialog();
         }
     }
