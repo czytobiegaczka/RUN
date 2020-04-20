@@ -74,7 +74,6 @@ namespace RUN
                     //MessageBox.Show(ex.Message.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     if(MyMessageBox.ShowMessage("Błąd połączenia. Czy łączyć jeszcze raz?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                     {
-                        MessageBox.Show(ex.Message.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         mati_connect();
                     }
                     else
@@ -650,6 +649,11 @@ namespace RUN
                 zawody.dateTimeZawodyCzas.TabIndex = 0;
 
                 zawody.ShowDialog();
+                zawody.Dispose();
+
+                mati_connect();               
+                DataGridView(jakiMiesiac);
+
             }
         }
     }

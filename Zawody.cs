@@ -180,34 +180,48 @@ namespace RUN
 
         private void menuSave_Click(object sender, EventArgs e)
         {
-            Wait wait = new Wait();
-
-            var t1 = new Task(() =>
+            int zmianaDys = Convert.ToInt16(Convert.ToDecimal(txtZawodyDystans.Text == "" ? "0" : txtZawodyDystans.Text) * 100);
+            if (zmianaDys != 0)
             {
-                //dzialanie na ktore czekamy zapisujace do now swoj progress
-                saveZawody();
+                Wait wait = new Wait();
 
-                wait.Invoke(new Action(() => { wait.Dispose(); })); //zamknięcie okna Wait
-            });
+                var t1 = new Task(() =>
+                {
+                    //dzialanie na ktore czekamy zapisujace do now swoj progress
+                    saveZawody();
 
-            t1.Start();
-            wait.ShowDialog(this); //w trakcie czekania na zapis zawodów uruchamia się Wait z ProgressBar
-            t1.Wait();
-            MyMessageBox.ShowMessage("Wgrywanie danych zakończone powodzeniem!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            menuAddPicture.Enabled = true;
+                    wait.Invoke(new Action(() => { wait.Dispose(); })); //zamknięcie okna Wait
+                });
+
+                t1.Start();
+                wait.ShowDialog(this); //w trakcie czekania na zapis zawodów uruchamia się Wait z ProgressBar
+                t1.Wait();
+                MyMessageBox.ShowMessage("Wgrywanie danych zakończone powodzeniem!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                menuAddPicture.Enabled = true;
+            }
+            else
+            {
+                this.Cursor = this.DefaultCursor;
+                MyMessageBox.ShowMessage("UWAGA! Brak dystansu!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
         }
 
         public void saveZawody()
         {
+            int zmianaDys = Convert.ToInt16(Convert.ToDecimal(txtZawodyDystans.Text == "" ? "0" : txtZawodyDystans.Text) * 100);
+
             MySqlConnection MyCon;
             string connectionString = @"DATASOURCE=db4free.net;PORT=3306;DATABASE=trening;UID=trening;PASSWORD=treningRTL;OldGuids=True;convert zero datetime=True";
 
-            
+
             using (MyCon = new MySqlConnection(connectionString))
             {
                 try
                 {
-
+                    MemoryStream ms = new MemoryStream();
+                    Properties.Resources.m.Save(ms, Properties.Resources.m.RawFormat);
+                    byte[] img = ms.ToArray();
 
                     MyCon.Open(); //otwarcie nowego połączenia
 
@@ -215,26 +229,25 @@ namespace RUN
                     mySqlCommand.CommandType = CommandType.StoredProcedure;
                     mySqlCommand.Parameters.AddWithValue("data", dateTimeZawody.Text);
                     mySqlCommand.Parameters.AddWithValue("naz", txtWpisNazwaZawodow.Text);
+                    mySqlCommand.Parameters.AddWithValue("dys", zmianaDys);
                     mySqlCommand.Parameters.AddWithValue("num", txtZawodyNumer.Text);
                     mySqlCommand.Parameters.AddWithValue("cza", dateTimeZawodyCzas.Value);
-                    mySqlCommand.Parameters.AddWithValue("typ", 'I');
-
-                    //UWAGA! Błąd
-                    mySqlCommand.Parameters.AddWithValue("pic", Properties.Resources.m);
+                    mySqlCommand.Parameters.AddWithValue("typ", 'M');
+                    mySqlCommand.Parameters.AddWithValue("pic", img);
                     mySqlCommand.ExecuteNonQuery();
                     mySqlCommand.Dispose();
 
 
                     // pobieranie zawodyId
-                    string query = "SELECT zawody_Id FROM zawody LEFT JOIN miesiac on zawody.miesiac_Id=miesiac.miesiac_Id WHERE miesiac.data='" + dateTimeZawody.Text+"'";
+                    string query = "SELECT zawody_Id FROM zawody LEFT JOIN miesiac on zawody.miesiac_Id=miesiac.miesiac_Id WHERE miesiac.data='" + dateTimeZawody.Text + "'";
 
-                    MySqlCommand mySqlCommandNext =new MySqlCommand(query, MyCon);
+                    MySqlCommand mySqlCommandNext = new MySqlCommand(query, MyCon);
 
                     if (mySqlCommandNext.ExecuteScalar() != DBNull.Value)
                     {
                         zawodyID = int.Parse(mySqlCommandNext.ExecuteScalar() + "");
                     }
-
+                    Console.WriteLine(zawodyID.ToString());
                     MyCon.Close();
 
                 }
@@ -250,6 +263,7 @@ namespace RUN
                 }
             }
         }
+
 
         public void txtWpisNazwaZawodow_TextChanged(object sender, EventArgs e)
         {
