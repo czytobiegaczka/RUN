@@ -30,11 +30,26 @@ namespace RUN
 
             zawodyID = zawID;
 
-            WaitForPicture(zawID);
-            PictureTimer();
+          
+            if (zawID != 0)
+            {
+                menuAddPicture.Enabled = true;
+                menuSave.Visible = false;
+                WaitForPicture(zawID);
+                PictureTimer();
+            }
+            else
+            {
+                menuAddPicture.Enabled = false;
+                menuSave.Visible = true;
+                menuSave.Enabled = false;
+                
+            }
+
         }
 
         public void WaitForPicture(int zawodID)
+        // obsługa 2 wątków podczas wgrywania zdjęć z bazy danych
         {
             Wait wait = new Wait();
 
@@ -53,18 +68,19 @@ namespace RUN
 
         public void PictureTimer()
         {
-            Console.WriteLine(ileWierszy.ToString());
             if (ileWierszy > 0)
             {
+                //pobieranie zdjćeia z tabeli z danymi
                 byte[] img = (byte[])table.Rows[licz][0];
                 MemoryStream ms = new MemoryStream(img);
                 picZawody.Image = Image.FromStream(ms);
+                picZawody.Name=table.Rows[licz][1].ToString();
                 picZawody.SizeMode = PictureBoxSizeMode.Zoom;
 
                 // timer, który wyświetla zdjęcia co określony czas 
                 tm = new Timer();
                 tm.Tick += new EventHandler(changeimage);
-                tm.Interval = 1500;
+                tm.Interval = 2000;
                 tm.Start();
                 czyTimer = true;
             }
@@ -77,7 +93,8 @@ namespace RUN
                 MemoryStream ms = new MemoryStream(img);
 
                 picZawody.Image = Image.FromStream(ms);
-                picZawody.SizeMode = PictureBoxSizeMode.Zoom;          
+                picZawody.SizeMode = PictureBoxSizeMode.Zoom;
+
             
             if (licz<ileWierszy-1)
             {
@@ -103,8 +120,7 @@ namespace RUN
                 {
                     MyCon.Open(); //otwarcie nowego połączenia
 
-                    string queryString = "select picture.fota from picture where zawody_id=" + zawID.ToString();
-                    Console.WriteLine(queryString);
+                    string queryString = "select picture.fota,picture.nazwa from picture where zawody_id=" + zawID.ToString();
                     MySqlCommand mySqlCommand = new MySqlCommand(queryString, MyCon); //deklaracja nowej komendy SQL                           
 
                     MySqlDataAdapter mySqlDataAdapter = new MySqlDataAdapter(mySqlCommand);
@@ -155,6 +171,96 @@ namespace RUN
             }
             WaitForPicture(zawodyID);
             PictureTimer();
+        }
+
+        private void picZawody_MouseMove(object sender, MouseEventArgs e)
+        {
+
+        }
+
+        private void menuSave_Click(object sender, EventArgs e)
+        {
+            Wait wait = new Wait();
+
+            var t1 = new Task(() =>
+            {
+                //dzialanie na ktore czekamy zapisujace do now swoj progress
+                saveZawody();
+
+                wait.Invoke(new Action(() => { wait.Dispose(); })); //zamknięcie okna Wait
+            });
+
+            t1.Start();
+            wait.ShowDialog(this); //w trakcie czekania na zapis zawodów uruchamia się Wait z ProgressBar
+            t1.Wait();
+            MyMessageBox.ShowMessage("Wgrywanie danych zakończone powodzeniem!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            menuAddPicture.Enabled = true;
+        }
+
+        public void saveZawody()
+        {
+            MySqlConnection MyCon;
+            string connectionString = @"DATASOURCE=db4free.net;PORT=3306;DATABASE=trening;UID=trening;PASSWORD=treningRTL;OldGuids=True;convert zero datetime=True";
+
+            
+            using (MyCon = new MySqlConnection(connectionString))
+            {
+                try
+                {
+
+
+                    MyCon.Open(); //otwarcie nowego połączenia
+
+                    MySqlCommand mySqlCommand = new MySqlCommand("ak_zawody_Add", MyCon); //deklaracja nowej komendy SQL                           
+                    mySqlCommand.CommandType = CommandType.StoredProcedure;
+                    mySqlCommand.Parameters.AddWithValue("data", dateTimeZawody.Text);
+                    mySqlCommand.Parameters.AddWithValue("naz", txtWpisNazwaZawodow.Text);
+                    mySqlCommand.Parameters.AddWithValue("num", txtZawodyNumer.Text);
+                    mySqlCommand.Parameters.AddWithValue("cza", dateTimeZawodyCzas.Value);
+                    mySqlCommand.Parameters.AddWithValue("typ", 'I');
+
+                    //UWAGA! Błąd
+                    mySqlCommand.Parameters.AddWithValue("pic", Properties.Resources.m);
+                    mySqlCommand.ExecuteNonQuery();
+                    mySqlCommand.Dispose();
+
+
+                    // pobieranie zawodyId
+                    string query = "SELECT zawody_Id FROM zawody LEFT JOIN miesiac on zawody.miesiac_Id=miesiac.miesiac_Id WHERE miesiac.data='" + dateTimeZawody.Text+"'";
+
+                    MySqlCommand mySqlCommandNext =new MySqlCommand(query, MyCon);
+
+                    if (mySqlCommandNext.ExecuteScalar() != DBNull.Value)
+                    {
+                        zawodyID = int.Parse(mySqlCommandNext.ExecuteScalar() + "");
+                    }
+
+                    MyCon.Close();
+
+                }
+                catch (Exception ex)
+                {
+                    //When handling errors, you can your application's response based 
+                    //on the error number.
+                    //The two most common error numbers when connecting are as follows:
+                    //0: Cannot connect to server.
+                    //1045: Invalid user name and/or password.
+                    //ViewPicture(zawID);
+                    saveZawody();
+                }
+            }
+        }
+
+        public void txtWpisNazwaZawodow_TextChanged(object sender, EventArgs e)
+        {
+            if (txtWpisNazwaZawodow.Text!="")
+            {
+                menuSave.Enabled = true;
+            }
+            else
+            {
+                menuSave.Enabled = false;
+            }
         }
     }
 }

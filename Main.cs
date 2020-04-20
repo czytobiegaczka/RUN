@@ -533,112 +533,124 @@ namespace RUN
 
         private void btnZawodyDodaj_Click(object sender, EventArgs e)
         {
-            Zawody zawody = new Zawody(5); // wyświetlenie okna zawodów
+            if (dataGrid.CurrentCell != null)
+            {
+                DataGridViewRow dataGrRow = dataGrid.CurrentRow;
+                string komo = dataGrid.CurrentCellAddress.X.ToString();
+                string zapamietajData = Convert.ToString(dataGrRow.Cells["txtData"].Value); //określenie i zapamiętanie miesiąca do wyświetlenia
+                DateTime jakiMiesiac = DateTime.ParseExact(Convert.ToString(dataGrRow.Cells["txtData"].Value), "dd.MM.yyyy", null); //określenie i zapamiętanie miesiąca do wyświetlenia
+                Console.WriteLine(zapamietajData);
 
-            zawody.Text = "Dopisywanie zawodów";
-            zawody.tableLayoutPanel11 = new System.Windows.Forms.TableLayoutPanel();
-            zawody.tableLayoutPanel1.Controls.Add(zawody.tableLayoutPanel11, 1, 1);
-            zawody.lblWpisNazwaZawodow = new System.Windows.Forms.Label();
-            zawody.tableLayoutPanel11.Controls.Add(zawody.lblWpisNazwaZawodow, 0, 0);
-            zawody.txtWpisNazwaZawodow = new System.Windows.Forms.TextBox();
-            zawody.tableLayoutPanel11.Controls.Add(zawody.txtWpisNazwaZawodow, 1, 0);
-            zawody.dateTimeZawody = new System.Windows.Forms.DateTimePicker();
-            zawody.tableLayoutPanel7.Controls.Add(zawody.dateTimeZawody, 0, 0);
-            zawody.txtZawodyDystans = new System.Windows.Forms.TextBox();
-            zawody.tableLayoutPanel8.Controls.Add(zawody.txtZawodyDystans, 0, 0);
-            zawody.txtZawodyNumer = new System.Windows.Forms.TextBox();
-            zawody.tableLayoutPanel9.Controls.Add(zawody.txtZawodyNumer, 0, 0);
-            zawody.dateTimeZawodyCzas = new System.Windows.Forms.DateTimePicker();
-            zawody.tableLayoutPanel10.Controls.Add(zawody.dateTimeZawodyCzas, 0, 0);
+                Zawody zawody = new Zawody(0); // wyświetlenie okna zawodów
 
-            // 
-            // tableLayoutPanel11
-            // 
-            zawody.tableLayoutPanel11.ColumnCount = 2;
-            zawody.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
-            zawody.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70F));
-            zawody.tableLayoutPanel11.Dock = System.Windows.Forms.DockStyle.Fill;
-            zawody.tableLayoutPanel11.Location = new System.Drawing.Point(52, 9);
-            zawody.tableLayoutPanel11.Name = "tableLayoutPanel11";
-            zawody.tableLayoutPanel11.RowCount = 1;
-            zawody.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            zawody.tableLayoutPanel11.Size = new System.Drawing.Size(887, 102);
-            zawody.tableLayoutPanel11.TabIndex = 0;
-            // 
-            // lblWpisNazwaZawodow
-            // 
-            zawody.lblWpisNazwaZawodow.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            zawody.lblWpisNazwaZawodow.AutoSize = true;
-            zawody.lblWpisNazwaZawodow.Font = new System.Drawing.Font("Courier New", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            zawody.lblWpisNazwaZawodow.Location = new System.Drawing.Point(85, 39);
-            zawody.lblWpisNazwaZawodow.Name = "lblWpisNazwaZawodow";
-            zawody.lblWpisNazwaZawodow.Size = new System.Drawing.Size(178, 23);
-            zawody.lblWpisNazwaZawodow.TabIndex = 0;
-            zawody.lblWpisNazwaZawodow.Text = "Nazwa zawodów:";
-            // 
-            // txtWpisNazwaZawodow
-            // 
-            zawody.txtWpisNazwaZawodow.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            zawody.txtWpisNazwaZawodow.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            zawody.txtWpisNazwaZawodow.Font = new System.Drawing.Font("Courier New", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            zawody.txtWpisNazwaZawodow.Location = new System.Drawing.Point(269, 32);
-            zawody.txtWpisNazwaZawodow.Name = "txtWpisNazwaZawodow";
-            zawody.txtWpisNazwaZawodow.Size = new System.Drawing.Size(615, 38);
-            zawody.txtWpisNazwaZawodow.TabIndex = 1;
-            // 
-            // dateTimeZawody
-            // 
-            zawody.dateTimeZawody.Anchor = System.Windows.Forms.AnchorStyles.None;
-            zawody.dateTimeZawody.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            zawody.dateTimeZawody.CalendarFont = new System.Drawing.Font("Courier New", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            zawody.dateTimeZawody.CustomFormat = "dd.MM.yyyy";
-            zawody.dateTimeZawody.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
-            zawody.dateTimeZawody.Font = new System.Drawing.Font("Courier New", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            zawody.dateTimeZawody.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            zawody.dateTimeZawody.Location = new System.Drawing.Point(20, 26);
-            zawody.dateTimeZawody.MinDate = new System.DateTime(2011, 3, 1, 0, 0, 0, 0);
-            zawody.dateTimeZawody.Name = "dateTimeZawody";
-            zawody.dateTimeZawody.Size = new System.Drawing.Size(160, 30);
-            zawody.dateTimeZawody.TabIndex = 0;
-            // 
-            // txtZawodyDystans
-            // 
-            zawody.txtZawodyDystans.Anchor = System.Windows.Forms.AnchorStyles.None;
-            zawody.txtZawodyDystans.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            zawody.txtZawodyDystans.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            zawody.txtZawodyDystans.Font = new System.Drawing.Font("Courier New", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            zawody.txtZawodyDystans.Location = new System.Drawing.Point(70, 29);
-            zawody.txtZawodyDystans.Name = "txtZawodyDystans";
-            zawody.txtZawodyDystans.Size = new System.Drawing.Size(100, 23);
-            zawody.txtZawodyDystans.TabIndex = 0;
-            zawody.txtZawodyDystans.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            zawody.txtZawodyDystans.KeyPress += new KeyPressEventHandler(zawody.txtZawodyDystans_KeyPress);
-            // 
-            // txtZawodyNumer
-            // 
-            zawody.txtZawodyNumer.Anchor = System.Windows.Forms.AnchorStyles.None;
-            zawody.txtZawodyNumer.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            zawody.txtZawodyNumer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            zawody.txtZawodyNumer.Font = new System.Drawing.Font("Courier New", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            zawody.txtZawodyNumer.Location = new System.Drawing.Point(70, 29);
-            zawody.txtZawodyNumer.Name = "txtZawodyNumer";
-            zawody.txtZawodyNumer.Size = new System.Drawing.Size(100, 23);
-            zawody.txtZawodyNumer.TabIndex = 0;
-            zawody.txtZawodyNumer.KeyPress += new System.Windows.Forms.KeyPressEventHandler(zawody.txtZawodyNumer_KeyPress);
-            // 
-            // dateTimeZawodyCzas
-            // 
-            zawody.dateTimeZawodyCzas.Anchor = System.Windows.Forms.AnchorStyles.None;
-            zawody.dateTimeZawodyCzas.Font = new System.Drawing.Font("Courier New", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            zawody.dateTimeZawodyCzas.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            zawody.dateTimeZawodyCzas.Location = new System.Drawing.Point(48, 26);
-            zawody.dateTimeZawodyCzas.Name = "dateTimeZawodyCzas";
-            zawody.dateTimeZawodyCzas.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            zawody.dateTimeZawodyCzas.ShowUpDown = true;
-            zawody.dateTimeZawodyCzas.Size = new System.Drawing.Size(145, 30);
-            zawody.dateTimeZawodyCzas.TabIndex = 0;
+                zawody.Text = "Dopisywanie zawodów";
+                zawody.tableLayoutPanel11 = new System.Windows.Forms.TableLayoutPanel();
+                zawody.tableLayoutPanel1.Controls.Add(zawody.tableLayoutPanel11, 1, 1);
+                zawody.lblWpisNazwaZawodow = new System.Windows.Forms.Label();
+                zawody.tableLayoutPanel11.Controls.Add(zawody.lblWpisNazwaZawodow, 0, 0);
+                zawody.txtWpisNazwaZawodow = new System.Windows.Forms.TextBox();
+                zawody.tableLayoutPanel11.Controls.Add(zawody.txtWpisNazwaZawodow, 1, 0);
+                zawody.dateTimeZawody = new System.Windows.Forms.DateTimePicker();
+                zawody.tableLayoutPanel7.Controls.Add(zawody.dateTimeZawody, 0, 0);
+                zawody.txtZawodyDystans = new System.Windows.Forms.TextBox();
+                zawody.tableLayoutPanel8.Controls.Add(zawody.txtZawodyDystans, 0, 0);
+                zawody.txtZawodyNumer = new System.Windows.Forms.TextBox();
+                zawody.tableLayoutPanel9.Controls.Add(zawody.txtZawodyNumer, 0, 0);
+                zawody.dateTimeZawodyCzas = new System.Windows.Forms.DateTimePicker();
+                zawody.tableLayoutPanel10.Controls.Add(zawody.dateTimeZawodyCzas, 0, 0);
 
-            zawody.ShowDialog();
+                // 
+                // tableLayoutPanel11
+                // 
+                zawody.tableLayoutPanel11.ColumnCount = 2;
+                zawody.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
+                zawody.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70F));
+                zawody.tableLayoutPanel11.Dock = System.Windows.Forms.DockStyle.Fill;
+                zawody.tableLayoutPanel11.Location = new System.Drawing.Point(52, 9);
+                zawody.tableLayoutPanel11.Name = "tableLayoutPanel11";
+                zawody.tableLayoutPanel11.RowCount = 1;
+                zawody.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+                zawody.tableLayoutPanel11.Size = new System.Drawing.Size(887, 102);
+                zawody.tableLayoutPanel11.TabIndex = 0;
+                // 
+                // lblWpisNazwaZawodow
+                // 
+                zawody.lblWpisNazwaZawodow.Anchor = System.Windows.Forms.AnchorStyles.Right;
+                zawody.lblWpisNazwaZawodow.AutoSize = true;
+                zawody.lblWpisNazwaZawodow.Font = new System.Drawing.Font("Courier New", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+                zawody.lblWpisNazwaZawodow.Location = new System.Drawing.Point(85, 39);
+                zawody.lblWpisNazwaZawodow.Name = "lblWpisNazwaZawodow";
+                zawody.lblWpisNazwaZawodow.Size = new System.Drawing.Size(178, 23);
+                zawody.lblWpisNazwaZawodow.TabIndex = 0;
+                zawody.lblWpisNazwaZawodow.Text = "Nazwa zawodów:";
+                // 
+                // txtWpisNazwaZawodow
+                // 
+                zawody.txtWpisNazwaZawodow.Anchor = System.Windows.Forms.AnchorStyles.Left;
+                zawody.txtWpisNazwaZawodow.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+                zawody.txtWpisNazwaZawodow.Font = new System.Drawing.Font("Courier New", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+                zawody.txtWpisNazwaZawodow.Location = new System.Drawing.Point(269, 32);
+                zawody.txtWpisNazwaZawodow.Name = "txtWpisNazwaZawodow";
+                zawody.txtWpisNazwaZawodow.Size = new System.Drawing.Size(615, 38);
+                zawody.txtWpisNazwaZawodow.TabIndex = 1;
+                zawody.txtWpisNazwaZawodow.TextChanged += new System.EventHandler(zawody.txtWpisNazwaZawodow_TextChanged);
+                // 
+                // dateTimeZawody
+                // 
+                zawody.dateTimeZawody.Anchor = System.Windows.Forms.AnchorStyles.None;
+                zawody.dateTimeZawody.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+                zawody.dateTimeZawody.CalendarFont = new System.Drawing.Font("Courier New", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+                zawody.dateTimeZawody.CustomFormat = "dd.MM.yyyy";
+                zawody.dateTimeZawody.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
+                zawody.dateTimeZawody.Font = new System.Drawing.Font("Courier New", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+                zawody.dateTimeZawody.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+                zawody.dateTimeZawody.Location = new System.Drawing.Point(20, 26);
+                zawody.dateTimeZawody.MinDate = new System.DateTime(2011, 3, 1, 0, 0, 0, 0);
+                zawody.dateTimeZawody.Name = "dateTimeZawody";
+                zawody.dateTimeZawody.Size = new System.Drawing.Size(160, 30);
+                zawody.dateTimeZawody.TabIndex = 0;
+                zawody.dateTimeZawody.Text = jakiMiesiac.ToString();
+                zawody.dateTimeZawody.Enabled = false;
+                // 
+                // txtZawodyDystans
+                // 
+                zawody.txtZawodyDystans.Anchor = System.Windows.Forms.AnchorStyles.None;
+                zawody.txtZawodyDystans.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+                zawody.txtZawodyDystans.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+                zawody.txtZawodyDystans.Font = new System.Drawing.Font("Courier New", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+                zawody.txtZawodyDystans.Location = new System.Drawing.Point(70, 29);
+                zawody.txtZawodyDystans.Name = "txtZawodyDystans";
+                zawody.txtZawodyDystans.Size = new System.Drawing.Size(100, 23);
+                zawody.txtZawodyDystans.TabIndex = 0;
+                zawody.txtZawodyDystans.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+                zawody.txtZawodyDystans.KeyPress += new KeyPressEventHandler(zawody.txtZawodyDystans_KeyPress);
+                // 
+                // txtZawodyNumer
+                // 
+                zawody.txtZawodyNumer.Anchor = System.Windows.Forms.AnchorStyles.None;
+                zawody.txtZawodyNumer.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+                zawody.txtZawodyNumer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+                zawody.txtZawodyNumer.Font = new System.Drawing.Font("Courier New", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+                zawody.txtZawodyNumer.Location = new System.Drawing.Point(70, 29);
+                zawody.txtZawodyNumer.Name = "txtZawodyNumer";
+                zawody.txtZawodyNumer.Size = new System.Drawing.Size(100, 23);
+                zawody.txtZawodyNumer.TabIndex = 0;
+                zawody.txtZawodyNumer.KeyPress += new System.Windows.Forms.KeyPressEventHandler(zawody.txtZawodyNumer_KeyPress);
+                // 
+                // dateTimeZawodyCzas
+                // 
+                zawody.dateTimeZawodyCzas.Anchor = System.Windows.Forms.AnchorStyles.None;
+                zawody.dateTimeZawodyCzas.Font = new System.Drawing.Font("Courier New", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+                zawody.dateTimeZawodyCzas.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+                zawody.dateTimeZawodyCzas.Location = new System.Drawing.Point(48, 26);
+                zawody.dateTimeZawodyCzas.Name = "dateTimeZawodyCzas";
+                zawody.dateTimeZawodyCzas.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+                zawody.dateTimeZawodyCzas.ShowUpDown = true;
+                zawody.dateTimeZawodyCzas.Size = new System.Drawing.Size(145, 30);
+                zawody.dateTimeZawodyCzas.TabIndex = 0;
+
+                zawody.ShowDialog();
+            }
         }
     }
 }

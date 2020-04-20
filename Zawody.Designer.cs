@@ -57,9 +57,11 @@
             this.tableLayoutPanel12 = new System.Windows.Forms.TableLayoutPanel();
             this.panel11 = new System.Windows.Forms.Panel();
             this.picZawody = new System.Windows.Forms.PictureBox();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.menuAddPicture = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuSave = new System.Windows.Forms.ToolStripMenuItem();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -137,7 +139,7 @@
             this.splitContainer1.Panel2.Controls.Add(this.tableLayoutPanel12);
             this.splitContainer1.Panel2.Controls.Add(this.menuStrip1);
             this.splitContainer1.Size = new System.Drawing.Size(830, 625);
-            this.splitContainer1.SplitterDistance = 231;
+            this.splitContainer1.SplitterDistance = 230;
             this.splitContainer1.TabIndex = 0;
             // 
             // tableLayoutPanel2
@@ -164,7 +166,7 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(830, 231);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(830, 230);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
             // panel3
@@ -409,7 +411,7 @@
             this.tableLayoutPanel12.Name = "tableLayoutPanel12";
             this.tableLayoutPanel12.RowCount = 1;
             this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel12.Size = new System.Drawing.Size(830, 366);
+            this.tableLayoutPanel12.Size = new System.Drawing.Size(830, 367);
             this.tableLayoutPanel12.TabIndex = 0;
             // 
             // panel11
@@ -418,7 +420,7 @@
             this.panel11.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel11.Location = new System.Drawing.Point(19, 3);
             this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(790, 360);
+            this.panel11.Size = new System.Drawing.Size(790, 361);
             this.panel11.TabIndex = 0;
             // 
             // picZawody
@@ -427,19 +429,16 @@
             this.picZawody.Dock = System.Windows.Forms.DockStyle.Fill;
             this.picZawody.Location = new System.Drawing.Point(0, 0);
             this.picZawody.Name = "picZawody";
-            this.picZawody.Size = new System.Drawing.Size(790, 360);
+            this.picZawody.Size = new System.Drawing.Size(790, 361);
             this.picZawody.TabIndex = 0;
             this.picZawody.TabStop = false;
-            // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            this.picZawody.MouseMove += new System.Windows.Forms.MouseEventHandler(this.picZawody_MouseMove);
             // 
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.menuAddPicture});
+            this.menuAddPicture,
+            this.menuSave});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(830, 24);
@@ -453,6 +452,24 @@
             this.menuAddPicture.Size = new System.Drawing.Size(130, 20);
             this.menuAddPicture.Text = "+ zdjęcie z zawodów";
             this.menuAddPicture.Click += new System.EventHandler(this.menuAddPicture_Click_1);
+            // 
+            // menuSave
+            // 
+            this.menuSave.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.menuSave.Name = "menuSave";
+            this.menuSave.Size = new System.Drawing.Size(96, 20);
+            this.menuSave.Text = "zapisz zawody";
+            this.menuSave.Click += new System.EventHandler(this.menuSave_Click);
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            // 
+            // contextMenuStrip2
+            // 
+            this.contextMenuStrip2.Name = "contextMenuStrip2";
+            this.contextMenuStrip2.Size = new System.Drawing.Size(61, 4);
             // 
             // Zawody
             // 
@@ -542,5 +559,7 @@
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem menuAddPicture;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip2;
+        private System.Windows.Forms.ToolStripMenuItem menuSave;
     }
 }
