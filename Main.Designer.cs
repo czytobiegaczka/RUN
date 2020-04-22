@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             this.panel1 = new System.Windows.Forms.Panel();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -49,6 +49,17 @@
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.dataGrid = new System.Windows.Forms.DataGridView();
+            this.txtMiesiac_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtData = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtDzien = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtWaga = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtDystans = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtZawody = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtNumer = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtCzas = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.imgMedal = new System.Windows.Forms.DataGridViewImageColumn();
+            this.txtTyp = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtZawody_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabDystans = new System.Windows.Forms.TabPage();
@@ -154,17 +165,6 @@
             this.btnZawodyDodaj = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.txtMiesiac_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtData = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtDzien = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtWaga = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtDystans = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtZawody = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtNumer = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtCzas = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.imgMedal = new System.Windows.Forms.DataGridViewImageColumn();
-            this.txtTyp = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtZawody_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -454,6 +454,103 @@
             this.dataGrid.CellMouseMove += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseMove);
             this.dataGrid.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGrid_CellValueChanged);
             this.dataGrid.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dataGrid_EditingControlShowing);
+            // 
+            // txtMiesiac_ID
+            // 
+            this.txtMiesiac_ID.DataPropertyName = "miesiac_ID";
+            this.txtMiesiac_ID.HeaderText = "MiesiacID";
+            this.txtMiesiac_ID.Name = "txtMiesiac_ID";
+            this.txtMiesiac_ID.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.txtMiesiac_ID.Visible = false;
+            // 
+            // txtData
+            // 
+            this.txtData.DataPropertyName = "data";
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.txtData.DefaultCellStyle = dataGridViewCellStyle1;
+            this.txtData.HeaderText = "Data";
+            this.txtData.Name = "txtData";
+            this.txtData.ReadOnly = true;
+            // 
+            // txtDzien
+            // 
+            this.txtDzien.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.txtDzien.DataPropertyName = "dzien";
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.txtDzien.DefaultCellStyle = dataGridViewCellStyle2;
+            this.txtDzien.HeaderText = "Dzień";
+            this.txtDzien.Name = "txtDzien";
+            this.txtDzien.ReadOnly = true;
+            this.txtDzien.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // txtWaga
+            // 
+            this.txtWaga.DataPropertyName = "waga";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.txtWaga.DefaultCellStyle = dataGridViewCellStyle3;
+            this.txtWaga.HeaderText = "Waga";
+            this.txtWaga.Name = "txtWaga";
+            this.txtWaga.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // txtDystans
+            // 
+            this.txtDystans.DataPropertyName = "dystans";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.txtDystans.DefaultCellStyle = dataGridViewCellStyle4;
+            this.txtDystans.HeaderText = "Dystans";
+            this.txtDystans.Name = "txtDystans";
+            this.txtDystans.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // txtZawody
+            // 
+            this.txtZawody.DataPropertyName = "zawody";
+            this.txtZawody.HeaderText = "Zawody";
+            this.txtZawody.Name = "txtZawody";
+            this.txtZawody.ReadOnly = true;
+            this.txtZawody.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.txtZawody.Visible = false;
+            // 
+            // txtNumer
+            // 
+            this.txtNumer.DataPropertyName = "numer";
+            this.txtNumer.HeaderText = "Numer";
+            this.txtNumer.Name = "txtNumer";
+            this.txtNumer.Visible = false;
+            // 
+            // txtCzas
+            // 
+            this.txtCzas.DataPropertyName = "czas";
+            this.txtCzas.HeaderText = "Czas";
+            this.txtCzas.Name = "txtCzas";
+            this.txtCzas.Visible = false;
+            // 
+            // imgMedal
+            // 
+            this.imgMedal.DataPropertyName = "medal";
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.NullValue = null;
+            this.imgMedal.DefaultCellStyle = dataGridViewCellStyle5;
+            this.imgMedal.FillWeight = 25F;
+            this.imgMedal.HeaderText = " ";
+            this.imgMedal.MinimumWidth = 25;
+            this.imgMedal.Name = "imgMedal";
+            this.imgMedal.ReadOnly = true;
+            this.imgMedal.Width = 25;
+            // 
+            // txtTyp
+            // 
+            this.txtTyp.DataPropertyName = "zawody_typ";
+            this.txtTyp.HeaderText = "Typ";
+            this.txtTyp.Name = "txtTyp";
+            this.txtTyp.Visible = false;
+            // 
+            // txtZawody_ID
+            // 
+            this.txtZawody_ID.DataPropertyName = "zawody_Id";
+            this.txtZawody_ID.HeaderText = "ZawodyID";
+            this.txtZawody_ID.Name = "txtZawody_ID";
+            this.txtZawody_ID.ReadOnly = true;
+            this.txtZawody_ID.Visible = false;
             // 
             // tableLayoutPanel5
             // 
@@ -1524,9 +1621,10 @@
             // 
             // tableLayoutPanel15
             // 
-            this.tableLayoutPanel15.ColumnCount = 2;
+            this.tableLayoutPanel15.ColumnCount = 3;
             this.tableLayoutPanel15.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel15.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 75F));
+            this.tableLayoutPanel15.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 45F));
+            this.tableLayoutPanel15.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
             this.tableLayoutPanel15.Controls.Add(this.label24, 0, 0);
             this.tableLayoutPanel15.Controls.Add(this.label25, 0, 1);
             this.tableLayoutPanel15.Controls.Add(this.label27, 0, 2);
@@ -1581,7 +1679,7 @@
             this.lblDataRekPolowka.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblDataRekPolowka.AutoSize = true;
             this.lblDataRekPolowka.Font = new System.Drawing.Font("Courier New", 11.25F, System.Drawing.FontStyle.Bold);
-            this.lblDataRekPolowka.Location = new System.Drawing.Point(330, 8);
+            this.lblDataRekPolowka.Location = new System.Drawing.Point(242, 8);
             this.lblDataRekPolowka.Name = "lblDataRekPolowka";
             this.lblDataRekPolowka.Size = new System.Drawing.Size(71, 17);
             this.lblDataRekPolowka.TabIndex = 1;
@@ -1592,7 +1690,7 @@
             this.lblCzasRekPolowka.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblCzasRekPolowka.AutoSize = true;
             this.lblCzasRekPolowka.Font = new System.Drawing.Font("Courier New", 11.25F, System.Drawing.FontStyle.Bold);
-            this.lblCzasRekPolowka.Location = new System.Drawing.Point(330, 41);
+            this.lblCzasRekPolowka.Location = new System.Drawing.Point(242, 41);
             this.lblCzasRekPolowka.Name = "lblCzasRekPolowka";
             this.lblCzasRekPolowka.Size = new System.Drawing.Size(71, 17);
             this.lblCzasRekPolowka.TabIndex = 1;
@@ -1603,7 +1701,7 @@
             this.lblNumerRekPolowka.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblNumerRekPolowka.AutoSize = true;
             this.lblNumerRekPolowka.Font = new System.Drawing.Font("Courier New", 11.25F, System.Drawing.FontStyle.Bold);
-            this.lblNumerRekPolowka.Location = new System.Drawing.Point(330, 74);
+            this.lblNumerRekPolowka.Location = new System.Drawing.Point(242, 74);
             this.lblNumerRekPolowka.Name = "lblNumerRekPolowka";
             this.lblNumerRekPolowka.Size = new System.Drawing.Size(71, 17);
             this.lblNumerRekPolowka.TabIndex = 1;
@@ -1677,9 +1775,10 @@
             // 
             // tableLayoutPanel17
             // 
-            this.tableLayoutPanel17.ColumnCount = 2;
+            this.tableLayoutPanel17.ColumnCount = 3;
             this.tableLayoutPanel17.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel17.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 75F));
+            this.tableLayoutPanel17.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 45F));
+            this.tableLayoutPanel17.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
             this.tableLayoutPanel17.Controls.Add(this.label28, 0, 0);
             this.tableLayoutPanel17.Controls.Add(this.label29, 0, 1);
             this.tableLayoutPanel17.Controls.Add(this.label30, 0, 2);
@@ -1734,7 +1833,7 @@
             this.lblDataRekDycha.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblDataRekDycha.AutoSize = true;
             this.lblDataRekDycha.Font = new System.Drawing.Font("Courier New", 11.25F, System.Drawing.FontStyle.Bold);
-            this.lblDataRekDycha.Location = new System.Drawing.Point(330, 8);
+            this.lblDataRekDycha.Location = new System.Drawing.Point(242, 8);
             this.lblDataRekDycha.Name = "lblDataRekDycha";
             this.lblDataRekDycha.Size = new System.Drawing.Size(71, 17);
             this.lblDataRekDycha.TabIndex = 1;
@@ -1745,7 +1844,7 @@
             this.lblCzasRekDycha.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblCzasRekDycha.AutoSize = true;
             this.lblCzasRekDycha.Font = new System.Drawing.Font("Courier New", 11.25F, System.Drawing.FontStyle.Bold);
-            this.lblCzasRekDycha.Location = new System.Drawing.Point(330, 41);
+            this.lblCzasRekDycha.Location = new System.Drawing.Point(242, 41);
             this.lblCzasRekDycha.Name = "lblCzasRekDycha";
             this.lblCzasRekDycha.Size = new System.Drawing.Size(71, 17);
             this.lblCzasRekDycha.TabIndex = 1;
@@ -1756,7 +1855,7 @@
             this.lblNumerRekDycha.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblNumerRekDycha.AutoSize = true;
             this.lblNumerRekDycha.Font = new System.Drawing.Font("Courier New", 11.25F, System.Drawing.FontStyle.Bold);
-            this.lblNumerRekDycha.Location = new System.Drawing.Point(330, 75);
+            this.lblNumerRekDycha.Location = new System.Drawing.Point(242, 75);
             this.lblNumerRekDycha.Name = "lblNumerRekDycha";
             this.lblNumerRekDycha.Size = new System.Drawing.Size(71, 17);
             this.lblNumerRekDycha.TabIndex = 1;
@@ -1795,22 +1894,22 @@
             // btnZawodyDodaj
             // 
             this.btnZawodyDodaj.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnZawodyDodaj.Image = global::RUN.Properties.Resources.plus64;
             this.btnZawodyDodaj.Location = new System.Drawing.Point(0, 0);
             this.btnZawodyDodaj.Name = "btnZawodyDodaj";
             this.btnZawodyDodaj.Size = new System.Drawing.Size(597, 78);
             this.btnZawodyDodaj.TabIndex = 0;
-            this.btnZawodyDodaj.Text = "Dopisz zawody";
             this.btnZawodyDodaj.UseVisualStyleBackColor = true;
             this.btnZawodyDodaj.Click += new System.EventHandler(this.btnZawodyDodaj_Click);
             // 
             // button1
             // 
             this.button1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button1.Image = global::RUN.Properties.Resources.minus64;
             this.button1.Location = new System.Drawing.Point(0, 0);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(597, 82);
             this.button1.TabIndex = 0;
-            this.button1.Text = "Usuń zawody";
             this.button1.UseVisualStyleBackColor = true;
             // 
             // dataGridViewImageColumn1
@@ -1821,103 +1920,6 @@
             this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
             this.dataGridViewImageColumn1.ReadOnly = true;
             // 
-            // txtMiesiac_ID
-            // 
-            this.txtMiesiac_ID.DataPropertyName = "miesiac_ID";
-            this.txtMiesiac_ID.HeaderText = "MiesiacID";
-            this.txtMiesiac_ID.Name = "txtMiesiac_ID";
-            this.txtMiesiac_ID.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.txtMiesiac_ID.Visible = false;
-            // 
-            // txtData
-            // 
-            this.txtData.DataPropertyName = "data";
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.txtData.DefaultCellStyle = dataGridViewCellStyle1;
-            this.txtData.HeaderText = "Data";
-            this.txtData.Name = "txtData";
-            this.txtData.ReadOnly = true;
-            // 
-            // txtDzien
-            // 
-            this.txtDzien.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.txtDzien.DataPropertyName = "dzien";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.txtDzien.DefaultCellStyle = dataGridViewCellStyle2;
-            this.txtDzien.HeaderText = "Dzień";
-            this.txtDzien.Name = "txtDzien";
-            this.txtDzien.ReadOnly = true;
-            this.txtDzien.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // txtWaga
-            // 
-            this.txtWaga.DataPropertyName = "waga";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.txtWaga.DefaultCellStyle = dataGridViewCellStyle3;
-            this.txtWaga.HeaderText = "Waga";
-            this.txtWaga.Name = "txtWaga";
-            this.txtWaga.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // txtDystans
-            // 
-            this.txtDystans.DataPropertyName = "dystans";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.txtDystans.DefaultCellStyle = dataGridViewCellStyle4;
-            this.txtDystans.HeaderText = "Dystans";
-            this.txtDystans.Name = "txtDystans";
-            this.txtDystans.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // txtZawody
-            // 
-            this.txtZawody.DataPropertyName = "zawody";
-            this.txtZawody.HeaderText = "Zawody";
-            this.txtZawody.Name = "txtZawody";
-            this.txtZawody.ReadOnly = true;
-            this.txtZawody.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.txtZawody.Visible = false;
-            // 
-            // txtNumer
-            // 
-            this.txtNumer.DataPropertyName = "numer";
-            this.txtNumer.HeaderText = "Numer";
-            this.txtNumer.Name = "txtNumer";
-            this.txtNumer.Visible = false;
-            // 
-            // txtCzas
-            // 
-            this.txtCzas.DataPropertyName = "czas";
-            this.txtCzas.HeaderText = "Czas";
-            this.txtCzas.Name = "txtCzas";
-            this.txtCzas.Visible = false;
-            // 
-            // imgMedal
-            // 
-            this.imgMedal.DataPropertyName = "medal";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.NullValue = null;
-            this.imgMedal.DefaultCellStyle = dataGridViewCellStyle5;
-            this.imgMedal.FillWeight = 25F;
-            this.imgMedal.HeaderText = " ";
-            this.imgMedal.MinimumWidth = 25;
-            this.imgMedal.Name = "imgMedal";
-            this.imgMedal.ReadOnly = true;
-            this.imgMedal.Width = 25;
-            // 
-            // txtTyp
-            // 
-            this.txtTyp.DataPropertyName = "zawody_typ";
-            this.txtTyp.HeaderText = "Typ";
-            this.txtTyp.Name = "txtTyp";
-            this.txtTyp.Visible = false;
-            // 
-            // txtZawody_ID
-            // 
-            this.txtZawody_ID.DataPropertyName = "zawody_Id";
-            this.txtZawody_ID.HeaderText = "ZawodyID";
-            this.txtZawody_ID.Name = "txtZawody_ID";
-            this.txtZawody_ID.ReadOnly = true;
-            this.txtZawody_ID.Visible = false;
-            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1926,7 +1928,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "Main";
-            this.Text = "RUN 2020 v.1.2";
+            this.Text = "RUN 2020 v.2.0";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Main_FormClosing);
             this.Load += new System.EventHandler(this.Main_Load);
             this.panel1.ResumeLayout(false);

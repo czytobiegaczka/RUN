@@ -66,6 +66,12 @@
     <Compile Include="AddPicture.Designer.cs">
       <DependentUpon>AddPicture.cs</DependentUpon>
     </Compile>
+    <Compile Include="Typ.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Typ.Designer.cs">
+      <DependentUpon>Typ.cs</DependentUpon>
+    </Compile>
     <Compile Include="Wait.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -107,6 +113,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AddPicture.resx">
       <DependentUpon>AddPicture.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Typ.resx">
+      <DependentUpon>Typ.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Wait.resx">
       <DependentUpon>Wait.cs</DependentUpon>
@@ -177,6 +186,24 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\m.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\plus128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\plus64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\minus64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\correct64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\correct.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\correct641.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

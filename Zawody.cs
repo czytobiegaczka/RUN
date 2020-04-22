@@ -80,7 +80,7 @@ namespace RUN
                 // timer, który wyświetla zdjęcia co określony czas 
                 tm = new Timer();
                 tm.Tick += new EventHandler(changeimage);
-                tm.Interval = 2000;
+                tm.Interval = 5000;
                 tm.Start();
                 czyTimer = true;
             }
@@ -180,6 +180,9 @@ namespace RUN
 
         private void menuSave_Click(object sender, EventArgs e)
         {
+            Typ typ = new Typ();
+            typ.ShowDialog();
+
             int zmianaDys = Convert.ToInt16(Convert.ToDecimal(txtZawodyDystans.Text == "" ? "0" : txtZawodyDystans.Text) * 100);
             if (zmianaDys != 0)
             {
@@ -219,6 +222,7 @@ namespace RUN
             {
                 try
                 {
+
                     MemoryStream ms = new MemoryStream();
                     Properties.Resources.m.Save(ms, Properties.Resources.m.RawFormat);
                     byte[] img = ms.ToArray();
