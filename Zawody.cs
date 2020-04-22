@@ -22,7 +22,9 @@ namespace RUN
         public int ileWierszy=0;
         public int zawodyID;
         public Timer tm;
-        bool czyTimer = false;
+        public bool czyTimer = false;
+        public string zawodyTyp = "";
+        
 
         public Zawody(int zawID)
         {
@@ -180,8 +182,10 @@ namespace RUN
 
         private void menuSave_Click(object sender, EventArgs e)
         {
+            // wybór rodzajów zawodów
             Typ typ = new Typ();
             typ.ShowDialog();
+            zawodyTyp = typ.jakiTyp;
 
             int zmianaDys = Convert.ToInt16(Convert.ToDecimal(txtZawodyDystans.Text == "" ? "0" : txtZawodyDystans.Text) * 100);
             if (zmianaDys != 0)
@@ -236,7 +240,7 @@ namespace RUN
                     mySqlCommand.Parameters.AddWithValue("dys", zmianaDys);
                     mySqlCommand.Parameters.AddWithValue("num", txtZawodyNumer.Text);
                     mySqlCommand.Parameters.AddWithValue("cza", dateTimeZawodyCzas.Value);
-                    mySqlCommand.Parameters.AddWithValue("typ", 'M');
+                    mySqlCommand.Parameters.AddWithValue("typ", zawodyTyp);
                     mySqlCommand.Parameters.AddWithValue("pic", img);
                     mySqlCommand.ExecuteNonQuery();
                     mySqlCommand.Dispose();

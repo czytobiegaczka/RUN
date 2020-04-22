@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.btnWybierzTyp = new System.Windows.Forms.Button();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.rdoMaraton = new System.Windows.Forms.RadioButton();
             this.rdoPolmaraton = new System.Windows.Forms.RadioButton();
             this.rdoDziesiec = new System.Windows.Forms.RadioButton();
             this.rdoInne = new System.Windows.Forms.RadioButton();
-            this.btnWybierzTyp = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
@@ -59,8 +59,21 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(262, 450);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
+            // btnWybierzTyp
+            // 
+            this.btnWybierzTyp.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnWybierzTyp.Font = new System.Drawing.Font("Courier New", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnWybierzTyp.Image = global::RUN.Properties.Resources.correct;
+            this.btnWybierzTyp.Location = new System.Drawing.Point(3, 318);
+            this.btnWybierzTyp.Name = "btnWybierzTyp";
+            this.btnWybierzTyp.Size = new System.Drawing.Size(256, 129);
+            this.btnWybierzTyp.TabIndex = 0;
+            this.btnWybierzTyp.UseVisualStyleBackColor = true;
+            this.btnWybierzTyp.Click += new System.EventHandler(this.btnWybierzTyp_Click);
+            // 
             // tableLayoutPanel2
             // 
+            this.tableLayoutPanel2.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.tableLayoutPanel2.ColumnCount = 2;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 80F));
@@ -105,6 +118,7 @@
             this.rdoPolmaraton.TabStop = true;
             this.rdoPolmaraton.Text = "półmaraton";
             this.rdoPolmaraton.UseVisualStyleBackColor = true;
+            this.rdoPolmaraton.CheckedChanged += new System.EventHandler(this.rdoPolmaraton_CheckedChanged);
             // 
             // rdoDziesiec
             // 
@@ -118,6 +132,7 @@
             this.rdoDziesiec.TabStop = true;
             this.rdoDziesiec.Text = "10 km";
             this.rdoDziesiec.UseVisualStyleBackColor = true;
+            this.rdoDziesiec.CheckedChanged += new System.EventHandler(this.rdoDziesiec_CheckedChanged);
             // 
             // rdoInne
             // 
@@ -131,21 +146,11 @@
             this.rdoInne.TabStop = true;
             this.rdoInne.Text = "inne";
             this.rdoInne.UseVisualStyleBackColor = true;
-            // 
-            // btnWybierzTyp
-            // 
-            this.btnWybierzTyp.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnWybierzTyp.Font = new System.Drawing.Font("Courier New", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnWybierzTyp.Image = global::RUN.Properties.Resources.correct;
-            this.btnWybierzTyp.Location = new System.Drawing.Point(3, 318);
-            this.btnWybierzTyp.Name = "btnWybierzTyp";
-            this.btnWybierzTyp.Size = new System.Drawing.Size(256, 129);
-            this.btnWybierzTyp.TabIndex = 0;
-            this.btnWybierzTyp.UseVisualStyleBackColor = true;
-            this.btnWybierzTyp.Click += new System.EventHandler(this.btnWybierzTyp_Click);
+            this.rdoInne.CheckedChanged += new System.EventHandler(this.rdoInne_CheckedChanged);
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.SystemColors.Info;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -163,13 +168,14 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(190, 23);
             this.label1.TabIndex = 0;
-            this.label1.Text = "wybierz zawody:";
+            this.label1.Text = "wybierz rodzaj:";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Typ
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(262, 450);
             this.Controls.Add(this.tableLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -191,12 +197,12 @@
 
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Button btnWybierzTyp;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.RadioButton rdoMaraton;
-        private System.Windows.Forms.RadioButton rdoDziesiec;
-        private System.Windows.Forms.RadioButton rdoPolmaraton;
-        private System.Windows.Forms.RadioButton rdoInne;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
+        public System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        public System.Windows.Forms.RadioButton rdoDziesiec;
+        public System.Windows.Forms.RadioButton rdoPolmaraton;
+        public System.Windows.Forms.RadioButton rdoInne;
     }
 }
