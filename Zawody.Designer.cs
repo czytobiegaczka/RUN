@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -56,13 +55,15 @@
             this.tableLayoutPanel10 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel12 = new System.Windows.Forms.TableLayoutPanel();
             this.panel11 = new System.Windows.Forms.Panel();
-            this.picZawody = new System.Windows.Forms.PictureBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.menuAddPicture = new System.Windows.Forms.ToolStripMenuItem();
             this.menuSave = new System.Windows.Forms.ToolStripMenuItem();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.poprawDaneToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.picZawody = new System.Windows.Forms.PictureBox();
+            this.picOplata = new System.Windows.Forms.PictureBox();
+            this.lblOplata = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -83,8 +84,9 @@
             this.panel10.SuspendLayout();
             this.tableLayoutPanel12.SuspendLayout();
             this.panel11.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picZawody)).BeginInit();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picZawody)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picOplata)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -103,6 +105,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 90F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
+            this.tableLayoutPanel1.Controls.Add(this.picOplata, 2, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -136,6 +139,7 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.BackColor = System.Drawing.SystemColors.Window;
+            this.splitContainer1.Panel2.Controls.Add(this.lblOplata);
             this.splitContainer1.Panel2.Controls.Add(this.tableLayoutPanel12);
             this.splitContainer1.Panel2.Controls.Add(this.menuStrip1);
             this.splitContainer1.Size = new System.Drawing.Size(830, 625);
@@ -423,22 +427,12 @@
             this.panel11.Size = new System.Drawing.Size(790, 361);
             this.panel11.TabIndex = 0;
             // 
-            // picZawody
-            // 
-            this.picZawody.BackColor = System.Drawing.SystemColors.Window;
-            this.picZawody.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.picZawody.Location = new System.Drawing.Point(0, 0);
-            this.picZawody.Name = "picZawody";
-            this.picZawody.Size = new System.Drawing.Size(790, 361);
-            this.picZawody.TabIndex = 0;
-            this.picZawody.TabStop = false;
-            this.picZawody.MouseMove += new System.Windows.Forms.MouseEventHandler(this.picZawody_MouseMove);
-            // 
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menuAddPicture,
-            this.menuSave});
+            this.menuSave,
+            this.poprawDaneToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(830, 24);
@@ -461,15 +455,46 @@
             this.menuSave.Text = "zapisz zawody";
             this.menuSave.Click += new System.EventHandler(this.menuSave_Click);
             // 
-            // contextMenuStrip1
+            // poprawDaneToolStripMenuItem
             // 
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            this.poprawDaneToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.poprawDaneToolStripMenuItem.Name = "poprawDaneToolStripMenuItem";
+            this.poprawDaneToolStripMenuItem.Size = new System.Drawing.Size(88, 20);
+            this.poprawDaneToolStripMenuItem.Text = "popraw dane";
+            this.poprawDaneToolStripMenuItem.Click += new System.EventHandler(this.poprawDaneToolStripMenuItem_Click);
             // 
-            // contextMenuStrip2
+            // picZawody
             // 
-            this.contextMenuStrip2.Name = "contextMenuStrip2";
-            this.contextMenuStrip2.Size = new System.Drawing.Size(61, 4);
+            this.picZawody.BackColor = System.Drawing.SystemColors.Window;
+            this.picZawody.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.picZawody.Location = new System.Drawing.Point(0, 0);
+            this.picZawody.Name = "picZawody";
+            this.picZawody.Size = new System.Drawing.Size(790, 361);
+            this.picZawody.TabIndex = 0;
+            this.picZawody.TabStop = false;
+            this.picZawody.MouseMove += new System.Windows.Forms.MouseEventHandler(this.picZawody_MouseMove);
+            // 
+            // picOplata
+            // 
+            this.picOplata.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.picOplata.Image = global::RUN.Properties.Resources.iconfinder_Purse_669953;
+            this.picOplata.Location = new System.Drawing.Point(791, 9);
+            this.picOplata.Name = "picOplata";
+            this.picOplata.Size = new System.Drawing.Size(36, 40);
+            this.picOplata.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picOplata.TabIndex = 4;
+            this.picOplata.TabStop = false;
+            this.picOplata.Click += new System.EventHandler(this.pictureBox2_Click);
+            this.picOplata.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pictureBox2_MouseMove);
+            // 
+            // lblOplata
+            // 
+            this.lblOplata.AutoSize = true;
+            this.lblOplata.Location = new System.Drawing.Point(791, 0);
+            this.lblOplata.Name = "lblOplata";
+            this.lblOplata.Size = new System.Drawing.Size(0, 13);
+            this.lblOplata.TabIndex = 2;
+            this.lblOplata.Visible = false;
             // 
             // Zawody
             // 
@@ -482,6 +507,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Form1";
             this.panel1.ResumeLayout(false);
+            this.tableLayoutPanel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
@@ -507,9 +533,10 @@
             this.panel10.ResumeLayout(false);
             this.tableLayoutPanel12.ResumeLayout(false);
             this.panel11.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.picZawody)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picZawody)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picOplata)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -556,10 +583,11 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel12;
         private System.Windows.Forms.Panel panel11;
         public System.Windows.Forms.PictureBox picZawody;
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem menuAddPicture;
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip2;
         private System.Windows.Forms.ToolStripMenuItem menuSave;
+        private System.Windows.Forms.ToolStripMenuItem poprawDaneToolStripMenuItem;
+        private System.Windows.Forms.PictureBox picOplata;
+        public System.Windows.Forms.Label lblOplata;
     }
 }

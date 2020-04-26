@@ -284,5 +284,27 @@ namespace RUN
                 menuSave.Enabled = false;
             }
         }
+
+        private void poprawDaneToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+        }
+
+        int x = 0, y = 0;
+        string dajOplata;
+        private void pictureBox2_MouseMove(object sender, MouseEventArgs e)
+        {
+            x = Cursor.Position.X;
+            y = Cursor.Position.Y;
+            dajOplata = lblOplata.Text;
+            Oplata oplata = new Oplata(dajOplata);
+            oplata.StartPosition = FormStartPosition.Manual;            
+            oplata.Location = new System.Drawing.Point(x-oplata.Width, y);
+            oplata.ShowDialog();
+        }
     }
 }

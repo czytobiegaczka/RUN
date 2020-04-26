@@ -404,6 +404,7 @@ namespace RUN
                             string ZapDystans = row.Cells["txtDystans"].Value.ToString();
                             string ZapNumer = row.Cells["txtNumer"].Value.ToString();
                             string ZapCzas = row.Cells["txtCzas"].Value.ToString();
+                            string ZapOplata = row.Cells["txtOplata"].Value.ToString();
                             
                             Zawody zawody = new Zawody(ZapZawodyID); // wyświetlenie okna zawodów
 
@@ -479,6 +480,7 @@ namespace RUN
                             zawody.lblZawodyDystans.Text = ZapDystans;
                             zawody.lblZawodyNumer.Text = ZapNumer;
                             zawody.lblZawodyCzas.Text = ZapCzas;
+                            zawody.lblOplata.Text = ZapOplata;
                             /*
                             lblNazwaRekMaraton.Text = " " + wybor_M[0]["zawody"].ToString() + " ";
                             lblDataRekMaraton.Text = wybor_M[0]["data"].ToString();
