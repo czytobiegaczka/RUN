@@ -43,9 +43,12 @@
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 2;
+            this.tableLayoutPanel1.RowCount = 3;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 5F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(167, 228);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
@@ -56,9 +59,9 @@
             this.lblOplataNazwa.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblOplataNazwa.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblOplataNazwa.Font = new System.Drawing.Font("Courier New", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblOplataNazwa.Location = new System.Drawing.Point(3, 124);
+            this.lblOplataNazwa.Location = new System.Drawing.Point(3, 111);
             this.lblOplataNazwa.Name = "lblOplataNazwa";
-            this.lblOplataNazwa.Size = new System.Drawing.Size(161, 104);
+            this.lblOplataNazwa.Size = new System.Drawing.Size(161, 111);
             this.lblOplataNazwa.TabIndex = 0;
             this.lblOplataNazwa.Text = "opłata\r\nstartowa";
             this.lblOplataNazwa.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -69,9 +72,9 @@
             this.lblOplata.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblOplata.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblOplata.Font = new System.Drawing.Font("Courier New", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblOplata.Location = new System.Drawing.Point(3, 20);
+            this.lblOplata.Location = new System.Drawing.Point(3, 0);
             this.lblOplata.Name = "lblOplata";
-            this.lblOplata.Size = new System.Drawing.Size(161, 104);
+            this.lblOplata.Size = new System.Drawing.Size(161, 111);
             this.lblOplata.TabIndex = 1;
             this.lblOplata.Text = "50,00 zł";
             this.lblOplata.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
