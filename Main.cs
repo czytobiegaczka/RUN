@@ -5,6 +5,7 @@ using System.Drawing;
 using System.Threading;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
+using System.Xml;
 
 
 
@@ -14,9 +15,11 @@ namespace RUN
     public partial class Main : Form
     {
         public static string connectionString = @"DATASOURCE=db4free.net;PORT=3306;DATABASE=trening;UID=trening;PASSWORD=treningRTL;OldGuids=True;convert zero datetime=True";
-        string[] miesiacNr = { "00","01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12" };
+        string[] miesiacNr = { "00", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12" };
         string[] miesiacNazwa = { "Styczeń", "Luty", "Marzec", "Kwiecień", "Maj", "Czerwiec", "Lipiec", "Sierpień", "Wrzesień", "Październik", "Listopad", "Grudzień" };
+        string[] tydzienNazwa = { "Niedziela","Poniedziałek", "Wtorek", "Środa", "Czwartek", "Piątek", "Sobota"};
         public MySqlConnection MyCon;
+        public Boolean czyGodzina=false;
         private DataTable data;
 
         public Main()
@@ -33,7 +36,7 @@ namespace RUN
         {
             mati_connect();
             DataGridView(DateTime.Now);
-        
+
         }
 
         public void mati_connect()
@@ -72,7 +75,7 @@ namespace RUN
                     }
                     */
                     //MessageBox.Show(ex.Message.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    if(MyMessageBox.ShowMessage("Błąd połączenia. Czy łączyć jeszcze raz?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                    if (MyMessageBox.ShowMessage("Błąd połączenia. Czy łączyć jeszcze raz?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                     {
                         mati_connect();
                     }
@@ -80,7 +83,7 @@ namespace RUN
                     {
                         Application.Exit();
                     }
-                       
+
                 }
             }
         }
@@ -96,24 +99,31 @@ namespace RUN
         void DataGridView(DateTime dzien)
         // obsługa wyświetlania przeglądarki bazy danych 
         {
-            string tylkoRok= "'%." + dzien.Year.ToString() + "'";
+            string tylkoRok = "'%." + dzien.Year.ToString() + "'";
             string tylkoMiesiac = "'%." + miesiacNr[dzien.Month] + "." + dzien.Year.ToString() + "'";
-            double sumKm=0;
-            double liczKm=1;
+            double sumKm = 0;
+            double liczKm = 1;
             double sredKm = 0;
-            double minKm=0;
-            double maxKm=0;
-            double sumKg=0;
-            double liczKg=1;
+            double minKm = 0;
+            double maxKm = 0;
+            double sumKg = 0;
+            double liczKg = 1;
             double sredKg = 0;
-            double minKg=0;
-            double maxKg=0;
+            double minKg = 0;
+            double maxKg = 0;
 
             this.Cursor = Cursors.WaitCursor;
-             this.Cursor = this.DefaultCursor;
+            this.Cursor = this.DefaultCursor;
 
+            // kalndarz
 
+            txtDzisData.Text = miesiacNazwa[DateTime.Now.Month] + " " + DateTime.Now.Year.ToString();
+            txtDzisNumer.Text = DateTime.Now.Day.ToString();
+            int jakiDzien = (int)DateTime.Now.DayOfWeek;
+            txtDzisDzien.Text = tydzienNazwa[jakiDzien];
+            // pogoda
 
+            Weather();
 
             DataTable MyTab = this.data;
 
@@ -291,11 +301,11 @@ namespace RUN
                         string komo = dataGrid.CurrentCellAddress.X.ToString();
                         int zmianaWag = Convert.ToInt16(Convert.ToDecimal(dataGrRow.Cells["txtWaga"].Value == DBNull.Value ? "0" : dataGrRow.Cells["txtWaga"].Value) * 100);
                         int zmianaDys = Convert.ToInt16(Convert.ToDecimal(dataGrRow.Cells["txtDystans"].Value == DBNull.Value ? "0" : dataGrRow.Cells["txtDystans"].Value) * 100);
-                        
+
                         string zapamietajData = Convert.ToString(dataGrRow.Cells["txtData"].Value); //określenie i zapamiętanie miesiąca do wyświetlenia
-                        DateTime jakiMiesiac= DateTime.ParseExact(Convert.ToString(dataGrRow.Cells["txtData"].Value),"dd.MM.yyyy",null); //określenie i zapamiętanie miesiąca do wyświetlenia
+                        DateTime jakiMiesiac = DateTime.ParseExact(Convert.ToString(dataGrRow.Cells["txtData"].Value), "dd.MM.yyyy", null); //określenie i zapamiętanie miesiąca do wyświetlenia
                         zapamietajData = zapamietajData.Remove(0, 3);
-                        zapamietajData = "'___" + zapamietajData+"'";
+                        zapamietajData = "'___" + zapamietajData + "'";
 
 
                         if (komo == "3") //zmiana z kolumnie waga
@@ -364,8 +374,8 @@ namespace RUN
             */
             foreach (DataGridViewRow Myrow in dataGrid.Rows)
             {
-                    //if (Convert.ToString(Myrow.Cells["txtZawody"].Value) != "") // kolorowanie zawodów
-                    //Myrow.DefaultCellStyle.BackColor = Color.Red;
+                //if (Convert.ToString(Myrow.Cells["txtZawody"].Value) != "") // kolorowanie zawodów
+                //Myrow.DefaultCellStyle.BackColor = Color.Red;
                 if (Convert.ToString(Myrow.Cells["txtDzien"].Value) == "sobota") //kolorowanie sobót i niedziel
                 {
 
@@ -396,7 +406,7 @@ namespace RUN
 
                         DataGridViewRow row = (DataGridViewRow)dataGrid.Rows[e.RowIndex];
                         //textBox1.Text = e.RowIndex.ToString();// return row index of dataGridView On CellMouseMove Event and Display RowIndex in TextBox1.
-                        if (row.Cells["txtZawody"].Value.ToString()!="")
+                        if (row.Cells["txtZawody"].Value.ToString() != "")
                         {
                             int ZapZawodyID = Convert.ToInt16(row.Cells["txtZawody_ID"].Value);
                             string ZapNazwa = row.Cells["txtZawody"].Value.ToString();
@@ -405,7 +415,7 @@ namespace RUN
                             string ZapNumer = row.Cells["txtNumer"].Value.ToString();
                             string ZapCzas = row.Cells["txtCzas"].Value.ToString();
                             string ZapOplata = row.Cells["txtOplata"].Value.ToString();
-                            
+
                             Zawody zawody = new Zawody(ZapZawodyID); // wyświetlenie okna zawodów
 
                             zawody.lblZawodyNazwa = new System.Windows.Forms.Label();
@@ -532,6 +542,92 @@ namespace RUN
             DataGridView(dzien);
         }
 
+        private void Weather()
+        {
+            XmlReader xmlRreader = XmlReader.Create(@"c:\xxx\pogodapl.xml");
+
+            while (xmlRreader.Read())
+            {
+
+                if ((xmlRreader.NodeType == XmlNodeType.Element) && (xmlRreader.Name == "time")) //wartość dla daty i godziny 
+                {
+                    if (xmlRreader.HasAttributes)
+                    {
+                        int godzinaOd = Int16.Parse(xmlRreader.GetAttribute("from").Substring(11,2));
+                        int godzinaDo = Int16.Parse(xmlRreader.GetAttribute("to").Substring(11, 2));
+                        if (DateTime.Now.Hour>=godzinaOd && DateTime.Now.Hour<=godzinaDo)
+                        {
+                            czyGodzina = true;
+                        }
+                        else
+                        {
+                            czyGodzina = false;
+                        }
+                    }
+
+                }
+
+                if ((xmlRreader.NodeType == XmlNodeType.Element) && (xmlRreader.Name == "symbol") && (czyGodzina==true)) //wartość dla daty i godziny 
+                {
+                    if (xmlRreader.HasAttributes)
+                    {
+                        string icona=xmlRreader.GetAttribute("var");
+                        string adres = "http://openweathermap.org/img/wn/"+icona+"@2x.png";
+                        picWeather.Load(adres);
+                        txtAPIOpis.Text= xmlRreader.GetAttribute("name");
+                    }
+
+                }
+
+                if ((xmlRreader.NodeType == XmlNodeType.Element) && (xmlRreader.Name == "precipitation") && (czyGodzina == true)) // wartość dla temperatury
+                {
+                    if (xmlRreader.HasAttributes)
+                    {
+                        txtAPIDeszcz.Text = "deszcz "+xmlRreader.GetAttribute("value") + " mm";
+                    }
+                    else
+                    {
+                        txtAPIDeszcz.Text = "deszcz 0.0 mm";
+                    }
+                }
+
+                if ((xmlRreader.NodeType == XmlNodeType.Element) && (xmlRreader.Name == "windSpeed") && (czyGodzina == true)) //wartość dla wiatru
+                {
+                    if (xmlRreader.HasAttributes)
+                    {
+                        txtAPIWiatr.Text = "wiatr "+xmlRreader.GetAttribute("mps")+" m/s";
+
+                    }
+                }
+
+                if ((xmlRreader.NodeType == XmlNodeType.Element) && (xmlRreader.Name == "temperature") && (czyGodzina == true)) //wartość dla wiatru
+                {
+                    if (xmlRreader.HasAttributes)
+                    {
+                        txtAPITemp.Text = xmlRreader.GetAttribute("value") + "°C";
+
+                    }
+                }
+
+                if ((xmlRreader.NodeType == XmlNodeType.Element) && (xmlRreader.Name == "pressure") && (czyGodzina == true)) //wartość dla wiatru
+                {
+                    if (xmlRreader.HasAttributes)
+                    {
+                        txtAPICisnienie.Text = "ciśnienie " + xmlRreader.GetAttribute("value") + " hPa";
+
+                    }
+                }
+
+                if ((xmlRreader.NodeType == XmlNodeType.Element) && (xmlRreader.Name == "humidity") && (czyGodzina == true)) //wartość dla wiatru
+                {
+                    if (xmlRreader.HasAttributes)
+                    {
+                        txtAPIWilgotnosc.Text = "wilgotność "+xmlRreader.GetAttribute("value")+" %";
+                    }
+                }
+            }
+        }
+
         private void btnZawodyDodaj_Click(object sender, EventArgs e)
         {
             if (dataGrid.CurrentCell != null)
@@ -653,10 +749,161 @@ namespace RUN
                 zawody.ShowDialog();
                 zawody.Dispose();
 
-                mati_connect();               
+                mati_connect();
                 DataGridView(jakiMiesiac);
 
             }
+        }
+
+        private void dataGrid_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+            }
+            else
+            {
+                ContextMenuStrip myMenu = new System.Windows.Forms.ContextMenuStrip();
+                int position_xy_mouse_row = dataGrid.HitTest(e.X, e.Y).RowIndex;
+
+                if (position_xy_mouse_row >= 0)
+                {
+                    myMenu.Items.Add("Dopisz").Name = "Dopisz";
+                }
+                myMenu.Show(dataGrid, new Point(e.X, e.Y));
+
+                myMenu.ItemClicked += new ToolStripItemClickedEventHandler(myMenu_ItemClicked);
+
+            }
+        }
+
+        void myMenu_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+            ToolStripItem item = e.ClickedItem;
+
+            if (dataGrid.CurrentCell != null)
+            {
+                DataGridViewRow dataGrRow = dataGrid.CurrentRow;
+                string komo = dataGrid.CurrentCellAddress.X.ToString();
+                string zapamietajData = Convert.ToString(dataGrRow.Cells["txtData"].Value); //określenie i zapamiętanie miesiąca do wyświetlenia
+                DateTime jakiMiesiac = DateTime.ParseExact(Convert.ToString(dataGrRow.Cells["txtData"].Value), "dd.MM.yyyy", null); //określenie i zapamiętanie miesiąca do wyświetlenia
+                Console.WriteLine(zapamietajData);
+
+                Zawody zawody = new Zawody(0); // wyświetlenie okna zawodów
+
+                zawody.Text = "Dopisywanie zawodów";
+                zawody.tableLayoutPanel11 = new System.Windows.Forms.TableLayoutPanel();
+                zawody.tableLayoutPanel1.Controls.Add(zawody.tableLayoutPanel11, 1, 1);
+                zawody.lblWpisNazwaZawodow = new System.Windows.Forms.Label();
+                zawody.tableLayoutPanel11.Controls.Add(zawody.lblWpisNazwaZawodow, 0, 0);
+                zawody.txtWpisNazwaZawodow = new System.Windows.Forms.TextBox();
+                zawody.tableLayoutPanel11.Controls.Add(zawody.txtWpisNazwaZawodow, 1, 0);
+                zawody.dateTimeZawody = new System.Windows.Forms.DateTimePicker();
+                zawody.tableLayoutPanel7.Controls.Add(zawody.dateTimeZawody, 0, 0);
+                zawody.txtZawodyDystans = new System.Windows.Forms.TextBox();
+                zawody.tableLayoutPanel8.Controls.Add(zawody.txtZawodyDystans, 0, 0);
+                zawody.txtZawodyNumer = new System.Windows.Forms.TextBox();
+                zawody.tableLayoutPanel9.Controls.Add(zawody.txtZawodyNumer, 0, 0);
+                zawody.dateTimeZawodyCzas = new System.Windows.Forms.DateTimePicker();
+                zawody.tableLayoutPanel10.Controls.Add(zawody.dateTimeZawodyCzas, 0, 0);
+
+                // 
+                // tableLayoutPanel11
+                // 
+                zawody.tableLayoutPanel11.ColumnCount = 2;
+                zawody.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
+                zawody.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70F));
+                zawody.tableLayoutPanel11.Dock = System.Windows.Forms.DockStyle.Fill;
+                zawody.tableLayoutPanel11.Location = new System.Drawing.Point(52, 9);
+                zawody.tableLayoutPanel11.Name = "tableLayoutPanel11";
+                zawody.tableLayoutPanel11.RowCount = 1;
+                zawody.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+                zawody.tableLayoutPanel11.Size = new System.Drawing.Size(887, 102);
+                zawody.tableLayoutPanel11.TabIndex = 0;
+                // 
+                // lblWpisNazwaZawodow
+                // 
+                zawody.lblWpisNazwaZawodow.Anchor = System.Windows.Forms.AnchorStyles.Right;
+                zawody.lblWpisNazwaZawodow.AutoSize = true;
+                zawody.lblWpisNazwaZawodow.Font = new System.Drawing.Font("Courier New", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+                zawody.lblWpisNazwaZawodow.Location = new System.Drawing.Point(85, 39);
+                zawody.lblWpisNazwaZawodow.Name = "lblWpisNazwaZawodow";
+                zawody.lblWpisNazwaZawodow.Size = new System.Drawing.Size(178, 23);
+                zawody.lblWpisNazwaZawodow.TabIndex = 0;
+                zawody.lblWpisNazwaZawodow.Text = "Nazwa zawodów:";
+                // 
+                // txtWpisNazwaZawodow
+                // 
+                zawody.txtWpisNazwaZawodow.Anchor = System.Windows.Forms.AnchorStyles.Left;
+                zawody.txtWpisNazwaZawodow.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+                zawody.txtWpisNazwaZawodow.Font = new System.Drawing.Font("Courier New", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+                zawody.txtWpisNazwaZawodow.Location = new System.Drawing.Point(269, 32);
+                zawody.txtWpisNazwaZawodow.Name = "txtWpisNazwaZawodow";
+                zawody.txtWpisNazwaZawodow.Size = new System.Drawing.Size(615, 38);
+                zawody.txtWpisNazwaZawodow.TabIndex = 1;
+                zawody.txtWpisNazwaZawodow.TextChanged += new System.EventHandler(zawody.txtWpisNazwaZawodow_TextChanged);
+                // 
+                // dateTimeZawody
+                // 
+                zawody.dateTimeZawody.Anchor = System.Windows.Forms.AnchorStyles.None;
+                zawody.dateTimeZawody.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+                zawody.dateTimeZawody.CalendarFont = new System.Drawing.Font("Courier New", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+                zawody.dateTimeZawody.CustomFormat = "dd.MM.yyyy";
+                zawody.dateTimeZawody.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
+                zawody.dateTimeZawody.Font = new System.Drawing.Font("Courier New", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+                zawody.dateTimeZawody.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+                zawody.dateTimeZawody.Location = new System.Drawing.Point(20, 26);
+                zawody.dateTimeZawody.MinDate = new System.DateTime(2011, 3, 1, 0, 0, 0, 0);
+                zawody.dateTimeZawody.Name = "dateTimeZawody";
+                zawody.dateTimeZawody.Size = new System.Drawing.Size(160, 30);
+                zawody.dateTimeZawody.TabIndex = 0;
+                zawody.dateTimeZawody.Text = jakiMiesiac.ToString();
+                zawody.dateTimeZawody.Enabled = false;
+                // 
+                // txtZawodyDystans
+                // 
+                zawody.txtZawodyDystans.Anchor = System.Windows.Forms.AnchorStyles.None;
+                zawody.txtZawodyDystans.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+                zawody.txtZawodyDystans.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+                zawody.txtZawodyDystans.Font = new System.Drawing.Font("Courier New", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+                zawody.txtZawodyDystans.Location = new System.Drawing.Point(70, 29);
+                zawody.txtZawodyDystans.Name = "txtZawodyDystans";
+                zawody.txtZawodyDystans.Size = new System.Drawing.Size(100, 23);
+                zawody.txtZawodyDystans.TabIndex = 0;
+                zawody.txtZawodyDystans.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+                zawody.txtZawodyDystans.KeyPress += new KeyPressEventHandler(zawody.txtZawodyDystans_KeyPress);
+                // 
+                // txtZawodyNumer
+                // 
+                zawody.txtZawodyNumer.Anchor = System.Windows.Forms.AnchorStyles.None;
+                zawody.txtZawodyNumer.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+                zawody.txtZawodyNumer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+                zawody.txtZawodyNumer.Font = new System.Drawing.Font("Courier New", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+                zawody.txtZawodyNumer.Location = new System.Drawing.Point(70, 29);
+                zawody.txtZawodyNumer.Name = "txtZawodyNumer";
+                zawody.txtZawodyNumer.Size = new System.Drawing.Size(100, 23);
+                zawody.txtZawodyNumer.TabIndex = 0;
+                zawody.txtZawodyNumer.KeyPress += new System.Windows.Forms.KeyPressEventHandler(zawody.txtZawodyNumer_KeyPress);
+                // 
+                // dateTimeZawodyCzas
+                // 
+                zawody.dateTimeZawodyCzas.Anchor = System.Windows.Forms.AnchorStyles.None;
+                zawody.dateTimeZawodyCzas.Font = new System.Drawing.Font("Courier New", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+                zawody.dateTimeZawodyCzas.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+                zawody.dateTimeZawodyCzas.Location = new System.Drawing.Point(48, 26);
+                zawody.dateTimeZawodyCzas.Name = "dateTimeZawodyCzas";
+                zawody.dateTimeZawodyCzas.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+                zawody.dateTimeZawodyCzas.ShowUpDown = true;
+                zawody.dateTimeZawodyCzas.Size = new System.Drawing.Size(145, 30);
+                zawody.dateTimeZawodyCzas.TabIndex = 0;
+
+                zawody.ShowDialog();
+                zawody.Dispose();
+
+                mati_connect();
+                DataGridView(jakiMiesiac);
+
+            }
+
         }
     }
 }
