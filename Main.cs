@@ -6,9 +6,9 @@ using System.Threading;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
 using System.Xml;
-
-
-
+using System.Net.Http;
+using System.Net.Http.Headers;
+using System.Threading.Tasks;
 
 namespace RUN
 {
@@ -21,6 +21,8 @@ namespace RUN
         public MySqlConnection MyCon;
         public Boolean czyGodzina=false;
         private DataTable data;
+        private static readonly HttpClient client = new HttpClient();
+        
 
         public Main()
         {
@@ -115,15 +117,26 @@ namespace RUN
             this.Cursor = Cursors.WaitCursor;
             this.Cursor = this.DefaultCursor;
 
-            // kalndarz
+            // kalendarz
 
-            txtDzisData.Text = miesiacNazwa[DateTime.Now.Month] + " " + DateTime.Now.Year.ToString();
+            txtDzisData.Text = miesiacNazwa[DateTime.Now.Month-1] + " " + DateTime.Now.Year.ToString();
             txtDzisNumer.Text = DateTime.Now.Day.ToString();
             int jakiDzien = (int)DateTime.Now.DayOfWeek;
             txtDzisDzien.Text = tydzienNazwa[jakiDzien];
-            // pogoda
 
-            Weather();
+            prognoza pogoda = new prognoza();
+
+            Weather(pogoda);
+
+            string icona = pogoda.WeatherNow(DateTime.Now.Hour)[2];
+            string adres = "http://openweathermap.org/img/wn/" + icona + "@2x.png";
+            picWeather.Load(adres);
+            txtAPIOpis.Text = pogoda.WeatherNow(DateTime.Now.Hour)[3];
+            txtAPIDeszcz.Text = "opady " + pogoda.WeatherNow(DateTime.Now.Hour)[4] + " mm";
+            txtAPIWiatr.Text = "wiatr " + pogoda.WeatherNow(DateTime.Now.Hour)[5] + " m/s";
+            txtAPITemp.Text = pogoda.WeatherNow(DateTime.Now.Hour)[6] + "°C";
+            txtAPICisnienie.Text = "ciśnienie " + pogoda.WeatherNow(DateTime.Now.Hour)[7] + " hPa";
+            txtAPIWilgotnosc.Text = "wilgotność " + pogoda.WeatherNow(DateTime.Now.Hour)[8] + " %";
 
             DataTable MyTab = this.data;
 
@@ -542,89 +555,72 @@ namespace RUN
             DataGridView(dzien);
         }
 
-        private void Weather()
+
+        private void ProcessRepositories()
         {
+
+            client.DefaultRequestHeaders.Accept.Clear();
+            client.DefaultRequestHeaders.Accept.Add(
+                new MediaTypeWithQualityHeaderValue("application/XML"));
+            client.DefaultRequestHeaders.Add("User-Agent", ".NET Foundation Repository Reporter");
+
+            var stringTask = client.GetStringAsync("http://api.openweathermap.org/data/2.5/forecast?q=Boston&APPID=94a14e2fa2194f8d45bd96051905a4dd&MODE=XML");
+
+            var msg = stringTask;
+            Console.Write(msg);
+            int x = Console.Read();
+        }
+
+        private void Weather(prognoza wpiszPogoda)
+        {
+
+            ProcessRepositories();
+
             XmlReader xmlRreader = XmlReader.Create(@"c:\xxx\pogodapl.xml");
 
             while (xmlRreader.Read())
             {
-
-                if ((xmlRreader.NodeType == XmlNodeType.Element) && (xmlRreader.Name == "time")) //wartość dla daty i godziny 
+                if (xmlRreader.NodeType == XmlNodeType.Element)
                 {
-                    if (xmlRreader.HasAttributes)
+                    switch (xmlRreader.Name)
                     {
-                        int godzinaOd = Int16.Parse(xmlRreader.GetAttribute("from").Substring(11,2));
-                        int godzinaDo = Int16.Parse(xmlRreader.GetAttribute("to").Substring(11, 2));
-                        if (DateTime.Now.Hour>=godzinaOd && DateTime.Now.Hour<=godzinaDo)
-                        {
-                            czyGodzina = true;
-                        }
-                        else
-                        {
-                            czyGodzina = false;
-                        }
+                        case "time":
+                            //string dateTime = xmlRreader.GetAttribute("from");
+                            //DateTime data_od = Convert.ToDateTime(dateTime);
+                            wpiszPogoda.add_czas_od(xmlRreader.GetAttribute("from"));
+                            wpiszPogoda.add_czas_do(xmlRreader.GetAttribute("to"));
+                            break;
+                        case "symbol":
+                            wpiszPogoda.add_ikona(xmlRreader.GetAttribute("var"));
+                            wpiszPogoda.add_opis(xmlRreader.GetAttribute("name"));
+                            break;
+                        case "precipitation":
+                            if (xmlRreader.HasAttributes)
+                            {
+                                wpiszPogoda.add_opady(xmlRreader.GetAttribute("value"));
+                            }
+                            else
+                            {
+                                wpiszPogoda.add_opady("0.0");
+                            }
+                            break;
+                        case "windSpeed":
+                            wpiszPogoda.add_wiatr(xmlRreader.GetAttribute("mps"));
+                            break;
+                        case "temperature":
+                            wpiszPogoda.add_temperatura(xmlRreader.GetAttribute("value"));
+                            break;
+                        case "pressure":
+                            wpiszPogoda.add_cisnienie(xmlRreader.GetAttribute("value"));
+                            break;
+                        case "humidity":
+                            wpiszPogoda.add_wilgotnosc(xmlRreader.GetAttribute("value"));
+                            break;
                     }
-
+                    
                 }
+                
 
-                if ((xmlRreader.NodeType == XmlNodeType.Element) && (xmlRreader.Name == "symbol") && (czyGodzina==true)) //wartość dla daty i godziny 
-                {
-                    if (xmlRreader.HasAttributes)
-                    {
-                        string icona=xmlRreader.GetAttribute("var");
-                        string adres = "http://openweathermap.org/img/wn/"+icona+"@2x.png";
-                        picWeather.Load(adres);
-                        txtAPIOpis.Text= xmlRreader.GetAttribute("name");
-                    }
-
-                }
-
-                if ((xmlRreader.NodeType == XmlNodeType.Element) && (xmlRreader.Name == "precipitation") && (czyGodzina == true)) // wartość dla temperatury
-                {
-                    if (xmlRreader.HasAttributes)
-                    {
-                        txtAPIDeszcz.Text = "deszcz "+xmlRreader.GetAttribute("value") + " mm";
-                    }
-                    else
-                    {
-                        txtAPIDeszcz.Text = "deszcz 0.0 mm";
-                    }
-                }
-
-                if ((xmlRreader.NodeType == XmlNodeType.Element) && (xmlRreader.Name == "windSpeed") && (czyGodzina == true)) //wartość dla wiatru
-                {
-                    if (xmlRreader.HasAttributes)
-                    {
-                        txtAPIWiatr.Text = "wiatr "+xmlRreader.GetAttribute("mps")+" m/s";
-
-                    }
-                }
-
-                if ((xmlRreader.NodeType == XmlNodeType.Element) && (xmlRreader.Name == "temperature") && (czyGodzina == true)) //wartość dla wiatru
-                {
-                    if (xmlRreader.HasAttributes)
-                    {
-                        txtAPITemp.Text = xmlRreader.GetAttribute("value") + "°C";
-
-                    }
-                }
-
-                if ((xmlRreader.NodeType == XmlNodeType.Element) && (xmlRreader.Name == "pressure") && (czyGodzina == true)) //wartość dla wiatru
-                {
-                    if (xmlRreader.HasAttributes)
-                    {
-                        txtAPICisnienie.Text = "ciśnienie " + xmlRreader.GetAttribute("value") + " hPa";
-
-                    }
-                }
-
-                if ((xmlRreader.NodeType == XmlNodeType.Element) && (xmlRreader.Name == "humidity") && (czyGodzina == true)) //wartość dla wiatru
-                {
-                    if (xmlRreader.HasAttributes)
-                    {
-                        txtAPIWilgotnosc.Text = "wilgotność "+xmlRreader.GetAttribute("value")+" %";
-                    }
-                }
             }
         }
 

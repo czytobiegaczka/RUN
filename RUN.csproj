@@ -72,6 +72,9 @@
     <Compile Include="Oplata.Designer.cs">
       <DependentUpon>Oplata.cs</DependentUpon>
     </Compile>
+    <Compile Include="prognoza.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Typ.cs">
       <SubType>Form</SubType>
     </Compile>

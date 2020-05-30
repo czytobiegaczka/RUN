@@ -67,9 +67,56 @@
             this.splitContainer8 = new System.Windows.Forms.SplitContainer();
             this.splitContainer9 = new System.Windows.Forms.SplitContainer();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.tableLayoutPanel18 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel19 = new System.Windows.Forms.TableLayoutPanel();
+            this.txtDzisData = new System.Windows.Forms.Label();
+            this.txtDzisDzien = new System.Windows.Forms.Label();
+            this.txtDzisNumer = new System.Windows.Forms.Label();
+            this.tableLayoutPanel20 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel21 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel22 = new System.Windows.Forms.TableLayoutPanel();
+            this.txtAPITemp = new System.Windows.Forms.Label();
+            this.picWeather = new System.Windows.Forms.PictureBox();
+            this.tableLayoutPanel23 = new System.Windows.Forms.TableLayoutPanel();
+            this.txtAPIWiatr = new System.Windows.Forms.Label();
+            this.txtAPICisnienie = new System.Windows.Forms.Label();
+            this.txtAPIDeszcz = new System.Windows.Forms.Label();
+            this.txtAPIWilgotnosc = new System.Windows.Forms.Label();
+            this.txtAPIOpis = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.tableLayoutPanel12 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel13 = new System.Windows.Forms.TableLayoutPanel();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.lblDataRekMaraton = new System.Windows.Forms.Label();
+            this.lblCzasRekMaraton = new System.Windows.Forms.Label();
+            this.lblNumerRekMaraton = new System.Windows.Forms.Label();
+            this.lblNazwaRekMaraton = new System.Windows.Forms.Label();
             this.splitContainer10 = new System.Windows.Forms.SplitContainer();
             this.panel7 = new System.Windows.Forms.Panel();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.tableLayoutPanel14 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel15 = new System.Windows.Forms.TableLayoutPanel();
+            this.label24 = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
+            this.lblDataRekPolowka = new System.Windows.Forms.Label();
+            this.lblCzasRekPolowka = new System.Windows.Forms.Label();
+            this.lblNumerRekPolowka = new System.Windows.Forms.Label();
+            this.lblNazwaRekPolowka = new System.Windows.Forms.Label();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.tableLayoutPanel16 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel17 = new System.Windows.Forms.TableLayoutPanel();
+            this.label28 = new System.Windows.Forms.Label();
+            this.label29 = new System.Windows.Forms.Label();
+            this.label30 = new System.Windows.Forms.Label();
+            this.lblDataRekDycha = new System.Windows.Forms.Label();
+            this.lblCzasRekDycha = new System.Windows.Forms.Label();
+            this.lblNumerRekDycha = new System.Windows.Forms.Label();
+            this.lblNazwaRekDycha = new System.Windows.Forms.Label();
             this.tabDystans = new System.Windows.Forms.TabPage();
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
             this.grpAllKm = new System.Windows.Forms.GroupBox();
@@ -133,53 +180,6 @@
             this.label31 = new System.Windows.Forms.Label();
             this.chrWaga = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.tableLayoutPanel16 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel17 = new System.Windows.Forms.TableLayoutPanel();
-            this.label28 = new System.Windows.Forms.Label();
-            this.label29 = new System.Windows.Forms.Label();
-            this.label30 = new System.Windows.Forms.Label();
-            this.lblDataRekDycha = new System.Windows.Forms.Label();
-            this.lblCzasRekDycha = new System.Windows.Forms.Label();
-            this.lblNumerRekDycha = new System.Windows.Forms.Label();
-            this.lblNazwaRekDycha = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.tableLayoutPanel14 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel15 = new System.Windows.Forms.TableLayoutPanel();
-            this.label24 = new System.Windows.Forms.Label();
-            this.label25 = new System.Windows.Forms.Label();
-            this.label27 = new System.Windows.Forms.Label();
-            this.lblDataRekPolowka = new System.Windows.Forms.Label();
-            this.lblCzasRekPolowka = new System.Windows.Forms.Label();
-            this.lblNumerRekPolowka = new System.Windows.Forms.Label();
-            this.lblNazwaRekPolowka = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.tableLayoutPanel12 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel13 = new System.Windows.Forms.TableLayoutPanel();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.lblDataRekMaraton = new System.Windows.Forms.Label();
-            this.lblCzasRekMaraton = new System.Windows.Forms.Label();
-            this.lblNumerRekMaraton = new System.Windows.Forms.Label();
-            this.lblNazwaRekMaraton = new System.Windows.Forms.Label();
-            this.tableLayoutPanel18 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel19 = new System.Windows.Forms.TableLayoutPanel();
-            this.txtDzisNumer = new System.Windows.Forms.Label();
-            this.txtDzisDzien = new System.Windows.Forms.Label();
-            this.txtDzisData = new System.Windows.Forms.Label();
-            this.tableLayoutPanel20 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel21 = new System.Windows.Forms.TableLayoutPanel();
-            this.txtAPIOpis = new System.Windows.Forms.Label();
-            this.tableLayoutPanel22 = new System.Windows.Forms.TableLayoutPanel();
-            this.txtAPITemp = new System.Windows.Forms.Label();
-            this.tableLayoutPanel23 = new System.Windows.Forms.TableLayoutPanel();
-            this.txtAPIWiatr = new System.Windows.Forms.Label();
-            this.picWeather = new System.Windows.Forms.PictureBox();
-            this.txtAPICisnienie = new System.Windows.Forms.Label();
-            this.txtAPIDeszcz = new System.Windows.Forms.Label();
-            this.txtAPIWilgotnosc = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -209,12 +209,29 @@
             this.splitContainer9.Panel2.SuspendLayout();
             this.splitContainer9.SuspendLayout();
             this.panel5.SuspendLayout();
+            this.tableLayoutPanel18.SuspendLayout();
+            this.tableLayoutPanel19.SuspendLayout();
+            this.tableLayoutPanel20.SuspendLayout();
+            this.tableLayoutPanel21.SuspendLayout();
+            this.tableLayoutPanel22.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picWeather)).BeginInit();
+            this.tableLayoutPanel23.SuspendLayout();
             this.panel6.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            this.tableLayoutPanel12.SuspendLayout();
+            this.tableLayoutPanel13.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer10)).BeginInit();
             this.splitContainer10.Panel1.SuspendLayout();
             this.splitContainer10.Panel2.SuspendLayout();
             this.splitContainer10.SuspendLayout();
             this.panel7.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.tableLayoutPanel14.SuspendLayout();
+            this.tableLayoutPanel15.SuspendLayout();
+            this.panel8.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            this.tableLayoutPanel16.SuspendLayout();
+            this.tableLayoutPanel17.SuspendLayout();
             this.tabDystans.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).BeginInit();
             this.splitContainer3.Panel1.SuspendLayout();
@@ -250,23 +267,6 @@
             this.grpMounthKg.SuspendLayout();
             this.tableLayoutPanel11.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chrWaga)).BeginInit();
-            this.panel8.SuspendLayout();
-            this.groupBox3.SuspendLayout();
-            this.tableLayoutPanel16.SuspendLayout();
-            this.tableLayoutPanel17.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            this.tableLayoutPanel14.SuspendLayout();
-            this.tableLayoutPanel15.SuspendLayout();
-            this.groupBox1.SuspendLayout();
-            this.tableLayoutPanel12.SuspendLayout();
-            this.tableLayoutPanel13.SuspendLayout();
-            this.tableLayoutPanel18.SuspendLayout();
-            this.tableLayoutPanel19.SuspendLayout();
-            this.tableLayoutPanel20.SuspendLayout();
-            this.tableLayoutPanel21.SuspendLayout();
-            this.tableLayoutPanel22.SuspendLayout();
-            this.tableLayoutPanel23.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picWeather)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -668,6 +668,221 @@
             this.panel5.Size = new System.Drawing.Size(599, 174);
             this.panel5.TabIndex = 0;
             // 
+            // tableLayoutPanel18
+            // 
+            this.tableLayoutPanel18.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.tableLayoutPanel18.ColumnCount = 2;
+            this.tableLayoutPanel18.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35F));
+            this.tableLayoutPanel18.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 65F));
+            this.tableLayoutPanel18.Controls.Add(this.tableLayoutPanel19, 0, 0);
+            this.tableLayoutPanel18.Controls.Add(this.tableLayoutPanel20, 1, 0);
+            this.tableLayoutPanel18.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel18.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel18.Name = "tableLayoutPanel18";
+            this.tableLayoutPanel18.RowCount = 1;
+            this.tableLayoutPanel18.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel18.Size = new System.Drawing.Size(597, 172);
+            this.tableLayoutPanel18.TabIndex = 0;
+            // 
+            // tableLayoutPanel19
+            // 
+            this.tableLayoutPanel19.ColumnCount = 1;
+            this.tableLayoutPanel19.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel19.Controls.Add(this.txtDzisData, 0, 2);
+            this.tableLayoutPanel19.Controls.Add(this.txtDzisDzien, 0, 0);
+            this.tableLayoutPanel19.Controls.Add(this.txtDzisNumer, 0, 1);
+            this.tableLayoutPanel19.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel19.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel19.Name = "tableLayoutPanel19";
+            this.tableLayoutPanel19.RowCount = 3;
+            this.tableLayoutPanel19.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel19.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60F));
+            this.tableLayoutPanel19.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel19.Size = new System.Drawing.Size(202, 166);
+            this.tableLayoutPanel19.TabIndex = 0;
+            // 
+            // txtDzisData
+            // 
+            this.txtDzisData.AutoSize = true;
+            this.txtDzisData.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtDzisData.Location = new System.Drawing.Point(3, 132);
+            this.txtDzisData.Name = "txtDzisData";
+            this.txtDzisData.Size = new System.Drawing.Size(196, 34);
+            this.txtDzisData.TabIndex = 9;
+            this.txtDzisData.Text = "label32";
+            this.txtDzisData.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // txtDzisDzien
+            // 
+            this.txtDzisDzien.AutoSize = true;
+            this.txtDzisDzien.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtDzisDzien.Font = new System.Drawing.Font("Courier New", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.txtDzisDzien.Location = new System.Drawing.Point(3, 0);
+            this.txtDzisDzien.Name = "txtDzisDzien";
+            this.txtDzisDzien.Size = new System.Drawing.Size(196, 33);
+            this.txtDzisDzien.TabIndex = 5;
+            this.txtDzisDzien.Text = "label33";
+            this.txtDzisDzien.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // txtDzisNumer
+            // 
+            this.txtDzisNumer.AutoSize = true;
+            this.txtDzisNumer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtDzisNumer.Font = new System.Drawing.Font("Courier New", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.txtDzisNumer.Location = new System.Drawing.Point(3, 33);
+            this.txtDzisNumer.Name = "txtDzisNumer";
+            this.txtDzisNumer.Size = new System.Drawing.Size(196, 99);
+            this.txtDzisNumer.TabIndex = 4;
+            this.txtDzisNumer.Text = "label33";
+            this.txtDzisNumer.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // tableLayoutPanel20
+            // 
+            this.tableLayoutPanel20.ColumnCount = 1;
+            this.tableLayoutPanel20.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel20.Controls.Add(this.tableLayoutPanel21, 0, 0);
+            this.tableLayoutPanel20.Controls.Add(this.txtAPIOpis, 0, 1);
+            this.tableLayoutPanel20.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel20.Location = new System.Drawing.Point(211, 3);
+            this.tableLayoutPanel20.Name = "tableLayoutPanel20";
+            this.tableLayoutPanel20.RowCount = 2;
+            this.tableLayoutPanel20.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 80F));
+            this.tableLayoutPanel20.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel20.Size = new System.Drawing.Size(383, 166);
+            this.tableLayoutPanel20.TabIndex = 1;
+            // 
+            // tableLayoutPanel21
+            // 
+            this.tableLayoutPanel21.ColumnCount = 2;
+            this.tableLayoutPanel21.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 42F));
+            this.tableLayoutPanel21.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 58F));
+            this.tableLayoutPanel21.Controls.Add(this.tableLayoutPanel22, 0, 0);
+            this.tableLayoutPanel21.Controls.Add(this.tableLayoutPanel23, 1, 0);
+            this.tableLayoutPanel21.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel21.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel21.Name = "tableLayoutPanel21";
+            this.tableLayoutPanel21.RowCount = 1;
+            this.tableLayoutPanel21.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel21.Size = new System.Drawing.Size(377, 126);
+            this.tableLayoutPanel21.TabIndex = 0;
+            // 
+            // tableLayoutPanel22
+            // 
+            this.tableLayoutPanel22.ColumnCount = 1;
+            this.tableLayoutPanel22.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel22.Controls.Add(this.txtAPITemp, 0, 0);
+            this.tableLayoutPanel22.Controls.Add(this.picWeather, 0, 1);
+            this.tableLayoutPanel22.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel22.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel22.Name = "tableLayoutPanel22";
+            this.tableLayoutPanel22.RowCount = 2;
+            this.tableLayoutPanel22.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
+            this.tableLayoutPanel22.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60F));
+            this.tableLayoutPanel22.Size = new System.Drawing.Size(152, 120);
+            this.tableLayoutPanel22.TabIndex = 1;
+            // 
+            // txtAPITemp
+            // 
+            this.txtAPITemp.AutoSize = true;
+            this.txtAPITemp.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtAPITemp.Font = new System.Drawing.Font("Courier New", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.txtAPITemp.Location = new System.Drawing.Point(3, 0);
+            this.txtAPITemp.Name = "txtAPITemp";
+            this.txtAPITemp.Size = new System.Drawing.Size(146, 48);
+            this.txtAPITemp.TabIndex = 0;
+            this.txtAPITemp.Text = "label32";
+            this.txtAPITemp.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // picWeather
+            // 
+            this.picWeather.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.picWeather.Location = new System.Drawing.Point(3, 51);
+            this.picWeather.Name = "picWeather";
+            this.picWeather.Size = new System.Drawing.Size(146, 66);
+            this.picWeather.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.picWeather.TabIndex = 1;
+            this.picWeather.TabStop = false;
+            // 
+            // tableLayoutPanel23
+            // 
+            this.tableLayoutPanel23.ColumnCount = 1;
+            this.tableLayoutPanel23.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel23.Controls.Add(this.txtAPIWiatr, 0, 0);
+            this.tableLayoutPanel23.Controls.Add(this.txtAPICisnienie, 0, 1);
+            this.tableLayoutPanel23.Controls.Add(this.txtAPIDeszcz, 0, 2);
+            this.tableLayoutPanel23.Controls.Add(this.txtAPIWilgotnosc, 0, 3);
+            this.tableLayoutPanel23.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel23.Location = new System.Drawing.Point(161, 3);
+            this.tableLayoutPanel23.Name = "tableLayoutPanel23";
+            this.tableLayoutPanel23.RowCount = 4;
+            this.tableLayoutPanel23.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel23.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel23.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel23.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel23.Size = new System.Drawing.Size(213, 120);
+            this.tableLayoutPanel23.TabIndex = 2;
+            // 
+            // txtAPIWiatr
+            // 
+            this.txtAPIWiatr.AutoSize = true;
+            this.txtAPIWiatr.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtAPIWiatr.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.txtAPIWiatr.Location = new System.Drawing.Point(3, 0);
+            this.txtAPIWiatr.Name = "txtAPIWiatr";
+            this.txtAPIWiatr.Size = new System.Drawing.Size(207, 30);
+            this.txtAPIWiatr.TabIndex = 2;
+            this.txtAPIWiatr.Text = "label32";
+            this.txtAPIWiatr.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // txtAPICisnienie
+            // 
+            this.txtAPICisnienie.AutoSize = true;
+            this.txtAPICisnienie.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtAPICisnienie.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.txtAPICisnienie.Location = new System.Drawing.Point(3, 30);
+            this.txtAPICisnienie.Name = "txtAPICisnienie";
+            this.txtAPICisnienie.Size = new System.Drawing.Size(207, 30);
+            this.txtAPICisnienie.TabIndex = 3;
+            this.txtAPICisnienie.Text = "label32";
+            this.txtAPICisnienie.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // txtAPIDeszcz
+            // 
+            this.txtAPIDeszcz.AutoSize = true;
+            this.txtAPIDeszcz.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtAPIDeszcz.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.txtAPIDeszcz.Location = new System.Drawing.Point(3, 60);
+            this.txtAPIDeszcz.Name = "txtAPIDeszcz";
+            this.txtAPIDeszcz.Size = new System.Drawing.Size(207, 30);
+            this.txtAPIDeszcz.TabIndex = 3;
+            this.txtAPIDeszcz.Text = "label32";
+            this.txtAPIDeszcz.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // txtAPIWilgotnosc
+            // 
+            this.txtAPIWilgotnosc.AutoSize = true;
+            this.txtAPIWilgotnosc.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtAPIWilgotnosc.Font = new System.Drawing.Font("Courier New", 9.75F);
+            this.txtAPIWilgotnosc.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.txtAPIWilgotnosc.Location = new System.Drawing.Point(3, 90);
+            this.txtAPIWilgotnosc.Name = "txtAPIWilgotnosc";
+            this.txtAPIWilgotnosc.Size = new System.Drawing.Size(207, 30);
+            this.txtAPIWilgotnosc.TabIndex = 4;
+            this.txtAPIWilgotnosc.Text = "label32";
+            this.txtAPIWilgotnosc.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // txtAPIOpis
+            // 
+            this.txtAPIOpis.AutoSize = true;
+            this.txtAPIOpis.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtAPIOpis.Font = new System.Drawing.Font("Courier New", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.txtAPIOpis.Location = new System.Drawing.Point(3, 132);
+            this.txtAPIOpis.Name = "txtAPIOpis";
+            this.txtAPIOpis.Size = new System.Drawing.Size(377, 34);
+            this.txtAPIOpis.TabIndex = 1;
+            this.txtAPIOpis.Text = "label32";
+            this.txtAPIOpis.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.MintCream;
@@ -678,6 +893,131 @@
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(599, 171);
             this.panel6.TabIndex = 0;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.tableLayoutPanel12);
+            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox1.Location = new System.Drawing.Point(0, 0);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(597, 169);
+            this.groupBox1.TabIndex = 1;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "maraton";
+            // 
+            // tableLayoutPanel12
+            // 
+            this.tableLayoutPanel12.ColumnCount = 1;
+            this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel12.Controls.Add(this.tableLayoutPanel13, 0, 1);
+            this.tableLayoutPanel12.Controls.Add(this.lblNazwaRekMaraton, 0, 0);
+            this.tableLayoutPanel12.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel12.Location = new System.Drawing.Point(3, 26);
+            this.tableLayoutPanel12.Name = "tableLayoutPanel12";
+            this.tableLayoutPanel12.RowCount = 2;
+            this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 75F));
+            this.tableLayoutPanel12.Size = new System.Drawing.Size(591, 140);
+            this.tableLayoutPanel12.TabIndex = 0;
+            // 
+            // tableLayoutPanel13
+            // 
+            this.tableLayoutPanel13.ColumnCount = 3;
+            this.tableLayoutPanel13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 45F));
+            this.tableLayoutPanel13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            this.tableLayoutPanel13.Controls.Add(this.label12, 0, 0);
+            this.tableLayoutPanel13.Controls.Add(this.label17, 0, 1);
+            this.tableLayoutPanel13.Controls.Add(this.label20, 0, 2);
+            this.tableLayoutPanel13.Controls.Add(this.lblDataRekMaraton, 1, 0);
+            this.tableLayoutPanel13.Controls.Add(this.lblCzasRekMaraton, 1, 1);
+            this.tableLayoutPanel13.Controls.Add(this.lblNumerRekMaraton, 1, 2);
+            this.tableLayoutPanel13.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel13.Location = new System.Drawing.Point(3, 38);
+            this.tableLayoutPanel13.Name = "tableLayoutPanel13";
+            this.tableLayoutPanel13.RowCount = 3;
+            this.tableLayoutPanel13.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel13.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel13.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel13.Size = new System.Drawing.Size(585, 99);
+            this.tableLayoutPanel13.TabIndex = 0;
+            // 
+            // label12
+            // 
+            this.label12.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Courier New", 11.25F, System.Drawing.FontStyle.Bold);
+            this.label12.Location = new System.Drawing.Point(90, 8);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(53, 17);
+            this.label12.TabIndex = 0;
+            this.label12.Text = "data:";
+            // 
+            // label17
+            // 
+            this.label17.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Courier New", 11.25F, System.Drawing.FontStyle.Bold);
+            this.label17.Location = new System.Drawing.Point(90, 41);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(53, 17);
+            this.label17.TabIndex = 0;
+            this.label17.Text = "czas:";
+            // 
+            // label20
+            // 
+            this.label20.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Courier New", 11.25F, System.Drawing.FontStyle.Bold);
+            this.label20.Location = new System.Drawing.Point(81, 74);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(62, 17);
+            this.label20.TabIndex = 0;
+            this.label20.Text = "numer:";
+            // 
+            // lblDataRekMaraton
+            // 
+            this.lblDataRekMaraton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblDataRekMaraton.AutoSize = true;
+            this.lblDataRekMaraton.Font = new System.Drawing.Font("Courier New", 11.25F, System.Drawing.FontStyle.Bold);
+            this.lblDataRekMaraton.Location = new System.Drawing.Point(242, 8);
+            this.lblDataRekMaraton.Name = "lblDataRekMaraton";
+            this.lblDataRekMaraton.Size = new System.Drawing.Size(71, 17);
+            this.lblDataRekMaraton.TabIndex = 1;
+            this.lblDataRekMaraton.Text = "label24";
+            // 
+            // lblCzasRekMaraton
+            // 
+            this.lblCzasRekMaraton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblCzasRekMaraton.AutoSize = true;
+            this.lblCzasRekMaraton.Font = new System.Drawing.Font("Courier New", 11.25F, System.Drawing.FontStyle.Bold);
+            this.lblCzasRekMaraton.Location = new System.Drawing.Point(242, 41);
+            this.lblCzasRekMaraton.Name = "lblCzasRekMaraton";
+            this.lblCzasRekMaraton.Size = new System.Drawing.Size(71, 17);
+            this.lblCzasRekMaraton.TabIndex = 1;
+            this.lblCzasRekMaraton.Text = "label24";
+            // 
+            // lblNumerRekMaraton
+            // 
+            this.lblNumerRekMaraton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblNumerRekMaraton.AutoSize = true;
+            this.lblNumerRekMaraton.Font = new System.Drawing.Font("Courier New", 11.25F, System.Drawing.FontStyle.Bold);
+            this.lblNumerRekMaraton.Location = new System.Drawing.Point(242, 74);
+            this.lblNumerRekMaraton.Name = "lblNumerRekMaraton";
+            this.lblNumerRekMaraton.Size = new System.Drawing.Size(71, 17);
+            this.lblNumerRekMaraton.TabIndex = 1;
+            this.lblNumerRekMaraton.Text = "label24";
+            // 
+            // lblNazwaRekMaraton
+            // 
+            this.lblNazwaRekMaraton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblNazwaRekMaraton.AutoSize = true;
+            this.lblNazwaRekMaraton.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblNazwaRekMaraton.Location = new System.Drawing.Point(252, 6);
+            this.lblNazwaRekMaraton.Name = "lblNazwaRekMaraton";
+            this.lblNazwaRekMaraton.Size = new System.Drawing.Size(87, 22);
+            this.lblNazwaRekMaraton.TabIndex = 1;
+            this.lblNazwaRekMaraton.Text = "label12";
             // 
             // splitContainer10
             // 
@@ -707,6 +1047,267 @@
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(599, 173);
             this.panel7.TabIndex = 0;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.tableLayoutPanel14);
+            this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox2.Location = new System.Drawing.Point(0, 0);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(597, 171);
+            this.groupBox2.TabIndex = 1;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "półmaraton";
+            // 
+            // tableLayoutPanel14
+            // 
+            this.tableLayoutPanel14.ColumnCount = 1;
+            this.tableLayoutPanel14.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel14.Controls.Add(this.tableLayoutPanel15, 0, 1);
+            this.tableLayoutPanel14.Controls.Add(this.lblNazwaRekPolowka, 0, 0);
+            this.tableLayoutPanel14.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel14.Location = new System.Drawing.Point(3, 26);
+            this.tableLayoutPanel14.Name = "tableLayoutPanel14";
+            this.tableLayoutPanel14.RowCount = 2;
+            this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 75F));
+            this.tableLayoutPanel14.Size = new System.Drawing.Size(591, 142);
+            this.tableLayoutPanel14.TabIndex = 1;
+            // 
+            // tableLayoutPanel15
+            // 
+            this.tableLayoutPanel15.ColumnCount = 3;
+            this.tableLayoutPanel15.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel15.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 45F));
+            this.tableLayoutPanel15.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            this.tableLayoutPanel15.Controls.Add(this.label24, 0, 0);
+            this.tableLayoutPanel15.Controls.Add(this.label25, 0, 1);
+            this.tableLayoutPanel15.Controls.Add(this.label27, 0, 2);
+            this.tableLayoutPanel15.Controls.Add(this.lblDataRekPolowka, 1, 0);
+            this.tableLayoutPanel15.Controls.Add(this.lblCzasRekPolowka, 1, 1);
+            this.tableLayoutPanel15.Controls.Add(this.lblNumerRekPolowka, 1, 2);
+            this.tableLayoutPanel15.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel15.Location = new System.Drawing.Point(3, 38);
+            this.tableLayoutPanel15.Name = "tableLayoutPanel15";
+            this.tableLayoutPanel15.RowCount = 3;
+            this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel15.Size = new System.Drawing.Size(585, 101);
+            this.tableLayoutPanel15.TabIndex = 0;
+            // 
+            // label24
+            // 
+            this.label24.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Courier New", 11.25F, System.Drawing.FontStyle.Bold);
+            this.label24.Location = new System.Drawing.Point(90, 8);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(53, 17);
+            this.label24.TabIndex = 0;
+            this.label24.Text = "data:";
+            // 
+            // label25
+            // 
+            this.label25.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.label25.AutoSize = true;
+            this.label25.Font = new System.Drawing.Font("Courier New", 11.25F, System.Drawing.FontStyle.Bold);
+            this.label25.Location = new System.Drawing.Point(90, 41);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(53, 17);
+            this.label25.TabIndex = 0;
+            this.label25.Text = "czas:";
+            // 
+            // label27
+            // 
+            this.label27.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.label27.AutoSize = true;
+            this.label27.Font = new System.Drawing.Font("Courier New", 11.25F, System.Drawing.FontStyle.Bold);
+            this.label27.Location = new System.Drawing.Point(81, 75);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(62, 17);
+            this.label27.TabIndex = 0;
+            this.label27.Text = "numer:";
+            // 
+            // lblDataRekPolowka
+            // 
+            this.lblDataRekPolowka.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblDataRekPolowka.AutoSize = true;
+            this.lblDataRekPolowka.Font = new System.Drawing.Font("Courier New", 11.25F, System.Drawing.FontStyle.Bold);
+            this.lblDataRekPolowka.Location = new System.Drawing.Point(242, 8);
+            this.lblDataRekPolowka.Name = "lblDataRekPolowka";
+            this.lblDataRekPolowka.Size = new System.Drawing.Size(71, 17);
+            this.lblDataRekPolowka.TabIndex = 1;
+            this.lblDataRekPolowka.Text = "label24";
+            // 
+            // lblCzasRekPolowka
+            // 
+            this.lblCzasRekPolowka.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblCzasRekPolowka.AutoSize = true;
+            this.lblCzasRekPolowka.Font = new System.Drawing.Font("Courier New", 11.25F, System.Drawing.FontStyle.Bold);
+            this.lblCzasRekPolowka.Location = new System.Drawing.Point(242, 41);
+            this.lblCzasRekPolowka.Name = "lblCzasRekPolowka";
+            this.lblCzasRekPolowka.Size = new System.Drawing.Size(71, 17);
+            this.lblCzasRekPolowka.TabIndex = 1;
+            this.lblCzasRekPolowka.Text = "label24";
+            // 
+            // lblNumerRekPolowka
+            // 
+            this.lblNumerRekPolowka.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblNumerRekPolowka.AutoSize = true;
+            this.lblNumerRekPolowka.Font = new System.Drawing.Font("Courier New", 11.25F, System.Drawing.FontStyle.Bold);
+            this.lblNumerRekPolowka.Location = new System.Drawing.Point(242, 75);
+            this.lblNumerRekPolowka.Name = "lblNumerRekPolowka";
+            this.lblNumerRekPolowka.Size = new System.Drawing.Size(71, 17);
+            this.lblNumerRekPolowka.TabIndex = 1;
+            this.lblNumerRekPolowka.Text = "label24";
+            // 
+            // lblNazwaRekPolowka
+            // 
+            this.lblNazwaRekPolowka.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblNazwaRekPolowka.AutoSize = true;
+            this.lblNazwaRekPolowka.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblNazwaRekPolowka.Location = new System.Drawing.Point(252, 6);
+            this.lblNazwaRekPolowka.Name = "lblNazwaRekPolowka";
+            this.lblNazwaRekPolowka.Size = new System.Drawing.Size(87, 22);
+            this.lblNazwaRekPolowka.TabIndex = 1;
+            this.lblNazwaRekPolowka.Text = "label12";
+            // 
+            // panel8
+            // 
+            this.panel8.BackColor = System.Drawing.Color.MintCream;
+            this.panel8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel8.Controls.Add(this.groupBox3);
+            this.panel8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel8.Location = new System.Drawing.Point(0, 0);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(599, 168);
+            this.panel8.TabIndex = 0;
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.tableLayoutPanel16);
+            this.groupBox3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox3.Location = new System.Drawing.Point(0, 0);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(597, 166);
+            this.groupBox3.TabIndex = 3;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "10 km";
+            // 
+            // tableLayoutPanel16
+            // 
+            this.tableLayoutPanel16.ColumnCount = 1;
+            this.tableLayoutPanel16.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel16.Controls.Add(this.tableLayoutPanel17, 0, 1);
+            this.tableLayoutPanel16.Controls.Add(this.lblNazwaRekDycha, 0, 0);
+            this.tableLayoutPanel16.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel16.Location = new System.Drawing.Point(3, 26);
+            this.tableLayoutPanel16.Name = "tableLayoutPanel16";
+            this.tableLayoutPanel16.RowCount = 2;
+            this.tableLayoutPanel16.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel16.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 75F));
+            this.tableLayoutPanel16.Size = new System.Drawing.Size(591, 137);
+            this.tableLayoutPanel16.TabIndex = 2;
+            // 
+            // tableLayoutPanel17
+            // 
+            this.tableLayoutPanel17.ColumnCount = 3;
+            this.tableLayoutPanel17.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel17.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 45F));
+            this.tableLayoutPanel17.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            this.tableLayoutPanel17.Controls.Add(this.label28, 0, 0);
+            this.tableLayoutPanel17.Controls.Add(this.label29, 0, 1);
+            this.tableLayoutPanel17.Controls.Add(this.label30, 0, 2);
+            this.tableLayoutPanel17.Controls.Add(this.lblDataRekDycha, 1, 0);
+            this.tableLayoutPanel17.Controls.Add(this.lblCzasRekDycha, 1, 1);
+            this.tableLayoutPanel17.Controls.Add(this.lblNumerRekDycha, 1, 2);
+            this.tableLayoutPanel17.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel17.Location = new System.Drawing.Point(3, 37);
+            this.tableLayoutPanel17.Name = "tableLayoutPanel17";
+            this.tableLayoutPanel17.RowCount = 3;
+            this.tableLayoutPanel17.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel17.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel17.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel17.Size = new System.Drawing.Size(585, 97);
+            this.tableLayoutPanel17.TabIndex = 0;
+            // 
+            // label28
+            // 
+            this.label28.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.label28.AutoSize = true;
+            this.label28.Font = new System.Drawing.Font("Courier New", 11.25F, System.Drawing.FontStyle.Bold);
+            this.label28.Location = new System.Drawing.Point(90, 7);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(53, 17);
+            this.label28.TabIndex = 0;
+            this.label28.Text = "data:";
+            // 
+            // label29
+            // 
+            this.label29.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.label29.AutoSize = true;
+            this.label29.Font = new System.Drawing.Font("Courier New", 11.25F, System.Drawing.FontStyle.Bold);
+            this.label29.Location = new System.Drawing.Point(90, 39);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(53, 17);
+            this.label29.TabIndex = 0;
+            this.label29.Text = "czas:";
+            // 
+            // label30
+            // 
+            this.label30.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.label30.AutoSize = true;
+            this.label30.Font = new System.Drawing.Font("Courier New", 11.25F, System.Drawing.FontStyle.Bold);
+            this.label30.Location = new System.Drawing.Point(81, 72);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(62, 17);
+            this.label30.TabIndex = 0;
+            this.label30.Text = "numer:";
+            // 
+            // lblDataRekDycha
+            // 
+            this.lblDataRekDycha.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblDataRekDycha.AutoSize = true;
+            this.lblDataRekDycha.Font = new System.Drawing.Font("Courier New", 11.25F, System.Drawing.FontStyle.Bold);
+            this.lblDataRekDycha.Location = new System.Drawing.Point(242, 7);
+            this.lblDataRekDycha.Name = "lblDataRekDycha";
+            this.lblDataRekDycha.Size = new System.Drawing.Size(71, 17);
+            this.lblDataRekDycha.TabIndex = 1;
+            this.lblDataRekDycha.Text = "label24";
+            // 
+            // lblCzasRekDycha
+            // 
+            this.lblCzasRekDycha.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblCzasRekDycha.AutoSize = true;
+            this.lblCzasRekDycha.Font = new System.Drawing.Font("Courier New", 11.25F, System.Drawing.FontStyle.Bold);
+            this.lblCzasRekDycha.Location = new System.Drawing.Point(242, 39);
+            this.lblCzasRekDycha.Name = "lblCzasRekDycha";
+            this.lblCzasRekDycha.Size = new System.Drawing.Size(71, 17);
+            this.lblCzasRekDycha.TabIndex = 1;
+            this.lblCzasRekDycha.Text = "label24";
+            // 
+            // lblNumerRekDycha
+            // 
+            this.lblNumerRekDycha.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblNumerRekDycha.AutoSize = true;
+            this.lblNumerRekDycha.Font = new System.Drawing.Font("Courier New", 11.25F, System.Drawing.FontStyle.Bold);
+            this.lblNumerRekDycha.Location = new System.Drawing.Point(242, 72);
+            this.lblNumerRekDycha.Name = "lblNumerRekDycha";
+            this.lblNumerRekDycha.Size = new System.Drawing.Size(71, 17);
+            this.lblNumerRekDycha.TabIndex = 1;
+            this.lblNumerRekDycha.Text = "label24";
+            // 
+            // lblNazwaRekDycha
+            // 
+            this.lblNazwaRekDycha.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblNazwaRekDycha.AutoSize = true;
+            this.lblNazwaRekDycha.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblNazwaRekDycha.Location = new System.Drawing.Point(252, 6);
+            this.lblNazwaRekDycha.Name = "lblNazwaRekDycha";
+            this.lblNazwaRekDycha.Size = new System.Drawing.Size(87, 22);
+            this.lblNazwaRekDycha.TabIndex = 1;
+            this.lblNazwaRekDycha.Text = "label12";
             // 
             // tabDystans
             // 
@@ -1533,606 +2134,6 @@
             this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
             this.dataGridViewImageColumn1.ReadOnly = true;
             // 
-            // panel8
-            // 
-            this.panel8.BackColor = System.Drawing.Color.MintCream;
-            this.panel8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel8.Controls.Add(this.groupBox3);
-            this.panel8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel8.Location = new System.Drawing.Point(0, 0);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(599, 168);
-            this.panel8.TabIndex = 0;
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.tableLayoutPanel16);
-            this.groupBox3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox3.Location = new System.Drawing.Point(0, 0);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(597, 166);
-            this.groupBox3.TabIndex = 3;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "10 km";
-            // 
-            // tableLayoutPanel16
-            // 
-            this.tableLayoutPanel16.ColumnCount = 1;
-            this.tableLayoutPanel16.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel16.Controls.Add(this.tableLayoutPanel17, 0, 1);
-            this.tableLayoutPanel16.Controls.Add(this.lblNazwaRekDycha, 0, 0);
-            this.tableLayoutPanel16.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel16.Location = new System.Drawing.Point(3, 26);
-            this.tableLayoutPanel16.Name = "tableLayoutPanel16";
-            this.tableLayoutPanel16.RowCount = 2;
-            this.tableLayoutPanel16.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel16.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 75F));
-            this.tableLayoutPanel16.Size = new System.Drawing.Size(591, 137);
-            this.tableLayoutPanel16.TabIndex = 2;
-            // 
-            // tableLayoutPanel17
-            // 
-            this.tableLayoutPanel17.ColumnCount = 3;
-            this.tableLayoutPanel17.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel17.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 45F));
-            this.tableLayoutPanel17.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
-            this.tableLayoutPanel17.Controls.Add(this.label28, 0, 0);
-            this.tableLayoutPanel17.Controls.Add(this.label29, 0, 1);
-            this.tableLayoutPanel17.Controls.Add(this.label30, 0, 2);
-            this.tableLayoutPanel17.Controls.Add(this.lblDataRekDycha, 1, 0);
-            this.tableLayoutPanel17.Controls.Add(this.lblCzasRekDycha, 1, 1);
-            this.tableLayoutPanel17.Controls.Add(this.lblNumerRekDycha, 1, 2);
-            this.tableLayoutPanel17.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel17.Location = new System.Drawing.Point(3, 37);
-            this.tableLayoutPanel17.Name = "tableLayoutPanel17";
-            this.tableLayoutPanel17.RowCount = 3;
-            this.tableLayoutPanel17.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel17.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel17.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel17.Size = new System.Drawing.Size(585, 97);
-            this.tableLayoutPanel17.TabIndex = 0;
-            // 
-            // label28
-            // 
-            this.label28.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.label28.AutoSize = true;
-            this.label28.Font = new System.Drawing.Font("Courier New", 11.25F, System.Drawing.FontStyle.Bold);
-            this.label28.Location = new System.Drawing.Point(90, 7);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(53, 17);
-            this.label28.TabIndex = 0;
-            this.label28.Text = "data:";
-            // 
-            // label29
-            // 
-            this.label29.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.label29.AutoSize = true;
-            this.label29.Font = new System.Drawing.Font("Courier New", 11.25F, System.Drawing.FontStyle.Bold);
-            this.label29.Location = new System.Drawing.Point(90, 39);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(53, 17);
-            this.label29.TabIndex = 0;
-            this.label29.Text = "czas:";
-            // 
-            // label30
-            // 
-            this.label30.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.label30.AutoSize = true;
-            this.label30.Font = new System.Drawing.Font("Courier New", 11.25F, System.Drawing.FontStyle.Bold);
-            this.label30.Location = new System.Drawing.Point(81, 72);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(62, 17);
-            this.label30.TabIndex = 0;
-            this.label30.Text = "numer:";
-            // 
-            // lblDataRekDycha
-            // 
-            this.lblDataRekDycha.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblDataRekDycha.AutoSize = true;
-            this.lblDataRekDycha.Font = new System.Drawing.Font("Courier New", 11.25F, System.Drawing.FontStyle.Bold);
-            this.lblDataRekDycha.Location = new System.Drawing.Point(242, 7);
-            this.lblDataRekDycha.Name = "lblDataRekDycha";
-            this.lblDataRekDycha.Size = new System.Drawing.Size(71, 17);
-            this.lblDataRekDycha.TabIndex = 1;
-            this.lblDataRekDycha.Text = "label24";
-            // 
-            // lblCzasRekDycha
-            // 
-            this.lblCzasRekDycha.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblCzasRekDycha.AutoSize = true;
-            this.lblCzasRekDycha.Font = new System.Drawing.Font("Courier New", 11.25F, System.Drawing.FontStyle.Bold);
-            this.lblCzasRekDycha.Location = new System.Drawing.Point(242, 39);
-            this.lblCzasRekDycha.Name = "lblCzasRekDycha";
-            this.lblCzasRekDycha.Size = new System.Drawing.Size(71, 17);
-            this.lblCzasRekDycha.TabIndex = 1;
-            this.lblCzasRekDycha.Text = "label24";
-            // 
-            // lblNumerRekDycha
-            // 
-            this.lblNumerRekDycha.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblNumerRekDycha.AutoSize = true;
-            this.lblNumerRekDycha.Font = new System.Drawing.Font("Courier New", 11.25F, System.Drawing.FontStyle.Bold);
-            this.lblNumerRekDycha.Location = new System.Drawing.Point(242, 72);
-            this.lblNumerRekDycha.Name = "lblNumerRekDycha";
-            this.lblNumerRekDycha.Size = new System.Drawing.Size(71, 17);
-            this.lblNumerRekDycha.TabIndex = 1;
-            this.lblNumerRekDycha.Text = "label24";
-            // 
-            // lblNazwaRekDycha
-            // 
-            this.lblNazwaRekDycha.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblNazwaRekDycha.AutoSize = true;
-            this.lblNazwaRekDycha.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblNazwaRekDycha.Location = new System.Drawing.Point(252, 6);
-            this.lblNazwaRekDycha.Name = "lblNazwaRekDycha";
-            this.lblNazwaRekDycha.Size = new System.Drawing.Size(87, 22);
-            this.lblNazwaRekDycha.TabIndex = 1;
-            this.lblNazwaRekDycha.Text = "label12";
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.tableLayoutPanel14);
-            this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox2.Location = new System.Drawing.Point(0, 0);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(597, 171);
-            this.groupBox2.TabIndex = 1;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "półmaraton";
-            // 
-            // tableLayoutPanel14
-            // 
-            this.tableLayoutPanel14.ColumnCount = 1;
-            this.tableLayoutPanel14.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel14.Controls.Add(this.tableLayoutPanel15, 0, 1);
-            this.tableLayoutPanel14.Controls.Add(this.lblNazwaRekPolowka, 0, 0);
-            this.tableLayoutPanel14.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel14.Location = new System.Drawing.Point(3, 26);
-            this.tableLayoutPanel14.Name = "tableLayoutPanel14";
-            this.tableLayoutPanel14.RowCount = 2;
-            this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 75F));
-            this.tableLayoutPanel14.Size = new System.Drawing.Size(591, 142);
-            this.tableLayoutPanel14.TabIndex = 1;
-            // 
-            // tableLayoutPanel15
-            // 
-            this.tableLayoutPanel15.ColumnCount = 3;
-            this.tableLayoutPanel15.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel15.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 45F));
-            this.tableLayoutPanel15.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
-            this.tableLayoutPanel15.Controls.Add(this.label24, 0, 0);
-            this.tableLayoutPanel15.Controls.Add(this.label25, 0, 1);
-            this.tableLayoutPanel15.Controls.Add(this.label27, 0, 2);
-            this.tableLayoutPanel15.Controls.Add(this.lblDataRekPolowka, 1, 0);
-            this.tableLayoutPanel15.Controls.Add(this.lblCzasRekPolowka, 1, 1);
-            this.tableLayoutPanel15.Controls.Add(this.lblNumerRekPolowka, 1, 2);
-            this.tableLayoutPanel15.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel15.Location = new System.Drawing.Point(3, 38);
-            this.tableLayoutPanel15.Name = "tableLayoutPanel15";
-            this.tableLayoutPanel15.RowCount = 3;
-            this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel15.Size = new System.Drawing.Size(585, 101);
-            this.tableLayoutPanel15.TabIndex = 0;
-            // 
-            // label24
-            // 
-            this.label24.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.label24.AutoSize = true;
-            this.label24.Font = new System.Drawing.Font("Courier New", 11.25F, System.Drawing.FontStyle.Bold);
-            this.label24.Location = new System.Drawing.Point(90, 8);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(53, 17);
-            this.label24.TabIndex = 0;
-            this.label24.Text = "data:";
-            // 
-            // label25
-            // 
-            this.label25.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.label25.AutoSize = true;
-            this.label25.Font = new System.Drawing.Font("Courier New", 11.25F, System.Drawing.FontStyle.Bold);
-            this.label25.Location = new System.Drawing.Point(90, 41);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(53, 17);
-            this.label25.TabIndex = 0;
-            this.label25.Text = "czas:";
-            // 
-            // label27
-            // 
-            this.label27.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.label27.AutoSize = true;
-            this.label27.Font = new System.Drawing.Font("Courier New", 11.25F, System.Drawing.FontStyle.Bold);
-            this.label27.Location = new System.Drawing.Point(81, 75);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(62, 17);
-            this.label27.TabIndex = 0;
-            this.label27.Text = "numer:";
-            // 
-            // lblDataRekPolowka
-            // 
-            this.lblDataRekPolowka.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblDataRekPolowka.AutoSize = true;
-            this.lblDataRekPolowka.Font = new System.Drawing.Font("Courier New", 11.25F, System.Drawing.FontStyle.Bold);
-            this.lblDataRekPolowka.Location = new System.Drawing.Point(242, 8);
-            this.lblDataRekPolowka.Name = "lblDataRekPolowka";
-            this.lblDataRekPolowka.Size = new System.Drawing.Size(71, 17);
-            this.lblDataRekPolowka.TabIndex = 1;
-            this.lblDataRekPolowka.Text = "label24";
-            // 
-            // lblCzasRekPolowka
-            // 
-            this.lblCzasRekPolowka.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblCzasRekPolowka.AutoSize = true;
-            this.lblCzasRekPolowka.Font = new System.Drawing.Font("Courier New", 11.25F, System.Drawing.FontStyle.Bold);
-            this.lblCzasRekPolowka.Location = new System.Drawing.Point(242, 41);
-            this.lblCzasRekPolowka.Name = "lblCzasRekPolowka";
-            this.lblCzasRekPolowka.Size = new System.Drawing.Size(71, 17);
-            this.lblCzasRekPolowka.TabIndex = 1;
-            this.lblCzasRekPolowka.Text = "label24";
-            // 
-            // lblNumerRekPolowka
-            // 
-            this.lblNumerRekPolowka.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblNumerRekPolowka.AutoSize = true;
-            this.lblNumerRekPolowka.Font = new System.Drawing.Font("Courier New", 11.25F, System.Drawing.FontStyle.Bold);
-            this.lblNumerRekPolowka.Location = new System.Drawing.Point(242, 75);
-            this.lblNumerRekPolowka.Name = "lblNumerRekPolowka";
-            this.lblNumerRekPolowka.Size = new System.Drawing.Size(71, 17);
-            this.lblNumerRekPolowka.TabIndex = 1;
-            this.lblNumerRekPolowka.Text = "label24";
-            // 
-            // lblNazwaRekPolowka
-            // 
-            this.lblNazwaRekPolowka.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblNazwaRekPolowka.AutoSize = true;
-            this.lblNazwaRekPolowka.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblNazwaRekPolowka.Location = new System.Drawing.Point(252, 6);
-            this.lblNazwaRekPolowka.Name = "lblNazwaRekPolowka";
-            this.lblNazwaRekPolowka.Size = new System.Drawing.Size(87, 22);
-            this.lblNazwaRekPolowka.TabIndex = 1;
-            this.lblNazwaRekPolowka.Text = "label12";
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.tableLayoutPanel12);
-            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox1.Location = new System.Drawing.Point(0, 0);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(597, 169);
-            this.groupBox1.TabIndex = 1;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "maraton";
-            // 
-            // tableLayoutPanel12
-            // 
-            this.tableLayoutPanel12.ColumnCount = 1;
-            this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel12.Controls.Add(this.tableLayoutPanel13, 0, 1);
-            this.tableLayoutPanel12.Controls.Add(this.lblNazwaRekMaraton, 0, 0);
-            this.tableLayoutPanel12.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel12.Location = new System.Drawing.Point(3, 26);
-            this.tableLayoutPanel12.Name = "tableLayoutPanel12";
-            this.tableLayoutPanel12.RowCount = 2;
-            this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 75F));
-            this.tableLayoutPanel12.Size = new System.Drawing.Size(591, 140);
-            this.tableLayoutPanel12.TabIndex = 0;
-            // 
-            // tableLayoutPanel13
-            // 
-            this.tableLayoutPanel13.ColumnCount = 3;
-            this.tableLayoutPanel13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 45F));
-            this.tableLayoutPanel13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
-            this.tableLayoutPanel13.Controls.Add(this.label12, 0, 0);
-            this.tableLayoutPanel13.Controls.Add(this.label17, 0, 1);
-            this.tableLayoutPanel13.Controls.Add(this.label20, 0, 2);
-            this.tableLayoutPanel13.Controls.Add(this.lblDataRekMaraton, 1, 0);
-            this.tableLayoutPanel13.Controls.Add(this.lblCzasRekMaraton, 1, 1);
-            this.tableLayoutPanel13.Controls.Add(this.lblNumerRekMaraton, 1, 2);
-            this.tableLayoutPanel13.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel13.Location = new System.Drawing.Point(3, 38);
-            this.tableLayoutPanel13.Name = "tableLayoutPanel13";
-            this.tableLayoutPanel13.RowCount = 3;
-            this.tableLayoutPanel13.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel13.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel13.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel13.Size = new System.Drawing.Size(585, 99);
-            this.tableLayoutPanel13.TabIndex = 0;
-            // 
-            // label12
-            // 
-            this.label12.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Courier New", 11.25F, System.Drawing.FontStyle.Bold);
-            this.label12.Location = new System.Drawing.Point(90, 8);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(53, 17);
-            this.label12.TabIndex = 0;
-            this.label12.Text = "data:";
-            // 
-            // label17
-            // 
-            this.label17.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Courier New", 11.25F, System.Drawing.FontStyle.Bold);
-            this.label17.Location = new System.Drawing.Point(90, 41);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(53, 17);
-            this.label17.TabIndex = 0;
-            this.label17.Text = "czas:";
-            // 
-            // label20
-            // 
-            this.label20.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Courier New", 11.25F, System.Drawing.FontStyle.Bold);
-            this.label20.Location = new System.Drawing.Point(81, 74);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(62, 17);
-            this.label20.TabIndex = 0;
-            this.label20.Text = "numer:";
-            // 
-            // lblDataRekMaraton
-            // 
-            this.lblDataRekMaraton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblDataRekMaraton.AutoSize = true;
-            this.lblDataRekMaraton.Font = new System.Drawing.Font("Courier New", 11.25F, System.Drawing.FontStyle.Bold);
-            this.lblDataRekMaraton.Location = new System.Drawing.Point(242, 8);
-            this.lblDataRekMaraton.Name = "lblDataRekMaraton";
-            this.lblDataRekMaraton.Size = new System.Drawing.Size(71, 17);
-            this.lblDataRekMaraton.TabIndex = 1;
-            this.lblDataRekMaraton.Text = "label24";
-            // 
-            // lblCzasRekMaraton
-            // 
-            this.lblCzasRekMaraton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblCzasRekMaraton.AutoSize = true;
-            this.lblCzasRekMaraton.Font = new System.Drawing.Font("Courier New", 11.25F, System.Drawing.FontStyle.Bold);
-            this.lblCzasRekMaraton.Location = new System.Drawing.Point(242, 41);
-            this.lblCzasRekMaraton.Name = "lblCzasRekMaraton";
-            this.lblCzasRekMaraton.Size = new System.Drawing.Size(71, 17);
-            this.lblCzasRekMaraton.TabIndex = 1;
-            this.lblCzasRekMaraton.Text = "label24";
-            // 
-            // lblNumerRekMaraton
-            // 
-            this.lblNumerRekMaraton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblNumerRekMaraton.AutoSize = true;
-            this.lblNumerRekMaraton.Font = new System.Drawing.Font("Courier New", 11.25F, System.Drawing.FontStyle.Bold);
-            this.lblNumerRekMaraton.Location = new System.Drawing.Point(242, 74);
-            this.lblNumerRekMaraton.Name = "lblNumerRekMaraton";
-            this.lblNumerRekMaraton.Size = new System.Drawing.Size(71, 17);
-            this.lblNumerRekMaraton.TabIndex = 1;
-            this.lblNumerRekMaraton.Text = "label24";
-            // 
-            // lblNazwaRekMaraton
-            // 
-            this.lblNazwaRekMaraton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblNazwaRekMaraton.AutoSize = true;
-            this.lblNazwaRekMaraton.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblNazwaRekMaraton.Location = new System.Drawing.Point(252, 6);
-            this.lblNazwaRekMaraton.Name = "lblNazwaRekMaraton";
-            this.lblNazwaRekMaraton.Size = new System.Drawing.Size(87, 22);
-            this.lblNazwaRekMaraton.TabIndex = 1;
-            this.lblNazwaRekMaraton.Text = "label12";
-            // 
-            // tableLayoutPanel18
-            // 
-            this.tableLayoutPanel18.ColumnCount = 2;
-            this.tableLayoutPanel18.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35F));
-            this.tableLayoutPanel18.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 65F));
-            this.tableLayoutPanel18.Controls.Add(this.tableLayoutPanel19, 0, 0);
-            this.tableLayoutPanel18.Controls.Add(this.tableLayoutPanel20, 1, 0);
-            this.tableLayoutPanel18.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel18.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel18.Name = "tableLayoutPanel18";
-            this.tableLayoutPanel18.RowCount = 1;
-            this.tableLayoutPanel18.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel18.Size = new System.Drawing.Size(597, 172);
-            this.tableLayoutPanel18.TabIndex = 0;
-            // 
-            // tableLayoutPanel19
-            // 
-            this.tableLayoutPanel19.ColumnCount = 1;
-            this.tableLayoutPanel19.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel19.Controls.Add(this.txtDzisData, 0, 2);
-            this.tableLayoutPanel19.Controls.Add(this.txtDzisDzien, 0, 0);
-            this.tableLayoutPanel19.Controls.Add(this.txtDzisNumer, 0, 1);
-            this.tableLayoutPanel19.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel19.Location = new System.Drawing.Point(3, 3);
-            this.tableLayoutPanel19.Name = "tableLayoutPanel19";
-            this.tableLayoutPanel19.RowCount = 3;
-            this.tableLayoutPanel19.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel19.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60F));
-            this.tableLayoutPanel19.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel19.Size = new System.Drawing.Size(202, 166);
-            this.tableLayoutPanel19.TabIndex = 0;
-            // 
-            // txtDzisNumer
-            // 
-            this.txtDzisNumer.AutoSize = true;
-            this.txtDzisNumer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtDzisNumer.Font = new System.Drawing.Font("Courier New", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.txtDzisNumer.Location = new System.Drawing.Point(3, 33);
-            this.txtDzisNumer.Name = "txtDzisNumer";
-            this.txtDzisNumer.Size = new System.Drawing.Size(196, 99);
-            this.txtDzisNumer.TabIndex = 4;
-            this.txtDzisNumer.Text = "label33";
-            this.txtDzisNumer.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // txtDzisDzien
-            // 
-            this.txtDzisDzien.AutoSize = true;
-            this.txtDzisDzien.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtDzisDzien.Font = new System.Drawing.Font("Courier New", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.txtDzisDzien.Location = new System.Drawing.Point(3, 0);
-            this.txtDzisDzien.Name = "txtDzisDzien";
-            this.txtDzisDzien.Size = new System.Drawing.Size(196, 33);
-            this.txtDzisDzien.TabIndex = 5;
-            this.txtDzisDzien.Text = "label33";
-            this.txtDzisDzien.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // txtDzisData
-            // 
-            this.txtDzisData.AutoSize = true;
-            this.txtDzisData.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtDzisData.Location = new System.Drawing.Point(3, 132);
-            this.txtDzisData.Name = "txtDzisData";
-            this.txtDzisData.Size = new System.Drawing.Size(196, 34);
-            this.txtDzisData.TabIndex = 9;
-            this.txtDzisData.Text = "label32";
-            this.txtDzisData.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // tableLayoutPanel20
-            // 
-            this.tableLayoutPanel20.ColumnCount = 1;
-            this.tableLayoutPanel20.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel20.Controls.Add(this.tableLayoutPanel21, 0, 0);
-            this.tableLayoutPanel20.Controls.Add(this.txtAPIOpis, 0, 1);
-            this.tableLayoutPanel20.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel20.Location = new System.Drawing.Point(211, 3);
-            this.tableLayoutPanel20.Name = "tableLayoutPanel20";
-            this.tableLayoutPanel20.RowCount = 2;
-            this.tableLayoutPanel20.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 80F));
-            this.tableLayoutPanel20.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel20.Size = new System.Drawing.Size(383, 166);
-            this.tableLayoutPanel20.TabIndex = 1;
-            // 
-            // tableLayoutPanel21
-            // 
-            this.tableLayoutPanel21.ColumnCount = 2;
-            this.tableLayoutPanel21.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 42F));
-            this.tableLayoutPanel21.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 58F));
-            this.tableLayoutPanel21.Controls.Add(this.tableLayoutPanel22, 0, 0);
-            this.tableLayoutPanel21.Controls.Add(this.tableLayoutPanel23, 1, 0);
-            this.tableLayoutPanel21.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel21.Location = new System.Drawing.Point(3, 3);
-            this.tableLayoutPanel21.Name = "tableLayoutPanel21";
-            this.tableLayoutPanel21.RowCount = 1;
-            this.tableLayoutPanel21.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel21.Size = new System.Drawing.Size(377, 126);
-            this.tableLayoutPanel21.TabIndex = 0;
-            // 
-            // txtAPIOpis
-            // 
-            this.txtAPIOpis.AutoSize = true;
-            this.txtAPIOpis.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtAPIOpis.Font = new System.Drawing.Font("Courier New", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.txtAPIOpis.Location = new System.Drawing.Point(3, 132);
-            this.txtAPIOpis.Name = "txtAPIOpis";
-            this.txtAPIOpis.Size = new System.Drawing.Size(377, 34);
-            this.txtAPIOpis.TabIndex = 1;
-            this.txtAPIOpis.Text = "label32";
-            this.txtAPIOpis.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // tableLayoutPanel22
-            // 
-            this.tableLayoutPanel22.ColumnCount = 1;
-            this.tableLayoutPanel22.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel22.Controls.Add(this.txtAPITemp, 0, 0);
-            this.tableLayoutPanel22.Controls.Add(this.picWeather, 0, 1);
-            this.tableLayoutPanel22.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel22.Location = new System.Drawing.Point(3, 3);
-            this.tableLayoutPanel22.Name = "tableLayoutPanel22";
-            this.tableLayoutPanel22.RowCount = 2;
-            this.tableLayoutPanel22.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
-            this.tableLayoutPanel22.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60F));
-            this.tableLayoutPanel22.Size = new System.Drawing.Size(152, 120);
-            this.tableLayoutPanel22.TabIndex = 1;
-            // 
-            // txtAPITemp
-            // 
-            this.txtAPITemp.AutoSize = true;
-            this.txtAPITemp.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtAPITemp.Font = new System.Drawing.Font("Courier New", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.txtAPITemp.Location = new System.Drawing.Point(3, 0);
-            this.txtAPITemp.Name = "txtAPITemp";
-            this.txtAPITemp.Size = new System.Drawing.Size(146, 48);
-            this.txtAPITemp.TabIndex = 0;
-            this.txtAPITemp.Text = "label32";
-            this.txtAPITemp.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // tableLayoutPanel23
-            // 
-            this.tableLayoutPanel23.ColumnCount = 1;
-            this.tableLayoutPanel23.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel23.Controls.Add(this.txtAPIWiatr, 0, 0);
-            this.tableLayoutPanel23.Controls.Add(this.txtAPICisnienie, 0, 1);
-            this.tableLayoutPanel23.Controls.Add(this.txtAPIDeszcz, 0, 2);
-            this.tableLayoutPanel23.Controls.Add(this.txtAPIWilgotnosc, 0, 3);
-            this.tableLayoutPanel23.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel23.Location = new System.Drawing.Point(161, 3);
-            this.tableLayoutPanel23.Name = "tableLayoutPanel23";
-            this.tableLayoutPanel23.RowCount = 4;
-            this.tableLayoutPanel23.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel23.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel23.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel23.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel23.Size = new System.Drawing.Size(213, 120);
-            this.tableLayoutPanel23.TabIndex = 2;
-            // 
-            // txtAPIWiatr
-            // 
-            this.txtAPIWiatr.AutoSize = true;
-            this.txtAPIWiatr.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtAPIWiatr.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.txtAPIWiatr.Location = new System.Drawing.Point(3, 0);
-            this.txtAPIWiatr.Name = "txtAPIWiatr";
-            this.txtAPIWiatr.Size = new System.Drawing.Size(207, 30);
-            this.txtAPIWiatr.TabIndex = 2;
-            this.txtAPIWiatr.Text = "label32";
-            this.txtAPIWiatr.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // picWeather
-            // 
-            this.picWeather.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.picWeather.Location = new System.Drawing.Point(3, 51);
-            this.picWeather.Name = "picWeather";
-            this.picWeather.Size = new System.Drawing.Size(146, 66);
-            this.picWeather.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.picWeather.TabIndex = 1;
-            this.picWeather.TabStop = false;
-            // 
-            // txtAPICisnienie
-            // 
-            this.txtAPICisnienie.AutoSize = true;
-            this.txtAPICisnienie.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtAPICisnienie.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.txtAPICisnienie.Location = new System.Drawing.Point(3, 30);
-            this.txtAPICisnienie.Name = "txtAPICisnienie";
-            this.txtAPICisnienie.Size = new System.Drawing.Size(207, 30);
-            this.txtAPICisnienie.TabIndex = 3;
-            this.txtAPICisnienie.Text = "label32";
-            this.txtAPICisnienie.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // txtAPIDeszcz
-            // 
-            this.txtAPIDeszcz.AutoSize = true;
-            this.txtAPIDeszcz.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtAPIDeszcz.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.txtAPIDeszcz.Location = new System.Drawing.Point(3, 60);
-            this.txtAPIDeszcz.Name = "txtAPIDeszcz";
-            this.txtAPIDeszcz.Size = new System.Drawing.Size(207, 30);
-            this.txtAPIDeszcz.TabIndex = 3;
-            this.txtAPIDeszcz.Text = "label32";
-            this.txtAPIDeszcz.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // txtAPIWilgotnosc
-            // 
-            this.txtAPIWilgotnosc.AutoSize = true;
-            this.txtAPIWilgotnosc.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtAPIWilgotnosc.Font = new System.Drawing.Font("Courier New", 9.75F);
-            this.txtAPIWilgotnosc.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.txtAPIWilgotnosc.Location = new System.Drawing.Point(3, 90);
-            this.txtAPIWilgotnosc.Name = "txtAPIWilgotnosc";
-            this.txtAPIWilgotnosc.Size = new System.Drawing.Size(207, 30);
-            this.txtAPIWilgotnosc.TabIndex = 4;
-            this.txtAPIWilgotnosc.Text = "label32";
-            this.txtAPIWilgotnosc.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2175,12 +2176,39 @@
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer9)).EndInit();
             this.splitContainer9.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
+            this.tableLayoutPanel18.ResumeLayout(false);
+            this.tableLayoutPanel19.ResumeLayout(false);
+            this.tableLayoutPanel19.PerformLayout();
+            this.tableLayoutPanel20.ResumeLayout(false);
+            this.tableLayoutPanel20.PerformLayout();
+            this.tableLayoutPanel21.ResumeLayout(false);
+            this.tableLayoutPanel22.ResumeLayout(false);
+            this.tableLayoutPanel22.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picWeather)).EndInit();
+            this.tableLayoutPanel23.ResumeLayout(false);
+            this.tableLayoutPanel23.PerformLayout();
             this.panel6.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
+            this.tableLayoutPanel12.ResumeLayout(false);
+            this.tableLayoutPanel12.PerformLayout();
+            this.tableLayoutPanel13.ResumeLayout(false);
+            this.tableLayoutPanel13.PerformLayout();
             this.splitContainer10.Panel1.ResumeLayout(false);
             this.splitContainer10.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer10)).EndInit();
             this.splitContainer10.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
+            this.tableLayoutPanel14.ResumeLayout(false);
+            this.tableLayoutPanel14.PerformLayout();
+            this.tableLayoutPanel15.ResumeLayout(false);
+            this.tableLayoutPanel15.PerformLayout();
+            this.panel8.ResumeLayout(false);
+            this.groupBox3.ResumeLayout(false);
+            this.tableLayoutPanel16.ResumeLayout(false);
+            this.tableLayoutPanel16.PerformLayout();
+            this.tableLayoutPanel17.ResumeLayout(false);
+            this.tableLayoutPanel17.PerformLayout();
             this.tabDystans.ResumeLayout(false);
             this.splitContainer3.Panel1.ResumeLayout(false);
             this.splitContainer3.Panel2.ResumeLayout(false);
@@ -2222,33 +2250,6 @@
             this.tableLayoutPanel11.ResumeLayout(false);
             this.tableLayoutPanel11.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chrWaga)).EndInit();
-            this.panel8.ResumeLayout(false);
-            this.groupBox3.ResumeLayout(false);
-            this.tableLayoutPanel16.ResumeLayout(false);
-            this.tableLayoutPanel16.PerformLayout();
-            this.tableLayoutPanel17.ResumeLayout(false);
-            this.tableLayoutPanel17.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.tableLayoutPanel14.ResumeLayout(false);
-            this.tableLayoutPanel14.PerformLayout();
-            this.tableLayoutPanel15.ResumeLayout(false);
-            this.tableLayoutPanel15.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.tableLayoutPanel12.ResumeLayout(false);
-            this.tableLayoutPanel12.PerformLayout();
-            this.tableLayoutPanel13.ResumeLayout(false);
-            this.tableLayoutPanel13.PerformLayout();
-            this.tableLayoutPanel18.ResumeLayout(false);
-            this.tableLayoutPanel19.ResumeLayout(false);
-            this.tableLayoutPanel19.PerformLayout();
-            this.tableLayoutPanel20.ResumeLayout(false);
-            this.tableLayoutPanel20.PerformLayout();
-            this.tableLayoutPanel21.ResumeLayout(false);
-            this.tableLayoutPanel22.ResumeLayout(false);
-            this.tableLayoutPanel22.PerformLayout();
-            this.tableLayoutPanel23.ResumeLayout(false);
-            this.tableLayoutPanel23.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picWeather)).EndInit();
             this.ResumeLayout(false);
 
         }
