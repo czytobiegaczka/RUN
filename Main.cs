@@ -9,6 +9,7 @@ using System.Xml;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace RUN
 {
@@ -22,6 +23,7 @@ namespace RUN
         public Boolean czyGodzina=false;
         private DataTable data;
         private static readonly HttpClient client = new HttpClient();
+        public string zawartoscXML;
         
 
         public Main()
@@ -118,25 +120,6 @@ namespace RUN
             this.Cursor = this.DefaultCursor;
 
             // kalendarz
-
-            txtDzisData.Text = miesiacNazwa[DateTime.Now.Month-1] + " " + DateTime.Now.Year.ToString();
-            txtDzisNumer.Text = DateTime.Now.Day.ToString();
-            int jakiDzien = (int)DateTime.Now.DayOfWeek;
-            txtDzisDzien.Text = tydzienNazwa[jakiDzien];
-
-            prognoza pogoda = new prognoza();
-
-            Weather(pogoda);
-
-            string icona = pogoda.WeatherNow(DateTime.Now.Hour)[2];
-            string adres = "http://openweathermap.org/img/wn/" + icona + "@2x.png";
-            picWeather.Load(adres);
-            txtAPIOpis.Text = pogoda.WeatherNow(DateTime.Now.Hour)[3];
-            txtAPIDeszcz.Text = "opady " + pogoda.WeatherNow(DateTime.Now.Hour)[4] + " mm";
-            txtAPIWiatr.Text = "wiatr " + pogoda.WeatherNow(DateTime.Now.Hour)[5] + " m/s";
-            txtAPITemp.Text = pogoda.WeatherNow(DateTime.Now.Hour)[6] + "°C";
-            txtAPICisnienie.Text = "ciśnienie " + pogoda.WeatherNow(DateTime.Now.Hour)[7] + " hPa";
-            txtAPIWilgotnosc.Text = "wilgotność " + pogoda.WeatherNow(DateTime.Now.Hour)[8] + " %";
 
             DataTable MyTab = this.data;
 
@@ -555,28 +538,61 @@ namespace RUN
             DataGridView(dzien);
         }
 
-
-        private void ProcessRepositories()
+        private void NaszaObslugaZdarzenia(object ob, EventArgs info) //tworzenie własnego zdarzenia - ściąganie XML z pogodą z API
         {
-            // do zmiany
+            CallProcess();
+        }
+
+        public static async Task<string> ProcessRepositories()
+        {
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(
-                new MediaTypeWithQualityHeaderValue("application/XML"));
+                new MediaTypeWithQualityHeaderValue("application/json"));
             client.DefaultRequestHeaders.Add("User-Agent", ".NET Foundation Repository Reporter");
 
-            var stringTask = client.GetStringAsync("http://api.openweathermap.org/data/2.5/forecast?q=Boston&APPID=94a14e2fa2194f8d45bd96051905a4dd&MODE=XML");
+            var stringTask = client.GetStringAsync("http://api.openweathermap.org/data/2.5/forecast?q=Bydgoszcz&APPID=94a14e2fa2194f8d45bd96051905a4dd&mode=xml&lang=pl&units=metric&temperature=temperature.value&count=1");
 
-            var msg = stringTask;
-            Console.Write(msg);
-            int x = Console.Read();
+            var msg = await stringTask;
+
+            string result = msg;
+            return await Task.FromResult(result);
+        }
+
+        public async void CallProcess()
+        {
+
+            String Value = await ProcessRepositories();
+            zawartoscXML = Value;
+            Calendar();
+        }
+
+        public void Calendar()
+        {
+            txtDzisData.Text = miesiacNazwa[DateTime.Now.Month - 1] + " " + DateTime.Now.Year.ToString();
+            txtDzisNumer.Text = DateTime.Now.Day.ToString();
+            int jakiDzien = (int)DateTime.Now.DayOfWeek;
+            txtDzisDzien.Text = tydzienNazwa[jakiDzien];
+
+            prognoza pogoda = new prognoza();
+
+            Weather(pogoda);
+
+            string icona = pogoda.WeatherNow(DateTime.Now.Hour)[2];
+            string adres = "http://openweathermap.org/img/wn/" + icona + "@2x.png";
+            picWeather.Load(adres);
+            txtAPIOpis.Text = pogoda.WeatherNow(DateTime.Now.Hour)[3];
+            txtAPIDeszcz.Text = "opady " + pogoda.WeatherNow(DateTime.Now.Hour)[4] + " mm";
+            txtAPIWiatr.Text = "wiatr " + pogoda.WeatherNow(DateTime.Now.Hour)[5] + " m/s";
+            txtAPITemp.Text = pogoda.WeatherNow(DateTime.Now.Hour)[6] + "°C";
+            txtAPICisnienie.Text = "ciśnienie " + pogoda.WeatherNow(DateTime.Now.Hour)[7] + " hPa";
+            txtAPIWilgotnosc.Text = "wilgotność " + pogoda.WeatherNow(DateTime.Now.Hour)[8] + " %";
         }
 
         private void Weather(prognoza wpiszPogoda)
         {
-
-            ProcessRepositories();
-
-            XmlReader xmlRreader = XmlReader.Create(@"c:\xxx\pogodapl.xml");
+            
+            //XmlReader xmlRreader = XmlReader.Create(@"c:\xxx\pogodapl.xml");
+            XmlReader xmlRreader = XmlReader.Create(new StringReader(zawartoscXML));
 
             while (xmlRreader.Read())
             {

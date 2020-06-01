@@ -76,7 +76,6 @@
             this.tableLayoutPanel21 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel22 = new System.Windows.Forms.TableLayoutPanel();
             this.txtAPITemp = new System.Windows.Forms.Label();
-            this.picWeather = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel23 = new System.Windows.Forms.TableLayoutPanel();
             this.txtAPIWiatr = new System.Windows.Forms.Label();
             this.txtAPICisnienie = new System.Windows.Forms.Label();
@@ -179,6 +178,7 @@
             this.lblMounthMaxKg = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
             this.chrWaga = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.picWeather = new System.Windows.Forms.PictureBox();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -214,7 +214,6 @@
             this.tableLayoutPanel20.SuspendLayout();
             this.tableLayoutPanel21.SuspendLayout();
             this.tableLayoutPanel22.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picWeather)).BeginInit();
             this.tableLayoutPanel23.SuspendLayout();
             this.panel6.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -267,6 +266,7 @@
             this.grpMounthKg.SuspendLayout();
             this.tableLayoutPanel11.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chrWaga)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picWeather)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -474,6 +474,7 @@
             this.dataGrid.CellMouseMove += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseMove);
             this.dataGrid.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGrid_CellValueChanged);
             this.dataGrid.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dataGrid_EditingControlShowing);
+            this.dataGrid.VisibleChanged += new System.EventHandler(this.NaszaObslugaZdarzenia);
             this.dataGrid.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dataGrid_MouseClick);
             // 
             // txtMiesiac_ID
@@ -617,7 +618,7 @@
             this.tabZawody.Name = "tabZawody";
             this.tabZawody.Size = new System.Drawing.Size(599, 698);
             this.tabZawody.TabIndex = 4;
-            this.tabZawody.Text = "    Zawody / Rekordy    ";
+            this.tabZawody.Text = "    Pogoda / Rekordy    ";
             this.tabZawody.UseVisualStyleBackColor = true;
             // 
             // splitContainer8
@@ -792,16 +793,6 @@
             this.txtAPITemp.TabIndex = 0;
             this.txtAPITemp.Text = "label32";
             this.txtAPITemp.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // picWeather
-            // 
-            this.picWeather.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.picWeather.Location = new System.Drawing.Point(3, 51);
-            this.picWeather.Name = "picWeather";
-            this.picWeather.Size = new System.Drawing.Size(146, 66);
-            this.picWeather.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.picWeather.TabIndex = 1;
-            this.picWeather.TabStop = false;
             // 
             // tableLayoutPanel23
             // 
@@ -2126,6 +2117,16 @@
             this.chrWaga.TabIndex = 0;
             this.chrWaga.Text = "chart1";
             // 
+            // picWeather
+            // 
+            this.picWeather.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.picWeather.Location = new System.Drawing.Point(3, 51);
+            this.picWeather.Name = "picWeather";
+            this.picWeather.Size = new System.Drawing.Size(146, 66);
+            this.picWeather.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.picWeather.TabIndex = 1;
+            this.picWeather.TabStop = false;
+            // 
             // dataGridViewImageColumn1
             // 
             this.dataGridViewImageColumn1.DataPropertyName = "zawody";
@@ -2142,7 +2143,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "Main";
-            this.Text = "RUN 2020 v.2.2";
+            this.Text = "RUN 2020 v.3.0";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Main_FormClosing);
             this.Load += new System.EventHandler(this.Main_Load);
             this.panel1.ResumeLayout(false);
@@ -2184,7 +2185,6 @@
             this.tableLayoutPanel21.ResumeLayout(false);
             this.tableLayoutPanel22.ResumeLayout(false);
             this.tableLayoutPanel22.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picWeather)).EndInit();
             this.tableLayoutPanel23.ResumeLayout(false);
             this.tableLayoutPanel23.PerformLayout();
             this.panel6.ResumeLayout(false);
@@ -2250,6 +2250,7 @@
             this.tableLayoutPanel11.ResumeLayout(false);
             this.tableLayoutPanel11.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chrWaga)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picWeather)).EndInit();
             this.ResumeLayout(false);
 
         }
