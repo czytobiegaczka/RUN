@@ -558,7 +558,7 @@ namespace RUN
 
         private void ProcessRepositories()
         {
-
+            // do zmiany
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(
                 new MediaTypeWithQualityHeaderValue("application/XML"));
