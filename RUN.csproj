@@ -66,15 +66,19 @@
     <Compile Include="AddPicture.Designer.cs">
       <DependentUpon>AddPicture.cs</DependentUpon>
     </Compile>
+    <Compile Include="meteo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="meteo.Designer.cs">
+      <DependentUpon>meteo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Oplata.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Oplata.Designer.cs">
       <DependentUpon>Oplata.cs</DependentUpon>
     </Compile>
-    <Compile Include="prognoza.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="prognoza.cs" />
     <Compile Include="Typ.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -122,6 +126,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AddPicture.resx">
       <DependentUpon>AddPicture.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="meteo.resx">
+      <DependentUpon>meteo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Oplata.resx">
       <DependentUpon>Oplata.cs</DependentUpon>

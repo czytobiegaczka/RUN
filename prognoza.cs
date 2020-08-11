@@ -3,9 +3,9 @@ using System.Collections.Generic;
 
 namespace RUN
 {
-    class prognoza:Main
+    public class prognoza
     {
-        public List<string> czas_od;
+        private List<string> czas_od;
         public List<string> czas_do;
         public List<string> ikona;
         public List<string> opis;
@@ -70,10 +70,32 @@ namespace RUN
         public List<string> WeatherNow(int godzina)
         {
             int i = 0;
-            while (Convert.ToInt16(czas_od[i].Substring(czas_od[i].Length - 8, 2)) <= godzina && Convert.ToInt16(czas_do[i].Substring(czas_do[i].Length - 8, 2)) >= godzina)
+            Console.WriteLine("od: " + Convert.ToInt16(czas_od[i].Substring(czas_od[i].Length - 8, 2)));
+            Console.WriteLine("do: " + Convert.ToInt16(czas_do[i].Substring(czas_do[i].Length - 8, 2)));
+            Console.WriteLine("godz: " + godzina);
+
+            if (godzina<=21)
             {
-                i++;
+                while (Convert.ToInt16(czas_od[i].Substring(czas_od[i].Length - 8, 2)) <= godzina && Convert.ToInt16(czas_do[i].Substring(czas_do[i].Length - 8, 2)) < godzina)
+                {
+                    Console.WriteLine("od: " + Convert.ToInt16(czas_od[i].Substring(czas_od[i].Length - 8, 2)));
+                    Console.WriteLine("do: " + Convert.ToInt16(czas_do[i].Substring(czas_do[i].Length - 8, 2)));
+                    Console.WriteLine("godz: " + godzina);
+                    i++;
+                }
             }
+            else
+            {
+                while (Convert.ToInt16(czas_od[i].Substring(czas_od[i].Length - 8, 2)) == 21 && Convert.ToInt16(czas_do[i].Substring(czas_do[i].Length - 8, 2)) == 0)
+                {
+                    Console.WriteLine("od: " + Convert.ToInt16(czas_od[i].Substring(czas_od[i].Length - 8, 2)));
+                    Console.WriteLine("do: " + Convert.ToInt16(czas_do[i].Substring(czas_do[i].Length - 8, 2)));
+                    Console.WriteLine("godz: " + godzina);
+                    i++;
+                }
+            }
+
+
 
             List<string> today = new List<string>
             {
@@ -87,6 +109,8 @@ namespace RUN
                 cisnienie[i],
                 wilgotnosc[i]
             };
+
+            Console.WriteLine("temp: " + temperatura[i]);
 
             return today;
         }

@@ -24,7 +24,9 @@ namespace RUN
         public Timer tm;
         public bool czyTimer = false;
         public string zawodyTyp = "";
-        
+        private Oplata oplata;
+        private int oplata_id = 0;
+
 
         public Zawody(int zawID)
         {
@@ -292,15 +294,27 @@ namespace RUN
         int x = 0, y = 0;
         string dajOplata;
 
+        private void picOplata_MouseLeave(object sender, EventArgs e)
+        {
+            oplata.Dispose();
+            oplata_id = 0;
+            this.Cursor = this.DefaultCursor;
+        }
+
         private void pictureBox2_MouseMove(object sender, MouseEventArgs e)
         {
-            x = Cursor.Position.X;
-            y = Cursor.Position.Y;
-            dajOplata = lblOplata.Text;
-            Oplata oplata = new Oplata(dajOplata);
-            oplata.StartPosition = FormStartPosition.Manual;            
-            oplata.Location = new System.Drawing.Point(x-oplata.Width, y);
-            oplata.ShowDialog();
+            this.Cursor = Cursors.Hand;
+            if (oplata_id == 0)
+            {
+                oplata_id++;
+                x = Cursor.Position.X;
+                y = Cursor.Position.Y;
+                dajOplata = lblOplata.Text;
+                oplata = new Oplata(dajOplata);
+                oplata.StartPosition = FormStartPosition.Manual;
+                oplata.Location = new System.Drawing.Point(x - oplata.Width, y);
+                oplata.Show();
+            }
         }
     }
 }

@@ -28,13 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             this.panel1 = new System.Windows.Forms.Panel();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -68,20 +68,22 @@
             this.splitContainer9 = new System.Windows.Forms.SplitContainer();
             this.panel5 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel18 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel19 = new System.Windows.Forms.TableLayoutPanel();
-            this.txtDzisData = new System.Windows.Forms.Label();
-            this.txtDzisDzien = new System.Windows.Forms.Label();
-            this.txtDzisNumer = new System.Windows.Forms.Label();
             this.tableLayoutPanel20 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel21 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel22 = new System.Windows.Forms.TableLayoutPanel();
             this.txtAPITemp = new System.Windows.Forms.Label();
+            this.picWeather = new System.Windows.Forms.PictureBox();
+            this.panel9 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel23 = new System.Windows.Forms.TableLayoutPanel();
             this.txtAPIWiatr = new System.Windows.Forms.Label();
             this.txtAPICisnienie = new System.Windows.Forms.Label();
             this.txtAPIDeszcz = new System.Windows.Forms.Label();
             this.txtAPIWilgotnosc = new System.Windows.Forms.Label();
             this.txtAPIOpis = new System.Windows.Forms.Label();
+            this.tableLayoutPanel19 = new System.Windows.Forms.TableLayoutPanel();
+            this.txtDzisData = new System.Windows.Forms.Label();
+            this.txtDzisDzien = new System.Windows.Forms.Label();
+            this.txtDzisNumer = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel12 = new System.Windows.Forms.TableLayoutPanel();
@@ -178,7 +180,6 @@
             this.lblMounthMaxKg = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
             this.chrWaga = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.picWeather = new System.Windows.Forms.PictureBox();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -210,11 +211,12 @@
             this.splitContainer9.SuspendLayout();
             this.panel5.SuspendLayout();
             this.tableLayoutPanel18.SuspendLayout();
-            this.tableLayoutPanel19.SuspendLayout();
             this.tableLayoutPanel20.SuspendLayout();
             this.tableLayoutPanel21.SuspendLayout();
             this.tableLayoutPanel22.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picWeather)).BeginInit();
             this.tableLayoutPanel23.SuspendLayout();
+            this.tableLayoutPanel19.SuspendLayout();
             this.panel6.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel12.SuspendLayout();
@@ -266,7 +268,6 @@
             this.grpMounthKg.SuspendLayout();
             this.tableLayoutPanel11.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chrWaga)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picWeather)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -460,14 +461,14 @@
             this.dataGrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGrid.Location = new System.Drawing.Point(14, 3);
             this.dataGrid.Name = "dataGrid";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
             this.dataGrid.Size = new System.Drawing.Size(556, 706);
             this.dataGrid.TabIndex = 0;
             this.dataGrid.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGrid_CellFormatting);
@@ -488,8 +489,8 @@
             // txtData
             // 
             this.txtData.DataPropertyName = "data";
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.txtData.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.txtData.DefaultCellStyle = dataGridViewCellStyle7;
             this.txtData.HeaderText = "Data";
             this.txtData.Name = "txtData";
             this.txtData.ReadOnly = true;
@@ -498,8 +499,8 @@
             // 
             this.txtDzien.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.txtDzien.DataPropertyName = "dzien";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.txtDzien.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.txtDzien.DefaultCellStyle = dataGridViewCellStyle8;
             this.txtDzien.HeaderText = "Dzień";
             this.txtDzien.Name = "txtDzien";
             this.txtDzien.ReadOnly = true;
@@ -508,8 +509,8 @@
             // txtWaga
             // 
             this.txtWaga.DataPropertyName = "waga";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.txtWaga.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.txtWaga.DefaultCellStyle = dataGridViewCellStyle9;
             this.txtWaga.HeaderText = "Waga";
             this.txtWaga.Name = "txtWaga";
             this.txtWaga.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
@@ -517,8 +518,8 @@
             // txtDystans
             // 
             this.txtDystans.DataPropertyName = "dystans";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.txtDystans.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.txtDystans.DefaultCellStyle = dataGridViewCellStyle10;
             this.txtDystans.HeaderText = "Dystans";
             this.txtDystans.Name = "txtDystans";
             this.txtDystans.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
@@ -549,9 +550,9 @@
             // imgMedal
             // 
             this.imgMedal.DataPropertyName = "medal";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.NullValue = null;
-            this.imgMedal.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle11.NullValue = null;
+            this.imgMedal.DefaultCellStyle = dataGridViewCellStyle11;
             this.imgMedal.FillWeight = 25F;
             this.imgMedal.HeaderText = " ";
             this.imgMedal.MinimumWidth = 25;
@@ -664,10 +665,13 @@
             this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel5.Controls.Add(this.tableLayoutPanel18);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel5.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.panel5.Location = new System.Drawing.Point(0, 0);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(599, 174);
             this.panel5.TabIndex = 0;
+            this.panel5.MouseLeave += new System.EventHandler(this.txtAPITemp_MouseLeave);
+            this.panel5.MouseMove += new System.Windows.Forms.MouseEventHandler(this.txtAPITemp_MouseMove);
             // 
             // tableLayoutPanel18
             // 
@@ -675,8 +679,8 @@
             this.tableLayoutPanel18.ColumnCount = 2;
             this.tableLayoutPanel18.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35F));
             this.tableLayoutPanel18.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 65F));
-            this.tableLayoutPanel18.Controls.Add(this.tableLayoutPanel19, 0, 0);
             this.tableLayoutPanel18.Controls.Add(this.tableLayoutPanel20, 1, 0);
+            this.tableLayoutPanel18.Controls.Add(this.tableLayoutPanel19, 0, 0);
             this.tableLayoutPanel18.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel18.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel18.Name = "tableLayoutPanel18";
@@ -684,6 +688,173 @@
             this.tableLayoutPanel18.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel18.Size = new System.Drawing.Size(597, 172);
             this.tableLayoutPanel18.TabIndex = 0;
+            // 
+            // tableLayoutPanel20
+            // 
+            this.tableLayoutPanel20.ColumnCount = 1;
+            this.tableLayoutPanel20.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel20.Controls.Add(this.tableLayoutPanel21, 0, 0);
+            this.tableLayoutPanel20.Controls.Add(this.txtAPIOpis, 0, 1);
+            this.tableLayoutPanel20.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel20.Location = new System.Drawing.Point(211, 3);
+            this.tableLayoutPanel20.Name = "tableLayoutPanel20";
+            this.tableLayoutPanel20.RowCount = 2;
+            this.tableLayoutPanel20.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 80F));
+            this.tableLayoutPanel20.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel20.Size = new System.Drawing.Size(383, 166);
+            this.tableLayoutPanel20.TabIndex = 1;
+            this.tableLayoutPanel20.MouseMove += new System.Windows.Forms.MouseEventHandler(this.txtAPITemp_MouseMove);
+            // 
+            // tableLayoutPanel21
+            // 
+            this.tableLayoutPanel21.ColumnCount = 2;
+            this.tableLayoutPanel21.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 42F));
+            this.tableLayoutPanel21.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 58F));
+            this.tableLayoutPanel21.Controls.Add(this.tableLayoutPanel22, 0, 0);
+            this.tableLayoutPanel21.Controls.Add(this.tableLayoutPanel23, 1, 0);
+            this.tableLayoutPanel21.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel21.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel21.Name = "tableLayoutPanel21";
+            this.tableLayoutPanel21.RowCount = 1;
+            this.tableLayoutPanel21.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel21.Size = new System.Drawing.Size(377, 126);
+            this.tableLayoutPanel21.TabIndex = 0;
+            this.tableLayoutPanel21.MouseLeave += new System.EventHandler(this.txtAPITemp_MouseLeave);
+            this.tableLayoutPanel21.MouseMove += new System.Windows.Forms.MouseEventHandler(this.txtAPITemp_MouseMove);
+            // 
+            // tableLayoutPanel22
+            // 
+            this.tableLayoutPanel22.ColumnCount = 1;
+            this.tableLayoutPanel22.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel22.Controls.Add(this.txtAPITemp, 0, 0);
+            this.tableLayoutPanel22.Controls.Add(this.picWeather, 0, 1);
+            this.tableLayoutPanel22.Controls.Add(this.panel9, 0, 2);
+            this.tableLayoutPanel22.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel22.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel22.Name = "tableLayoutPanel22";
+            this.tableLayoutPanel22.RowCount = 3;
+            this.tableLayoutPanel22.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
+            this.tableLayoutPanel22.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60F));
+            this.tableLayoutPanel22.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel22.Size = new System.Drawing.Size(152, 120);
+            this.tableLayoutPanel22.TabIndex = 1;
+            // 
+            // txtAPITemp
+            // 
+            this.txtAPITemp.AutoSize = true;
+            this.txtAPITemp.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtAPITemp.Font = new System.Drawing.Font("Courier New", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.txtAPITemp.Location = new System.Drawing.Point(3, 0);
+            this.txtAPITemp.Name = "txtAPITemp";
+            this.txtAPITemp.Size = new System.Drawing.Size(146, 40);
+            this.txtAPITemp.TabIndex = 0;
+            this.txtAPITemp.Text = "label32";
+            this.txtAPITemp.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.txtAPITemp.MouseMove += new System.Windows.Forms.MouseEventHandler(this.txtAPITemp_MouseMove);
+            // 
+            // picWeather
+            // 
+            this.picWeather.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.picWeather.Location = new System.Drawing.Point(3, 43);
+            this.picWeather.Name = "picWeather";
+            this.picWeather.Size = new System.Drawing.Size(146, 54);
+            this.picWeather.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.picWeather.TabIndex = 1;
+            this.picWeather.TabStop = false;
+            this.picWeather.MouseMove += new System.Windows.Forms.MouseEventHandler(this.txtAPITemp_MouseMove);
+            // 
+            // panel9
+            // 
+            this.panel9.Location = new System.Drawing.Point(3, 103);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(146, 14);
+            this.panel9.TabIndex = 2;
+            this.panel9.MouseMove += new System.Windows.Forms.MouseEventHandler(this.txtAPITemp_MouseMove);
+            // 
+            // tableLayoutPanel23
+            // 
+            this.tableLayoutPanel23.ColumnCount = 1;
+            this.tableLayoutPanel23.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel23.Controls.Add(this.txtAPIWiatr, 0, 0);
+            this.tableLayoutPanel23.Controls.Add(this.txtAPICisnienie, 0, 1);
+            this.tableLayoutPanel23.Controls.Add(this.txtAPIDeszcz, 0, 2);
+            this.tableLayoutPanel23.Controls.Add(this.txtAPIWilgotnosc, 0, 3);
+            this.tableLayoutPanel23.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel23.Location = new System.Drawing.Point(161, 3);
+            this.tableLayoutPanel23.Name = "tableLayoutPanel23";
+            this.tableLayoutPanel23.RowCount = 4;
+            this.tableLayoutPanel23.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel23.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel23.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel23.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel23.Size = new System.Drawing.Size(213, 120);
+            this.tableLayoutPanel23.TabIndex = 2;
+            // 
+            // txtAPIWiatr
+            // 
+            this.txtAPIWiatr.AutoSize = true;
+            this.txtAPIWiatr.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtAPIWiatr.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.txtAPIWiatr.Location = new System.Drawing.Point(3, 0);
+            this.txtAPIWiatr.Name = "txtAPIWiatr";
+            this.txtAPIWiatr.Size = new System.Drawing.Size(207, 30);
+            this.txtAPIWiatr.TabIndex = 2;
+            this.txtAPIWiatr.Text = "label32";
+            this.txtAPIWiatr.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.txtAPIWiatr.MouseMove += new System.Windows.Forms.MouseEventHandler(this.txtAPITemp_MouseMove);
+            // 
+            // txtAPICisnienie
+            // 
+            this.txtAPICisnienie.AutoSize = true;
+            this.txtAPICisnienie.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtAPICisnienie.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.txtAPICisnienie.Location = new System.Drawing.Point(3, 30);
+            this.txtAPICisnienie.Name = "txtAPICisnienie";
+            this.txtAPICisnienie.Size = new System.Drawing.Size(207, 30);
+            this.txtAPICisnienie.TabIndex = 3;
+            this.txtAPICisnienie.Text = "label32";
+            this.txtAPICisnienie.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.txtAPICisnienie.MouseMove += new System.Windows.Forms.MouseEventHandler(this.txtAPITemp_MouseMove);
+            // 
+            // txtAPIDeszcz
+            // 
+            this.txtAPIDeszcz.AutoSize = true;
+            this.txtAPIDeszcz.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtAPIDeszcz.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.txtAPIDeszcz.Location = new System.Drawing.Point(3, 60);
+            this.txtAPIDeszcz.Name = "txtAPIDeszcz";
+            this.txtAPIDeszcz.Size = new System.Drawing.Size(207, 30);
+            this.txtAPIDeszcz.TabIndex = 3;
+            this.txtAPIDeszcz.Text = "label32";
+            this.txtAPIDeszcz.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.txtAPIDeszcz.MouseMove += new System.Windows.Forms.MouseEventHandler(this.txtAPITemp_MouseMove);
+            // 
+            // txtAPIWilgotnosc
+            // 
+            this.txtAPIWilgotnosc.AutoSize = true;
+            this.txtAPIWilgotnosc.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtAPIWilgotnosc.Font = new System.Drawing.Font("Courier New", 9.75F);
+            this.txtAPIWilgotnosc.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.txtAPIWilgotnosc.Location = new System.Drawing.Point(3, 90);
+            this.txtAPIWilgotnosc.Name = "txtAPIWilgotnosc";
+            this.txtAPIWilgotnosc.Size = new System.Drawing.Size(207, 30);
+            this.txtAPIWilgotnosc.TabIndex = 4;
+            this.txtAPIWilgotnosc.Text = "label32";
+            this.txtAPIWilgotnosc.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.txtAPIWilgotnosc.MouseMove += new System.Windows.Forms.MouseEventHandler(this.txtAPITemp_MouseMove);
+            // 
+            // txtAPIOpis
+            // 
+            this.txtAPIOpis.AutoSize = true;
+            this.txtAPIOpis.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtAPIOpis.Font = new System.Drawing.Font("Courier New", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.txtAPIOpis.Location = new System.Drawing.Point(3, 132);
+            this.txtAPIOpis.Name = "txtAPIOpis";
+            this.txtAPIOpis.Size = new System.Drawing.Size(377, 34);
+            this.txtAPIOpis.TabIndex = 1;
+            this.txtAPIOpis.Text = "label32";
+            this.txtAPIOpis.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.txtAPIOpis.MouseMove += new System.Windows.Forms.MouseEventHandler(this.txtAPITemp_MouseMove);
             // 
             // tableLayoutPanel19
             // 
@@ -736,143 +907,6 @@
             this.txtDzisNumer.TabIndex = 4;
             this.txtDzisNumer.Text = "label33";
             this.txtDzisNumer.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // tableLayoutPanel20
-            // 
-            this.tableLayoutPanel20.ColumnCount = 1;
-            this.tableLayoutPanel20.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel20.Controls.Add(this.tableLayoutPanel21, 0, 0);
-            this.tableLayoutPanel20.Controls.Add(this.txtAPIOpis, 0, 1);
-            this.tableLayoutPanel20.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel20.Location = new System.Drawing.Point(211, 3);
-            this.tableLayoutPanel20.Name = "tableLayoutPanel20";
-            this.tableLayoutPanel20.RowCount = 2;
-            this.tableLayoutPanel20.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 80F));
-            this.tableLayoutPanel20.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel20.Size = new System.Drawing.Size(383, 166);
-            this.tableLayoutPanel20.TabIndex = 1;
-            // 
-            // tableLayoutPanel21
-            // 
-            this.tableLayoutPanel21.ColumnCount = 2;
-            this.tableLayoutPanel21.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 42F));
-            this.tableLayoutPanel21.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 58F));
-            this.tableLayoutPanel21.Controls.Add(this.tableLayoutPanel22, 0, 0);
-            this.tableLayoutPanel21.Controls.Add(this.tableLayoutPanel23, 1, 0);
-            this.tableLayoutPanel21.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel21.Location = new System.Drawing.Point(3, 3);
-            this.tableLayoutPanel21.Name = "tableLayoutPanel21";
-            this.tableLayoutPanel21.RowCount = 1;
-            this.tableLayoutPanel21.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel21.Size = new System.Drawing.Size(377, 126);
-            this.tableLayoutPanel21.TabIndex = 0;
-            // 
-            // tableLayoutPanel22
-            // 
-            this.tableLayoutPanel22.ColumnCount = 1;
-            this.tableLayoutPanel22.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel22.Controls.Add(this.txtAPITemp, 0, 0);
-            this.tableLayoutPanel22.Controls.Add(this.picWeather, 0, 1);
-            this.tableLayoutPanel22.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel22.Location = new System.Drawing.Point(3, 3);
-            this.tableLayoutPanel22.Name = "tableLayoutPanel22";
-            this.tableLayoutPanel22.RowCount = 2;
-            this.tableLayoutPanel22.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
-            this.tableLayoutPanel22.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60F));
-            this.tableLayoutPanel22.Size = new System.Drawing.Size(152, 120);
-            this.tableLayoutPanel22.TabIndex = 1;
-            // 
-            // txtAPITemp
-            // 
-            this.txtAPITemp.AutoSize = true;
-            this.txtAPITemp.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtAPITemp.Font = new System.Drawing.Font("Courier New", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.txtAPITemp.Location = new System.Drawing.Point(3, 0);
-            this.txtAPITemp.Name = "txtAPITemp";
-            this.txtAPITemp.Size = new System.Drawing.Size(146, 48);
-            this.txtAPITemp.TabIndex = 0;
-            this.txtAPITemp.Text = "label32";
-            this.txtAPITemp.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // tableLayoutPanel23
-            // 
-            this.tableLayoutPanel23.ColumnCount = 1;
-            this.tableLayoutPanel23.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel23.Controls.Add(this.txtAPIWiatr, 0, 0);
-            this.tableLayoutPanel23.Controls.Add(this.txtAPICisnienie, 0, 1);
-            this.tableLayoutPanel23.Controls.Add(this.txtAPIDeszcz, 0, 2);
-            this.tableLayoutPanel23.Controls.Add(this.txtAPIWilgotnosc, 0, 3);
-            this.tableLayoutPanel23.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel23.Location = new System.Drawing.Point(161, 3);
-            this.tableLayoutPanel23.Name = "tableLayoutPanel23";
-            this.tableLayoutPanel23.RowCount = 4;
-            this.tableLayoutPanel23.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel23.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel23.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel23.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel23.Size = new System.Drawing.Size(213, 120);
-            this.tableLayoutPanel23.TabIndex = 2;
-            // 
-            // txtAPIWiatr
-            // 
-            this.txtAPIWiatr.AutoSize = true;
-            this.txtAPIWiatr.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtAPIWiatr.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.txtAPIWiatr.Location = new System.Drawing.Point(3, 0);
-            this.txtAPIWiatr.Name = "txtAPIWiatr";
-            this.txtAPIWiatr.Size = new System.Drawing.Size(207, 30);
-            this.txtAPIWiatr.TabIndex = 2;
-            this.txtAPIWiatr.Text = "label32";
-            this.txtAPIWiatr.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // txtAPICisnienie
-            // 
-            this.txtAPICisnienie.AutoSize = true;
-            this.txtAPICisnienie.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtAPICisnienie.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.txtAPICisnienie.Location = new System.Drawing.Point(3, 30);
-            this.txtAPICisnienie.Name = "txtAPICisnienie";
-            this.txtAPICisnienie.Size = new System.Drawing.Size(207, 30);
-            this.txtAPICisnienie.TabIndex = 3;
-            this.txtAPICisnienie.Text = "label32";
-            this.txtAPICisnienie.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // txtAPIDeszcz
-            // 
-            this.txtAPIDeszcz.AutoSize = true;
-            this.txtAPIDeszcz.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtAPIDeszcz.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.txtAPIDeszcz.Location = new System.Drawing.Point(3, 60);
-            this.txtAPIDeszcz.Name = "txtAPIDeszcz";
-            this.txtAPIDeszcz.Size = new System.Drawing.Size(207, 30);
-            this.txtAPIDeszcz.TabIndex = 3;
-            this.txtAPIDeszcz.Text = "label32";
-            this.txtAPIDeszcz.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // txtAPIWilgotnosc
-            // 
-            this.txtAPIWilgotnosc.AutoSize = true;
-            this.txtAPIWilgotnosc.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtAPIWilgotnosc.Font = new System.Drawing.Font("Courier New", 9.75F);
-            this.txtAPIWilgotnosc.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.txtAPIWilgotnosc.Location = new System.Drawing.Point(3, 90);
-            this.txtAPIWilgotnosc.Name = "txtAPIWilgotnosc";
-            this.txtAPIWilgotnosc.Size = new System.Drawing.Size(207, 30);
-            this.txtAPIWilgotnosc.TabIndex = 4;
-            this.txtAPIWilgotnosc.Text = "label32";
-            this.txtAPIWilgotnosc.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // txtAPIOpis
-            // 
-            this.txtAPIOpis.AutoSize = true;
-            this.txtAPIOpis.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtAPIOpis.Font = new System.Drawing.Font("Courier New", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.txtAPIOpis.Location = new System.Drawing.Point(3, 132);
-            this.txtAPIOpis.Name = "txtAPIOpis";
-            this.txtAPIOpis.Size = new System.Drawing.Size(377, 34);
-            this.txtAPIOpis.TabIndex = 1;
-            this.txtAPIOpis.Text = "label32";
-            this.txtAPIOpis.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel6
             // 
@@ -2108,24 +2142,14 @@
             // 
             // chrWaga
             // 
-            chartArea1.Name = "ChartArea1";
-            this.chrWaga.ChartAreas.Add(chartArea1);
+            chartArea2.Name = "ChartArea1";
+            this.chrWaga.ChartAreas.Add(chartArea2);
             this.chrWaga.Dock = System.Windows.Forms.DockStyle.Fill;
             this.chrWaga.Location = new System.Drawing.Point(0, 0);
             this.chrWaga.Name = "chrWaga";
             this.chrWaga.Size = new System.Drawing.Size(593, 190);
             this.chrWaga.TabIndex = 0;
             this.chrWaga.Text = "chart1";
-            // 
-            // picWeather
-            // 
-            this.picWeather.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.picWeather.Location = new System.Drawing.Point(3, 51);
-            this.picWeather.Name = "picWeather";
-            this.picWeather.Size = new System.Drawing.Size(146, 66);
-            this.picWeather.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.picWeather.TabIndex = 1;
-            this.picWeather.TabStop = false;
             // 
             // dataGridViewImageColumn1
             // 
@@ -2178,15 +2202,16 @@
             this.splitContainer9.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.tableLayoutPanel18.ResumeLayout(false);
-            this.tableLayoutPanel19.ResumeLayout(false);
-            this.tableLayoutPanel19.PerformLayout();
             this.tableLayoutPanel20.ResumeLayout(false);
             this.tableLayoutPanel20.PerformLayout();
             this.tableLayoutPanel21.ResumeLayout(false);
             this.tableLayoutPanel22.ResumeLayout(false);
             this.tableLayoutPanel22.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picWeather)).EndInit();
             this.tableLayoutPanel23.ResumeLayout(false);
             this.tableLayoutPanel23.PerformLayout();
+            this.tableLayoutPanel19.ResumeLayout(false);
+            this.tableLayoutPanel19.PerformLayout();
             this.panel6.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.tableLayoutPanel12.ResumeLayout(false);
@@ -2250,7 +2275,6 @@
             this.tableLayoutPanel11.ResumeLayout(false);
             this.tableLayoutPanel11.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chrWaga)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picWeather)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2402,5 +2426,6 @@
         private System.Windows.Forms.Label txtAPICisnienie;
         private System.Windows.Forms.Label txtAPIDeszcz;
         private System.Windows.Forms.Label txtAPIWilgotnosc;
+        private System.Windows.Forms.Panel panel9;
     }
 }

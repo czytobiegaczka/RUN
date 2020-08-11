@@ -10,6 +10,7 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
 using System.IO;
+using System.Collections.Generic;
 
 namespace RUN
 {
@@ -24,6 +25,9 @@ namespace RUN
         private DataTable data;
         private static readonly HttpClient client = new HttpClient();
         public string zawartoscXML;
+        private prognoza pogoda;
+        private meteo Meteo;
+        private int meteo_id = 0;
         
 
         public Main()
@@ -573,19 +577,21 @@ namespace RUN
             int jakiDzien = (int)DateTime.Now.DayOfWeek;
             txtDzisDzien.Text = tydzienNazwa[jakiDzien];
 
-            prognoza pogoda = new prognoza();
+            pogoda = new prognoza();
 
             Weather(pogoda);
+            List<string> temp;
+            temp = pogoda.WeatherNow(DateTime.Now.Hour);
 
-            string icona = pogoda.WeatherNow(DateTime.Now.Hour)[2];
+            string icona = temp[2];
             string adres = "http://openweathermap.org/img/wn/" + icona + "@2x.png";
             picWeather.Load(adres);
-            txtAPIOpis.Text = pogoda.WeatherNow(DateTime.Now.Hour)[3];
-            txtAPIDeszcz.Text = "opady " + pogoda.WeatherNow(DateTime.Now.Hour)[4] + " mm";
-            txtAPIWiatr.Text = "wiatr " + pogoda.WeatherNow(DateTime.Now.Hour)[5] + " m/s";
-            txtAPITemp.Text = pogoda.WeatherNow(DateTime.Now.Hour)[6] + "°C";
-            txtAPICisnienie.Text = "ciśnienie " + pogoda.WeatherNow(DateTime.Now.Hour)[7] + " hPa";
-            txtAPIWilgotnosc.Text = "wilgotność " + pogoda.WeatherNow(DateTime.Now.Hour)[8] + " %";
+            txtAPIOpis.Text = temp[3];
+            txtAPIDeszcz.Text = "opady " + temp[4] + " mm";
+            txtAPIWiatr.Text = "wiatr " + temp[5] + " m/s";
+            txtAPITemp.Text = temp[6] + "°C";
+            txtAPICisnienie.Text = "ciśnienie " + temp[7] + " hPa";
+            txtAPIWilgotnosc.Text = "wilgotność " + temp[8] + " %";
         }
 
         private void Weather(prognoza wpiszPogoda)
@@ -916,6 +922,35 @@ namespace RUN
 
             }
 
+        }
+
+
+        private void txtAPITemp_Click(object sender, EventArgs e)
+        {
+             if (meteo_id==0)
+            {
+                meteo_id++;
+                meteo Meteo = new meteo(pogoda);
+                Meteo.Show();
+            }
+        }
+
+        private void txtAPITemp_MouseMove(object sender, MouseEventArgs e)
+        {
+            this.Cursor = Cursors.Hand;
+            if (meteo_id == 0)
+            {
+                meteo_id++;
+                Meteo = new meteo(pogoda);
+                Meteo.Show();
+            }
+        }
+
+        private void txtAPITemp_MouseLeave(object sender, EventArgs e)
+        {
+            Meteo.Dispose();
+            meteo_id = 0;
+            this.Cursor = this.DefaultCursor;
         }
     }
 }
