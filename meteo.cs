@@ -20,7 +20,6 @@ namespace RUN
                 InitializeComponent();
                 m_prognoza = m_pogoda.WeatherNow(DateTime.Now.Hour);
                 dgvPrognoza.DataSource = m_pogoda;
-
             //label2.Text = m_pogoda.opady[0];
         }
 

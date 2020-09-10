@@ -2,7 +2,6 @@
 using System;
 using System.Data;
 using System.Drawing;
-using System.Threading;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
 using System.Xml;
@@ -44,7 +43,6 @@ namespace RUN
         {
             mati_connect();
             DataGridView(DateTime.Now);
-
         }
 
         public void mati_connect()
@@ -924,32 +922,43 @@ namespace RUN
 
         }
 
+        int x = 0, y = 0;
 
-        private void txtAPITemp_Click(object sender, EventArgs e)
+        private void pictureBox1_MouseClick(object sender, MouseEventArgs e)
         {
-             if (meteo_id==0)
-            {
-                meteo_id++;
-                meteo Meteo = new meteo(pogoda);
-                Meteo.Show();
-            }
-        }
-
-        private void txtAPITemp_MouseMove(object sender, MouseEventArgs e)
-        {
-            this.Cursor = Cursors.Hand;
             if (meteo_id == 0)
             {
+                //System.Drawing.Point scrLoc = this.PointToScreen(Location);
+                System.Drawing.Point gdzieMeteo = this.tableLayoutPanel24.PointToScreen(Location);
+                System.Drawing.Point gdzieForm = this.PointToScreen(Location);
+
+
+                x = gdzieMeteo.X;
+                y = gdzieMeteo.Y;
+                this.pictureBox1.Image = global::RUN.Properties.Resources.top_arrow;
                 meteo_id++;
                 Meteo = new meteo(pogoda);
+                Meteo.StartPosition = FormStartPosition.Manual;
+                Meteo.Location = new System.Drawing.Point(x, y);
                 Meteo.Show();
+            }
+            else
+            {
+                Meteo.Dispose();
+                meteo_id = 0;
+                this.pictureBox1.Image = global::RUN.Properties.Resources.bottom_arrow;
+                x = 0;
+                y = 0;
             }
         }
 
-        private void txtAPITemp_MouseLeave(object sender, EventArgs e)
+        private void pictureBox1_MouseMove(object sender, MouseEventArgs e)
         {
-            Meteo.Dispose();
-            meteo_id = 0;
+            this.Cursor = Cursors.Hand;
+        }
+
+        private void pictureBox1_MouseLeave(object sender, EventArgs e)
+        {
             this.Cursor = this.DefaultCursor;
         }
     }

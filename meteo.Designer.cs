@@ -30,8 +30,8 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.listView1 = new System.Windows.Forms.ListView();
             this.dgvPrognoza = new System.Windows.Forms.DataGridView();
+            this.listView1 = new System.Windows.Forms.ListView();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPrognoza)).BeginInit();
@@ -56,6 +56,15 @@
             this.panel2.Size = new System.Drawing.Size(800, 450);
             this.panel2.TabIndex = 1;
             // 
+            // dgvPrognoza
+            // 
+            this.dgvPrognoza.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPrognoza.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvPrognoza.Location = new System.Drawing.Point(0, 0);
+            this.dgvPrognoza.Name = "dgvPrognoza";
+            this.dgvPrognoza.Size = new System.Drawing.Size(800, 450);
+            this.dgvPrognoza.TabIndex = 0;
+            // 
             // listView1
             // 
             this.listView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -67,25 +76,17 @@
             this.listView1.TabIndex = 0;
             this.listView1.UseCompatibleStateImageBehavior = false;
             // 
-            // dgvPrognoza
-            // 
-            this.dgvPrognoza.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPrognoza.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvPrognoza.Location = new System.Drawing.Point(0, 0);
-            this.dgvPrognoza.Name = "dgvPrognoza";
-            this.dgvPrognoza.Size = new System.Drawing.Size(800, 450);
-            this.dgvPrognoza.TabIndex = 0;
-            // 
             // meteo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.panel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "meteo";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "meteo";
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);

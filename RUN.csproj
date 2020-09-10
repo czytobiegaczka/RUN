@@ -242,5 +242,11 @@
   <ItemGroup>
     <None Include="Resources\iconfinder_24_3319620.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bottom-arrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\top-arrow.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
