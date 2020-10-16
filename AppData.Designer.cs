@@ -418,8 +418,8 @@ namespace RUN {
                                 this.columnusername}, true));
                 this.columnusername.AllowDBNull = false;
                 this.columnusername.Unique = true;
-                this.columnusername.MaxLength = 25;
-                this.columnpassword.MaxLength = 50;
+                this.columnusername.MaxLength = 50;
+                this.columnpassword.MaxLength = 300;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

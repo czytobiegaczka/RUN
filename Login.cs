@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Security.Cryptography;
 
 namespace RUN
 {
@@ -31,8 +32,21 @@ namespace RUN
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
+            string haslo;
             this.Cursor = Cursors.WaitCursor;
-            if (string.IsNullOrEmpty(txtUsername.Text))
+
+            string source = txtPassword.Text;
+            using (SHA256 sha256Hash = SHA256.Create())
+            {
+                //From String to byte array
+                byte[] sourceBytes = Encoding.UTF8.GetBytes(source);
+                byte[] hashBytes = sha256Hash.ComputeHash(sourceBytes);
+                string hash = BitConverter.ToString(hashBytes).Replace("-", String.Empty);
+
+                haslo = hash;
+            }
+
+                if (string.IsNullOrEmpty(txtUsername.Text))
             {
                 MyMessageBox.ShowMessage("Please enter Your username.", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Cursor = this.DefaultCursor;
@@ -42,7 +56,7 @@ namespace RUN
             try
             {
                 AppDataTableAdapters.usersTableAdapter user = new AppDataTableAdapters.usersTableAdapter();
-                AppData.usersDataTable dt = user.Login(txtUsername.Text, txtPassword.Text);
+                AppData.usersDataTable dt = user.Login(txtUsername.Text, haslo);
                 if (dt.Rows.Count > 0)
                 {
                     Main Mform = new Main();
@@ -60,6 +74,7 @@ namespace RUN
             }
             catch (Exception ex)
             {
+                Console.WriteLine(ex);
                 MyMessageBox.ShowMessage(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Cursor = this.DefaultCursor;
             }
