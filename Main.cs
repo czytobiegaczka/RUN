@@ -99,6 +99,7 @@ namespace RUN
         {
             string query = "select * from ak_miesiac_zawody";
             MySqlDataAdapter MyDa = new MySqlDataAdapter(query, MyCon);
+
             MyDa.Fill(this.data);
         }
 
@@ -173,6 +174,12 @@ namespace RUN
 
 
             MyTab.DefaultView.RowFilter = "data like " + tylkoMiesiac; //filtr wierszy w tabeli do wyświetlenia
+
+            // jeśli brak danych dla wybranego miesiąca
+            if (MyTab.DefaultView.Count == 0)
+            {
+
+            }
 
             this.dataGrid.DataSource = MyTab; //wypełnienie GridView danymi
 
