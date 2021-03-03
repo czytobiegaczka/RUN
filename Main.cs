@@ -964,6 +964,59 @@ namespace RUN
             this.Cursor = Cursors.Hand;
         }
 
+        private void tableLayoutPanel4_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        DateTime endTime = new DateTime(2021, 10, 03, 0, 0, 0);
+
+        private void tmrEvent_Tick(object sender, EventArgs e)
+        {
+            TimeSpan time = endTime.Subtract(DateTime.Now);
+
+            lblWeeks.Text = (time.Days / 7).ToString();
+            lblDays.Text = (time.Days%7).ToString();
+            lblHours.Text = time.Hours.ToString();
+            lblMinutes.Text = time.Minutes.ToString();
+
+            if ((time.Days / 7) == 1)
+            {
+                lblW.Text = "week";
+            }
+            else
+            {
+                lblW.Text = "weeks";
+            }
+
+            if ((time.Days % 7) == 1)
+            {
+                lblD.Text = "day";
+            }
+            else
+            {
+                lblD.Text = "days";
+            }
+
+            if (time.Hours == 1)
+            {
+                lblH.Text = "hour";
+            }
+            else
+            {
+                lblH.Text = "hours";
+            }
+
+            if (time.Minutes == 1)
+            {
+                lblM.Text = "minute";
+            }
+            else
+            {
+                lblM.Text = "minutes";
+            }
+        }
+
         private void pictureBox1_MouseLeave(object sender, EventArgs e)
         {
             this.Cursor = this.DefaultCursor;

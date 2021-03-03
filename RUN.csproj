@@ -69,12 +69,6 @@
     <Compile Include="AddPicture.Designer.cs">
       <DependentUpon>AddPicture.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
     <Compile Include="meteo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -259,6 +253,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="buty.ico" />
+    <None Include="Resources\lm2.png" />
+    <None Include="Resources\lm1.png" />
+    <None Include="Resources\lm.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

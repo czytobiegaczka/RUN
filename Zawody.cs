@@ -296,6 +296,8 @@ namespace RUN
             this.Cursor = this.DefaultCursor;
         }
 
+
+
         private void pictureBox2_MouseMove(object sender, MouseEventArgs e)
         {
             this.Cursor = Cursors.Hand;
