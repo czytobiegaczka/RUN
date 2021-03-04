@@ -36,7 +36,7 @@ namespace RUN
         {
             this.Cursor = Cursors.WaitCursor;
             MySqlConnection MyCon;
-            string connectionString = @"DATASOURCE=db4free.net;PORT=3306;DATABASE=trening;UID=trening;PASSWORD=treningRTL;OldGuids=True;convert zero datetime=True";
+            string connectionString = @"DATASOURCE=freedb.tech;PORT=3306;DATABASE=freedbtech_trening;UID=freedbtech_trening;PASSWORD=treningRTL;OldGuids=True;convert zero datetime=True";
             
             MemoryStream memoryStream = new MemoryStream();
             picAddPicture.Image.Save(memoryStream, picAddPicture.Image.RawFormat);

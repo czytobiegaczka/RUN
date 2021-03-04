@@ -110,7 +110,7 @@ namespace RUN
         public void ViewPicture(int zawID)
         {
             MySqlConnection MyCon;
-            string connectionString = @"DATASOURCE=db4free.net;PORT=3306;DATABASE=trening;UID=trening;PASSWORD=treningRTL;OldGuids=True;convert zero datetime=True";
+            string connectionString = @"DATASOURCE=freedb.tech;PORT=3306;DATABASE=freedbtech_trening;UID=freedbtech_trening;PASSWORD=treningRTL;OldGuids=True;convert zero datetime=True";
             
 
             using (MyCon = new MySqlConnection(connectionString))
@@ -216,7 +216,7 @@ namespace RUN
             int zmianaDys = Convert.ToInt16(Convert.ToDecimal(txtZawodyDystans.Text == "" ? "0" : txtZawodyDystans.Text) * 100);
 
             MySqlConnection MyCon;
-            string connectionString = @"DATASOURCE=db4free.net;PORT=3306;DATABASE=trening;UID=trening;PASSWORD=treningRTL;OldGuids=True;convert zero datetime=True";
+            string connectionString = @"DATASOURCE=freedb.tech;PORT=3306;DATABASE=freedbtech_trening;UID=freedbtech_trening;PASSWORD=treningRTL;OldGuids=True;convert zero datetime=True";
 
 
             using (MyCon = new MySqlConnection(connectionString))

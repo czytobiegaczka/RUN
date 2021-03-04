@@ -57,7 +57,8 @@ namespace RUN
             {
                 AppDataTableAdapters.usersTableAdapter user = new AppDataTableAdapters.usersTableAdapter();
                 AppData.usersDataTable dt = user.Login(txtUsername.Text, haslo);
-                if (dt.Rows.Count > 0)
+                if (dt.Rows.Count == 0) // UWAGA! UWAGA! UWAGA! - zmieniłam badanie loginu - NIE DZIAŁA AddData !!! 
+                                        // tutaj powinno być: (dt.Rows.Count > 0)
                 {
                     Main Mform = new Main();
                     Mform.Show();
@@ -78,6 +79,11 @@ namespace RUN
                 MyMessageBox.ShowMessage(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Cursor = this.DefaultCursor;
             }
+        }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
