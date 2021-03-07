@@ -1,18 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Data;
-using System.Drawing;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Security.Cryptography;
+using System.IO;
+
 
 namespace RUN
 {
     public partial class Login : Form
     {
+        public static string connectionString = @"DATASOURCE=freedb.tech;PORT=3306;DATABASE=freedbtech_trening;UID=freedbtech_trening;PASSWORD=treningRTL;OldGuids=True;convert zero datetime=True";
+        public MySqlConnection MyLoginCon;
+        private DataTable users;
+        private string haslo;
+        private int potwierdz = 0;
+
+
         public Login()
         {
             InitializeComponent();
@@ -32,9 +37,8 @@ namespace RUN
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            string haslo;
-            this.Cursor = Cursors.WaitCursor;
 
+            this.Cursor = Cursors.WaitCursor;
             string source = txtPassword.Text;
             using (SHA256 sha256Hash = SHA256.Create())
             {
@@ -55,23 +59,23 @@ namespace RUN
             }
             try
             {
-                AppDataTableAdapters.usersTableAdapter user = new AppDataTableAdapters.usersTableAdapter();
-                AppData.usersDataTable dt = user.Login(txtUsername.Text, haslo);
-                if (dt.Rows.Count == 0) // UWAGA! UWAGA! UWAGA! - zmieniłam badanie loginu - NIE DZIAŁA AddData !!! 
-                                        // tutaj powinno być: (dt.Rows.Count > 0)
+                baza_connect();
+
+                if (potwierdz > 0) 
                 {
                     Main Mform = new Main();
                     Mform.Show();
                     this.Hide();
                     this.Cursor = this.DefaultCursor;
                     
-                    /*MyMessageBox.ShowMessage("Zalogowany!!!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);*/
+                    
                 }
                 else
                 {
                     MyMessageBox.ShowMessage("Niepoprawny login lub hasło!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.Cursor = this.DefaultCursor;
                 }
+
             }
             catch (Exception ex)
             {
@@ -84,6 +88,68 @@ namespace RUN
         private void Login_Load(object sender, EventArgs e)
         {
 
+        }
+
+        public void baza_connect()
+        {
+            this.users = new DataTable();
+            using (this.MyLoginCon = new MySqlConnection(connectionString))
+            {
+                try
+                {
+                    MyLoginCon.Open(); //otwarcie nowego połączenia
+                    potwierdz=LicznikRekordow(txtUsername.Text,haslo);
+                    MyLoginCon.Close(); //zamknięcie połaczenia
+
+                }
+                //catch (MySqlException ex)
+                catch (Exception ex)
+                {
+                    //When handling errors, you can your application's response based 
+                    //on the error number.
+                    //The two most common error numbers when connecting are as follows:
+                    //0: Cannot connect to server.
+                    //1045: Invalid user name and/or password.
+                    /*
+                    switch (ex.Number)
+                    {
+                        case 0:
+                            MyMessageBox.ShowMessage("Problem z połaczeniem, próbuj dalej!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            break;
+                        case 1045:
+                            MyMessageBox.ShowMessage("UWAGA! Nieprawidłowe hasło lub login, próbuj dalej!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            break;
+                        default:
+                            MyMessageBox.ShowMessage("Wystąpił problem z połaczeniem, próbuj dalej!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            break;
+                            
+                    }
+                    */
+                    //MessageBox.Show(ex.Message.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    if (MyMessageBox.ShowMessage("Błąd połączenia. Czy łączyć jeszcze raz?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                    {
+                        baza_connect();
+                    }
+                    else
+                    {
+                        Application.Exit();
+                    }
+
+                }
+            }
+        }
+
+        private int LicznikRekordow(string userName, string userPassword)
+        {
+            string like = "'" + userName + "'";
+            string query = "SELECT COUNT(*) FROM users WHERE username=" + like;
+            int suma = 0;
+
+                //Create Command
+                MySqlCommand cmd = new MySqlCommand(query, MyLoginCon);
+                suma = int.Parse(cmd.ExecuteScalar().ToString());
+
+            return suma;
         }
     }
 }
