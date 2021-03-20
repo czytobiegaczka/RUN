@@ -50,13 +50,14 @@ namespace RUN
                 haslo = hash;
             }
 
-                if (string.IsNullOrEmpty(txtUsername.Text))
+                if (string.IsNullOrEmpty(txtUsername.Text) ^ string.IsNullOrEmpty(txtPassword.Text))
             {
-                MyMessageBox.ShowMessage("Please enter Your username.", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MyMessageBox.ShowMessage("Please enter Your username and password.", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Cursor = this.DefaultCursor;
                 txtUsername.Focus();
                 return;
             }
+
             try
             {
                 baza_connect();
@@ -85,10 +86,6 @@ namespace RUN
             }
         }
 
-        private void Login_Load(object sender, EventArgs e)
-        {
-
-        }
 
         public void baza_connect()
         {
@@ -141,7 +138,7 @@ namespace RUN
 
         private int LicznikRekordow(string userName, string userPassword)
         {
-            string like = "'" + userName + "'";
+            string like = "'" + userName + "'"+ " and password="+"'"+userPassword+"'";
             string query = "SELECT COUNT(*) FROM users WHERE username=" + like;
             int suma = 0;
 

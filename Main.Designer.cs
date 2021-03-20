@@ -202,7 +202,6 @@
             this.chrWaga = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.tmrEvent = new System.Windows.Forms.Timer(this.components);
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -489,7 +488,6 @@
             // 
             // splitContainer11.Panel2
             // 
-            this.splitContainer11.Panel2.Controls.Add(this.dateTimePicker1);
             this.splitContainer11.Panel2.Controls.Add(this.dataGrid);
             this.splitContainer11.Size = new System.Drawing.Size(556, 713);
             this.splitContainer11.SplitterDistance = 89;
@@ -2443,13 +2441,6 @@
             this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
             this.dataGridViewImageColumn1.ReadOnly = true;
             // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(424, 179);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 1;
-            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2755,6 +2746,5 @@
         private System.Windows.Forms.Label lblH;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel29;
         private System.Windows.Forms.Label lblM;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
     }
 }
