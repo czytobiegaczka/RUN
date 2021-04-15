@@ -790,7 +790,8 @@ namespace RUN
 
                 if (position_xy_mouse_row >= 0)
                 {
-                    myMenu.Items.Add("Dopisz").Name = "Dopisz";
+                     myMenu.Items.Add("Importuj trening").Name = "addTrening";                   
+                    myMenu.Items.Add("Dopisz zwody").Name = "addZawody";
                 }
                 myMenu.Show(dataGrid, new Point(e.X, e.Y));
 
@@ -802,7 +803,25 @@ namespace RUN
         void myMenu_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
             ToolStripItem item = e.ClickedItem;
+            if (item.Name=="addZawody")
+            {
+                add_Zawody();
+            }
+            else
+            {
+                OpenFileDialog openFileDialog = new OpenFileDialog();
+                openFileDialog.Filter = "Choose xml file(*.xml; *.tcx;)|*.xml; *.tcx;";
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                   // picAddPicture.Image = Image.FromFile(openFileDialog.FileName);
+                }
+            }
 
+
+        }
+
+        private void add_Zawody()
+        {
             if (dataGrid.CurrentCell != null)
             {
                 DataGridViewRow dataGrRow = dataGrid.CurrentRow;
@@ -926,7 +945,6 @@ namespace RUN
                 DataGridView(jakiMiesiac);
 
             }
-
         }
 
         int x = 0, y = 0;
